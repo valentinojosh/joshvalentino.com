@@ -1,0 +1,21 @@
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 8rem - 35px);
+  box-sizing: border-box;
+}
+
+.error-text h1 {
+  color: var(--white-almost);
+  font-family: 'Ubuntu Mono';
+  padding: 0px;
+  margin: 0px;
+  text-shadow: 0.5rem 0.5rem 0.5rem black;
+}
+
+@media screen and (max-width: 480px) {
+  .error-container {
+    height: 45rem;
+  }
+}
