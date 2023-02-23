@@ -1,20 +1,20 @@
 import React from 'react';
 
-import Expresso from './Assets/expresso.png';
-import Dayz from './Assets/dayz.png';
-import Gradient from './Assets/gradient.png';
-import ColorCharts from './Assets/colorcharts.png';
-import DriversEd from './Assets/driversed.gif';
-import Blog from './Assets/blog.png';
-import Blogmas from './Assets/blogmas.png';
+import Datafy from './Assets/datafy.png';
+import CloudJams from './Assets/cloudjams.png';
+import IM from './Assets/im.png';
+import Yahtzee from './Assets/yahtzee.png';
+import StatsDB from './Assets/statsdb.png';
+import GitHub from './Assets/github.png';
+import Photography from './Assets/photography.png';
 
-import MiniExpresso from './Assets/mini-expresso.jpg';
-import MiniDayz from './Assets/mini-dayz.jpg';
-import MiniGradient from './Assets/mini-gradient.jpg';
-import MiniColorCharts from './Assets/mini-colorcharts.jpg';
-import MiniDriversEd from './Assets/mini-driversed.jpg';
-import MiniBlog from './Assets/mini-blog.jpg';
-import MiniBlogmas from './Assets/mini-blogmas.jpg';
+import MiniDatafy from './Assets/mini-datafy.png';
+import MiniCloudJams from './Assets/mini-cloudjams.png';
+import MiniIM from './Assets/mini-im.png';
+import MiniYahtzee from './Assets/mini-yahtzee.png';
+import MiniStatsDB from './Assets/mini-statsdb.png';
+import MiniGitHub from './Assets/mini-github.png';
+import MiniPhotography from './Assets/mini-photography.png';
 
 export const DARK_PINK = '#FF7C7C';
 
@@ -26,15 +26,13 @@ export const BLUE = '#8DEAFF';
 
 export const YELLOW = '#FFE084';
 
-export const LIGHT_GRAY = '#D9D9D9';
-
 export const ALMOST_WHITE = '#F5F5F5';
 
 export const projectInfo = [
   {
     color: DARK_PINK,
-    image: Gradient,
-    mini: MiniGradient,
+    image: Datafy,
+    mini: MiniDatafy,
     name: 'data-fy',
     type: 'full stack web app',
     stack: 'Java, React',
@@ -61,8 +59,8 @@ export const projectInfo = [
   },
   {
     color: LIGHT_PINK,
-    image: Blog,
-    mini: MiniBlog,
+    image: CloudJams,
+    mini: MiniCloudJams,
     name: 'cloud-jams',
     type: 'Lambda function',
     stack: 'Java, React, AWS',
@@ -106,8 +104,8 @@ export const projectInfo = [
   },
   {
     color: DARK_PINK,
-    image: Expresso,
-    mini: MiniExpresso,
+    image: IM,
+    mini: MiniIM,
     name: 'ims',
     type: 'full stack web app',
     stack: 'React, Node.js, SQL, REST',
@@ -143,8 +141,8 @@ export const projectInfo = [
   },
   {
     color: LIGHT_PINK,
-    image: Blogmas,
-    mini: MiniBlogmas,
+    image: Yahtzee,
+    mini: MiniYahtzee,
     name: 'yahtzee',
     type: 'static site',
     stack: 'HTML, CSS, JS, JQuery',
@@ -171,8 +169,8 @@ export const projectInfo = [
   },
   {
     color: DARK_PINK,
-    image: Dayz,
-    mini: MiniDayz,
+    image: StatsDB,
+    mini: MiniStatsDB,
     name: 'stats db',
     type: 'database',
     stack: 'SQL, MySQL',
@@ -208,8 +206,8 @@ export const projectInfo = [
   },
   {
     color: LIGHT_PINK,
-    image: DriversEd,
-    mini: MiniDriversEd,
+    image: GitHub,
+    mini: MiniGitHub,
     name: "github",
     type: 'repositories',
     stack: 'Java, React, SQL, AWS',
@@ -233,8 +231,8 @@ export const projectInfo = [
   },
   {
     color: DARK_PINK,
-    image: ColorCharts,
-    mini: MiniColorCharts,
+    image: Photography,
+    mini: MiniPhotography,
     name: 'photography',
     type: 'creative',
     stack: 'DSLR, Photoshop, Illustrator',
