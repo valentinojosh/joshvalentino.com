@@ -1,6 +1,6 @@
-# [karenying.com](https://karenying.com)
+# [joshvalentino.com](https://joshvalentino.com)
 
-Personal / portfolio site of Karen Ying.
+Personal / portfolio site of Josh.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d9b919d2-70aa-4446-827a-966c9ee47c5f/deploy-status)](https://app.netlify.com/sites/karen-ying/deploys)
 
@@ -11,6 +11,8 @@ This site was bootstrapped with [Create React App](https://github.com/facebook/c
 It is statically hosted on [Netlify](http://netlify.com/). Read about enabling redirects on Netlify to fix client-side routing for SPAs [here](https://www.blog.karenying.com/posts/404-react-page-not-found).
 
 A tutorial for the [carousel](https://karenying.com/projects) can be found [here](https://www.blog.karenying.com/posts/adding-transitions-to-a-react-carousel-with-material-ui) and a tutorial for the nav bar can be found [here](https://blog.karenying.com/posts/nav-bar-with-dots).
+
+Credit to [Karen Ying](https://github.com/karenying) for the base design.
 
 ## Installation
 
