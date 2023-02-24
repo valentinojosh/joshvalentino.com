@@ -77,8 +77,8 @@ const About = () => {
                 .
                 <br />
                 <br />
-                I'm born and raised here in Chicago, Illinois. If I'm
-                not programming, you can find me working out, eating good food, or hanging out with friends
+                I was born and raised here in Chicago, IL. If I'm
+                not programming, you can find me working out, out with friends, or dreaming of Spain.
                 <br />
                 <br />
                 Check out some of

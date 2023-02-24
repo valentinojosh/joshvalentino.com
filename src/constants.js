@@ -35,9 +35,12 @@ export const projectInfo = [
     mini: MiniDatafy,
     name: 'data-fy',
     type: 'full stack web app',
-    stack: 'Java, React',
+    stack: 'Java, React, REST',
     description: (
       <span>
+          *Currently in development*
+        <br />
+        <br />
         Data-fy is a Spotify Wrapped remake created as a full stack web application
         <br />
         <br />
@@ -63,42 +66,23 @@ export const projectInfo = [
     mini: MiniCloudJams,
     name: 'cloud-jams',
     type: 'Lambda function',
-    stack: 'Java, React, AWS',
+    stack: 'Java, AWS',
     description: (
       <span>
-        blog.karenying.com is my blog site. It was bootstrapped with{' '}
-        <a
-          href='https://github.com/alxshelepenok/gatsby-starter-lumen'
-          target='_blank'
-          rel='noopener noreferrer'
-          style={{ color: LIGHT_PINK }}
-        >
-          Lumen
-        </a>
-        , a lightweight Gatsby starter and is statically hosted on{' '}
-        <a
-          href='http://netlify.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-          style={{ color: LIGHT_PINK }}
-        >
-          Netlify
-        </a>
-        .
+        Cloud-Jams is an AWS Lambda function triggered weekly by CloudWatch Events to update a text file containing the global top 5 songs on spotify for the week.
+          <br />
         <br />
-        <br />I write mostly web dev tutorials and UI/UX observational pieces.
-        Blogging has been a fun outlet to explore those areas, while also
-        helping me better articulate my thoughts/writing.
+          This function utilizes Java, JGit, and the Spotify API.
       </span>
     ),
     buttons: [
       {
-        name: 'site',
-        link: 'https://blog.karenying.com/',
+        name: 'chart',
+        link: 'https://github.com/valentinojosh/cloud-jams/blob/main/WeeklyCharts/Charts.txt',
       },
       {
         name: 'code',
-        link: 'https://github.com/karenying/blog.karenying.com',
+        link: 'https://github.com/valentinojosh/cloud-jams/',
       },
     ],
   },
@@ -111,25 +95,11 @@ export const projectInfo = [
     stack: 'React, Node.js, SQL, REST',
     description: (
       <span>
-        Expresso is an online-ordering app for Princeton University’s{' '}
-        <a
-          href='https://pucoffeeclub.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-          style={{ color: YELLOW }}
-        >
-          Coffee Club
-        </a>
-        . Much like any online-ordering interface, the baristas are able to see
-        the orders the students place. The students either pay in store when
-        picking up, or use Princeton’s Student Charge.
-        <br />
-        <br />
-        We worked closely with both the Coffee Club and the University on this
-        app.
-        <br />
-        <br />
-        Launch postponed.
+          IMS is an incident management system for a local business, FVSRA, in Aurora, IL.
+            Our team utilized React, Node.js, SQL, and REST architecture in an agile environment.
+          <br/>
+          <br/>
+          I led the formal documentation, frontend design, and customer communication; I also translated verbal and written needs into technical requirements, stories, and other deliverables. In addition, I assisted in the development of the backend and the design of the database.
       </span>
     ),
     buttons: [
@@ -148,22 +118,30 @@ export const projectInfo = [
     stack: 'HTML, CSS, JS, JQuery',
     description: (
       <span>
-        In the spirit of Vlogmas, I participated in Blogmas — miniposts every
-        day of December 2020 until Christmas, writing about something I coded /
-        designed / learned that day.
+        Yahtzee is the first web project I ever worked on. The frontend is of questionable design; However, the backend logic is well designed in an effort to be efficient, simple, and score properly.
         <br />
-        <br />I created a semi-interactive calendar visualizer to encapsulate
-        the experience.
+        <br />
+          It's designed to be fun, interactive, and easy to play. I grew up playing a variety of dice and card games with my mom, including Yahtzee. Hence, even to this day I still enjoy playing this.
+          My high score is 275. If you can beat my score feel free to{' '}
+          <a
+              href='https://www.linkedin.com/in/valentino-josh/'
+              style={{ color: YELLOW }}
+              target='_blank'
+              rel='noopener noreferrer'
+          >
+              reach out
+            </a>
+          !
       </span>
     ),
     buttons: [
       {
-        name: 'site',
-        link: 'https://www.blogmas.karenying.com/',
+        name: 'game',
+        link: 'https://valentinojosh.github.io/Yahtzee_Valentino.html',
       },
       {
         name: 'code',
-        link: 'https://blog.karenying.com/posts/blogmas-2020',
+        link: 'https://github.com/valentinojosh/yahtzee',
       },
     ],
   },
@@ -176,31 +154,17 @@ export const projectInfo = [
     stack: 'SQL, MySQL',
     description: (
       <span>
-        Dayz is a bullet journal-style mood tracker. It utilizes a RESTful api
-        with a MERN stack. This was my first solo full stack project where I
-        implemented and deployed all the components from scratch. It's hosted on
-        Heroku.
-        <br />
-        <br />I wrote a{' '}
-        <a
-          href='https://blog.karenying.com/posts/tracking-my-mood-daily-2020'
-          target='_blank'
-          rel='noopener noreferrer'
-          style={{ color: DARK_PINK }}
-        >
-          blog post
-        </a>{' '}
-        about how I used Dayz to track my mood every day of 2020.
+        Database created in SQL utilizing MySQL Workbench. Included design of the ERD, creation of tables and their relationships in SQL, insertion of data, samples of complex queries, and connection via web application.
       </span>
     ),
     buttons: [
       {
         name: 'site',
-        link: 'https://blog.karenying.com/posts/tracking-my-mood-daily-2020',
+        link: 'https://valentinojosh.github.io/database.html',
       },
         {
             name: 'paper',
-            link: 'https://blog.karenying.com/posts/tracking-my-mood-daily-2020',
+            link: 'https://valentinojosh.github.io/assets/pdfOverview.pdf',
         },
     ],
   },
@@ -213,19 +177,13 @@ export const projectInfo = [
     stack: 'Java, React, SQL, AWS',
     description: (
       <span>
-        Driver’s Ed is an infinite runner game. A student driver must navigate
-        Princeton University's Washington Road to collect coins while avoiding
-        obstacles.
-        <br />
-        <br />
-        Won Art Direction Award and 3rd place overall for Spring 2020 COS 426:
-        Computer Graphics.
+        For more information on the majority of my projects check out my GitHub!
       </span>
     ),
     buttons: [
       {
         name: 'site',
-        link: 'https://github.com/karenying/drivers-ed/',
+        link: 'https://github.com/valentinojosh',
       },
     ],
   },
@@ -238,19 +196,19 @@ export const projectInfo = [
     stack: 'DSLR, Photoshop, Illustrator',
     description: (
       <span>
-        Color Charts aims to increase the readability of charts, graphs, and
-        diagrams on the web.
+        During University I had the pleasure of taking a photography course. I have always loved photography, so it was a great opportunity to expand my skills with DSLR cameras, Photoshop, and Illustrator.
         <br />
         <br />
-        It improves upon existing extensions by using researched color blind
-        friendly palettes to recolor images. The algorithm uses HTML Canvas and
-        Base64 encoding to recolor images in place.
+        Learning to use Photoshop has been particular useful especially so in web design. For example, any minified pictures on my portfolio site were made through Photoshop.
+        <br />
+        <br />
+          If you're interested feel free to check out the Elysian Magazine where two of my photographs were published, one of which is the very first one of the gallery!
       </span>
     ),
     buttons: [
       {
         name: 'site',
-        link: 'https://github.com/karenying/color-charts',
+        link: 'https://www.auelysianmagazine.com/gallery',
       },
     ],
   },
