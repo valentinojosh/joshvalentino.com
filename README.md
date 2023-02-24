@@ -2,7 +2,7 @@
 
 Personal / portfolio site of Josh.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d9b919d2-70aa-4446-827a-966c9ee47c5f/deploy-status)](https://app.netlify.com/sites/karen-ying/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4a97bf5c-a702-4b54-b193-b4e7ccdcc4f6/deploy-status)](https://app.netlify.com/sites/joshvalentinocom/deploys)
 
 <img src="./public/preview.png" width="500px">
 
