@@ -105,7 +105,11 @@ export const projectInfo = [
     buttons: [
       {
         name: 'site',
-        link: 'http://coffeeclub.princeton.edu/',
+        link: 'https://valentinojosh.github.io/foxvalleyspecialrec.github.io/documentation',
+      },
+      {
+        name: 'code',
+        link: 'https://github.com/valentinojosh/IncidentManagementSystem',
       },
     ],
   },
