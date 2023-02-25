@@ -12,7 +12,7 @@ It is statically hosted on [Netlify](http://netlify.com/). Read about enabling r
 
 A tutorial for the [carousel](https://karenying.com/projects) can be found [here](https://www.blog.karenying.com/posts/adding-transitions-to-a-react-carousel-with-material-ui) and a tutorial for the nav bar can be found [here](https://blog.karenying.com/posts/nav-bar-with-dots).
 
-Credit to [Karen Ying](https://github.com/karenying) for the base design.
+Credit goes to [Karen Ying](https://github.com/karenying) for their awesome front-end project, which I used to bootstrap my own.
 
 ## Installation
 
