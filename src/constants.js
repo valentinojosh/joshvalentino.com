@@ -109,7 +109,7 @@ export const projectInfo = [
       },
       {
         name: 'code',
-        link: 'https://github.com/valentinojosh/IncidentManagementSystem',
+        link: 'https://github.com/valentinojosh/ims',
       },
     ],
   },
