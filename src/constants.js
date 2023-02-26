@@ -105,7 +105,7 @@ export const projectInfo = [
     buttons: [
       {
         name: 'site',
-        link: 'https://valentinojosh.github.io/foxvalleyspecialrec.github.io/documentation',
+        link: 'https://valentinojosh.github.io/ims-prototype/documentation',
       },
       {
         name: 'code',

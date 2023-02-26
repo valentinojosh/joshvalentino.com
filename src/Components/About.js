@@ -86,7 +86,7 @@ const About = () => {
                 <Link
                   to={`/projects`}
                   style={{
-                    color: BLUE,
+                    color: PURPLE,
                   }}
                   className="internal-link"
                 >
