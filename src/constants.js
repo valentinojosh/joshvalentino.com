@@ -126,7 +126,7 @@ export const projectInfo = [
         <br />
         <br />
           It's designed to be fun, interactive, and easy to play. I grew up playing a variety of dice and card games with my mom, including Yahtzee. Hence, even to this day I still enjoy playing this.
-          My high score is 275. If you can beat my score feel free to{' '}
+          My high score is 291. If you can beat my score feel free to{' '}
           <a
               href='https://www.linkedin.com/in/valentino-josh/'
               style={{ color: YELLOW }}
