@@ -122,10 +122,10 @@ export const projectInfo = [
     stack: 'HTML, CSS, JS, JQuery',
     description: (
       <span>
-        Yahtzee is the first web project I ever worked on. The frontend is of questionable design; However, the backend logic is well designed in an effort to be efficient, simple, and score properly.
+        Yahtzee is the first web game I created my freshman year. The frontend is of questionable design; However, the backend logic was designed in an effort to be efficient, simple, and score properly.
         <br />
         <br />
-          It's designed to be fun, interactive, and easy to play. I grew up playing a variety of dice and card games with my mom, including Yahtzee. Hence, even to this day I still enjoy playing this.
+          It's designed to be fun, interactive, and easy to play. I grew up playing a variety of dice and card games with my mom, including Yahtzee. Even to this day I still enjoy playing.
           My high score is 291. If you can beat my score feel free to{' '}
           <a
               href='https://www.linkedin.com/in/valentino-josh/'
