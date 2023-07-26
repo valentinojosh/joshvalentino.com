@@ -52,7 +52,7 @@ export const projectInfo = [
     buttons: [
       {
         name: 'site',
-        link: 'https://github.com/valentinojosh/data-fy',
+        link: '/demo',
       },
       {
         name: 'code',

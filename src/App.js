@@ -8,6 +8,7 @@ import Contact from './Components/Contact';
 import Error from './Components/Error';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
+import Demo from "./Components/Demo";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route exact path='/about' component={About} />
         <Route exact path='/projects' component={Projects} />
         <Route exact path='/contact' component={Contact} />
+        <Route exact path='/demo' component={Demo} />
         <Route path='*' component={Error} />
       </Switch>
       <Footer />
