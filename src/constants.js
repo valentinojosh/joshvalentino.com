@@ -52,7 +52,11 @@ export const projectInfo = [
     buttons: [
       {
         name: 'site',
-        link: '/demo',
+        link: '/datafydemo',
+      },
+      {
+        name: 'demo',
+        link: '/datafydemo',
       },
       {
         name: 'code',

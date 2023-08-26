@@ -77,10 +77,6 @@ const About = () => {
                 .
                 <br />
                 <br />
-                I was born and raised here in Chicago, IL. If I'm
-                not programming, you can find me working out, out with friends, or dreaming of Spain.
-                <br />
-                <br />
                 Check out some of
                 my{" "}
                 <Link
@@ -116,7 +112,7 @@ const About = () => {
                     className="internal-link"
                 >
                   resume
-                </Link>
+                </Link>.
               </p>
             </div>
           </Fade>
