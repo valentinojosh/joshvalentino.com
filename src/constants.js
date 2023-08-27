@@ -38,10 +38,10 @@ export const projectInfo = [
     stack: 'Java, React, REST, Maven, Spring',
     description: (
       <span>
-          *Currently in development*
+          *Functionally developed, not yet deployed*
         <br />
         <br />
-        Data-fy is a Spotify Wrapped remake created as a full stack web application
+        Data-fy is a full stack web application utilizing the Spotify API, Java for the backend, and React for the front end
         <br />
         <br />
         Through the Spotify API, the users personal listening data is acquired. Then processed by the server
