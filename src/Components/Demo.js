@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import baseDemoVideoFile from '../Assets/IncompleteDemo.mp4';
+import baseDemoVideoFile from '../Assets/BaseDemo.mp4';
+import mobileDemoVideoFile from '../Assets/MobileDemo.mp4';
+import errorDemoVideoFile from '../Assets/ErrorDemo.mp4';
 import '../Styles/Error.css';
 import Fade from '@material-ui/core/Fade';
 import '../Styles/Projects.scss';
@@ -50,15 +52,15 @@ const Demo = () => {
           <div className='projects-container'>
               <Hidden smDown>
                   <DemoCard name='Base Demo' video={baseDemoVideoFile}/>
-                  <DemoCard name='Mobile Demo' video='dev'/>
-                  <DemoCard name='Error Demo' video='dev'/>
+                  <DemoCard name='Mobile Demo' video={mobileDemoVideoFile}/>
+                  <DemoCard name='Error Demo' video={errorDemoVideoFile}/>
               </Hidden>
 
               {/*mobile*/}
               <Hidden mdUp>
                   <DemoCardMobile name='Base Demo' video={baseDemoVideoFile}/>
-                  <DemoCardMobile name='Mobile Demo' video='dev'/>
-                  <DemoCardMobile name='Error Demo' video='dev'/>
+                  <DemoCardMobile name='Mobile Demo' video={mobileDemoVideoFile}/>
+                  <DemoCardMobile name='Error Demo' video={errorDemoVideoFile}/>
               </Hidden>
           </div>
       </Fade>

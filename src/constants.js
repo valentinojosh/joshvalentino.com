@@ -35,7 +35,7 @@ export const projectInfo = [
     mini: MiniDatafy,
     name: 'data-fy',
     type: 'full stack web app',
-    stack: 'Java, React, REST',
+    stack: 'Java, React, REST, Maven, Spring',
     description: (
       <span>
           *Currently in development*
