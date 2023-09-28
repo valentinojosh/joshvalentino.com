@@ -38,11 +38,10 @@ export const projectInfo = [
     stack: 'Java, React, REST, Maven, Spring',
     description: (
       <span>
-          *Functionally developed, not yet deployed*
+          *backend yet to be deployed*
         <br />
         <br />
-        Data-fy is a full stack web application utilizing the Spotify API, Java for the backend, and React for the front end
-        <br />
+        Data-fy is a Java/React full-stack app that analyzes Spotify listening history. MVC design pattern. Managed with maven, utilizing Spring Boot, JGit, REST architecture, the Spotify API, and build tested with Docker.        <br />
         <br />
         Through the Spotify API, the users personal listening data is acquired. Then processed by the server
           and presented to the front end. Interesting data relations and
@@ -52,7 +51,7 @@ export const projectInfo = [
     buttons: [
       {
         name: 'site',
-        link: '/datafydemo',
+        link: 'https://data-fy.netlify.app/',
       },
       {
         name: 'demo',
