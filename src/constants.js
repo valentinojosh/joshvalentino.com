@@ -35,17 +35,12 @@ export const projectInfo = [
     mini: MiniDatafy,
     name: 'data-fy',
     type: 'full stack web app',
-    stack: 'Java, React, REST, Maven, Spring',
+    stack: 'Java, React, REST, Maven, Spring, Google Cloud',
     description: (
       <span>
-          *backend yet to be deployed*
+        Data-fy is a full-stack application for visualizing user’s Spotify listening data, featuring a stateless Java backend, hosted on Google Cloud, with multithreading for efficient processing. It is implemented with a user-friendly React frontend, hosted on Netlify, complementing the backend's MVC and RESTful architecture for a cohesive and scalable solution. Utilized Docker for assistance with build testing and Maven for build management
         <br />
-        <br />
-        Data-fy is a Java/React full-stack app that analyzes Spotify listening history. MVC design pattern. Managed with maven, utilizing Spring Boot, JGit, REST architecture, the Spotify API, and build tested with Docker.        <br />
-        <br />
-        Through the Spotify API, the users personal listening data is acquired. Then processed by the server
-          and presented to the front end. Interesting data relations and
-          vibrate charts provide an engaging experience.
+
       </span>
     ),
     buttons: [
