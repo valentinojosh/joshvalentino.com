@@ -62,19 +62,19 @@
 }
 
 .code:hover svg {
-  fill: var(--yellow);
+  fill: #9c88f7;
 }
 
 .github:hover svg {
-  fill: var(--dark-pink);
+  fill: #9c88f7;
 }
 
 .email:hover svg {
-  fill: var(--light-pink);
+  fill: #9c88f7;
 }
 
 .linkedin:hover svg {
-  fill: var(--blue);
+  fill: #9c88f7;
 }
 
 .twitter:hover svg {
@@ -82,5 +82,5 @@
 }
 
 .medium:hover svg {
-  fill: var(--dark-pink);
+  fill: #9c88f7;
 }

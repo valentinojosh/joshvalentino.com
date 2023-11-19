@@ -6,7 +6,6 @@ import IM from './Assets/im.png';
 import Yahtzee from './Assets/yahtzee.png';
 import StatsDB from './Assets/statsdb.png';
 import GitHub from './Assets/github.png';
-import Photography from './Assets/photography.png';
 
 import MiniDatafy from './Assets/mini-datafy.png';
 import MiniCloudJams from './Assets/mini-cloudjams.png';
@@ -14,23 +13,17 @@ import MiniIM from './Assets/mini-im.png';
 import MiniYahtzee from './Assets/mini-yahtzee.png';
 import MiniStatsDB from './Assets/mini-statsdb.png';
 import MiniGitHub from './Assets/mini-github.png';
-import MiniPhotography from './Assets/mini-photography.png';
 
-export const DARK_PINK = '#FF7C7C';
-
-export const LIGHT_PINK = '#FFB6B9';
 
 export const PURPLE = '#9c88f7';
 
 export const BLUE = '#8DEAFF';
 
-export const YELLOW = '#FFE084';
-
 export const ALMOST_WHITE = '#F5F5F5';
 
 export const projectInfo = [
   {
-    color: DARK_PINK,
+    color: PURPLE,
     image: Datafy,
     mini: MiniDatafy,
     name: 'data-fy',
@@ -38,7 +31,7 @@ export const projectInfo = [
     stack: 'Java, React, REST, Maven, Spring, Google Cloud',
     description: (
       <span>
-        Data-fy is a full-stack application for visualizing user’s Spotify listening data, featuring a stateless Java backend, hosted on Google Cloud, with multithreading for efficient processing. It is implemented with a user-friendly React frontend, hosted on Netlify, complementing the backend's MVC and RESTful architecture for a cohesive and scalable solution. Utilized Docker for assistance with build testing and Maven for build management
+        Full-stack web application for visualizing user’s Spotify listening data, featuring a stateless Java backend, hosted on Google Cloud, with multithreading for efficient processing. Implemented with a user-friendly React frontend, hosted on Netlify, complementing the backend's MVC and RESTful architecture for a cohesive and scalable solution. Utilized Docker for assistance with build testing and Maven for build management
         <br />
 
       </span>
@@ -59,7 +52,7 @@ export const projectInfo = [
     ],
   },
   {
-    color: LIGHT_PINK,
+    color: PURPLE,
     image: CloudJams,
     mini: MiniCloudJams,
     name: 'cloud-jams',
@@ -67,7 +60,7 @@ export const projectInfo = [
     stack: 'Java, AWS',
     description: (
       <span>
-        Cloud-Jams is an AWS Lambda function triggered weekly by CloudWatch Events to update a text file containing the global top 5 songs on spotify for the week.
+        AWS Lambda function triggered weekly by CloudWatch Events. Queries the Spotify API for the global top 5 songs. Commits to Github repository, storing each week in a text file.
           <br />
         <br />
           This function utilizes Java, JGit, and the Spotify API.
@@ -85,7 +78,7 @@ export const projectInfo = [
     ],
   },
   {
-    color: DARK_PINK,
+    color: PURPLE,
     image: IM,
     mini: MiniIM,
     name: 'ims',
@@ -112,22 +105,23 @@ export const projectInfo = [
     ],
   },
   {
-    color: LIGHT_PINK,
+    color: PURPLE,
     image: Yahtzee,
     mini: MiniYahtzee,
     name: 'yahtzee',
-    type: 'static site',
-    stack: 'HTML, CSS, JS, JQuery',
+    type: 'web app',
+    stack: 'HTML, CSS, JS, jQuery',
     description: (
       <span>
-        Yahtzee is the first web game I created my freshman year. The frontend is of questionable design; However, the backend logic was designed in an effort to be efficient, simple, and score properly.
+
+
+        First web app I created freshman year of University
         <br />
         <br />
-          It's designed to be fun, interactive, and easy to play. I grew up playing a variety of dice and card games with my mom, including Yahtzee. Even to this day I still enjoy playing.
-          My high score is 291. If you can beat my score feel free to{' '}
+          I grew up playing Yahtzee with my mom; I still enjoy playing. If you can beat my high score of 291 feel free to{' '}
           <a
               href='https://www.linkedin.com/in/valentino-josh/'
-              style={{ color: YELLOW }}
+              style={{ color: PURPLE }}
               target='_blank'
               rel='noopener noreferrer'
           >
@@ -148,7 +142,7 @@ export const projectInfo = [
     ],
   },
   {
-    color: DARK_PINK,
+    color: PURPLE,
     image: StatsDB,
     mini: MiniStatsDB,
     name: 'stats db',
@@ -156,7 +150,7 @@ export const projectInfo = [
     stack: 'SQL, MySQL',
     description: (
       <span>
-        Database created in SQL utilizing MySQL Workbench. Included design of the ERD, creation of tables and their relationships in SQL, insertion of data, samples of complex queries, and connection via web application.
+        Database exercise from University. Involved SQL, MySQL workbench, ERD design, table design, data sourcing, and query samples
       </span>
     ),
     buttons: [
@@ -171,12 +165,12 @@ export const projectInfo = [
     ],
   },
   {
-    color: LIGHT_PINK,
+    color: PURPLE,
     image: GitHub,
     mini: MiniGitHub,
     name: "github",
     type: 'repositories',
-    stack: 'Java, React, SQL, AWS',
+    stack: 'Java, React, SQL, AWS, GCP',
     description: (
       <span>
         For more information on the majority of my projects check out my GitHub!
@@ -188,30 +182,5 @@ export const projectInfo = [
         link: 'https://github.com/valentinojosh',
       },
     ],
-  },
-  {
-    color: DARK_PINK,
-    image: Photography,
-    mini: MiniPhotography,
-    name: 'photography',
-    type: 'creative',
-    stack: 'DSLR, Photoshop, Illustrator',
-    description: (
-      <span>
-        During University I had the pleasure of taking a photography course. I have always loved photography, so it was a great opportunity to expand my skills with DSLR cameras, Photoshop, and Illustrator.
-        <br />
-        <br />
-        Learning to use Photoshop has been particular useful especially so in web design. For example, any minified pictures on my portfolio site were made through Photoshop.
-        <br />
-        <br />
-          If you're interested feel free to check out the Elysian Magazine where two of my photographs were published, one of which is the very first one of the gallery!
-      </span>
-    ),
-    buttons: [
-      {
-        name: 'site',
-        link: 'https://www.auelysianmagazine.com/gallery',
-      },
-    ],
-  },
+  }
 ];

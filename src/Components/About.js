@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import Fade from "@material-ui/core/Fade";
 
 import "../Styles/About.css";
-import { BLUE, YELLOW, PURPLE} from "../constants";
+import {PURPLE} from "../constants";
 import Portrait from "../Assets/portrait.png";
 import MiniPortrait from "../Assets/mini-portrait.png"
 import res from "../Assets/resume.pdf";
@@ -68,7 +68,7 @@ const About = () => {
                 Currently I work remotely as a production support engineer for{" "}
                 <a
                   href="https://www.rxsense.com/"
-                  style={{ color: BLUE }}
+                  style={{ color: PURPLE }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -92,7 +92,7 @@ const About = () => {
                 <Link
                   to={`/contact`}
                   style={{
-                    color: YELLOW,
+                    color: PURPLE,
                   }}
                   className="internal-link"
                 >
