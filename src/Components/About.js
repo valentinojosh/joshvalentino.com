@@ -61,7 +61,7 @@ const About = () => {
                 <span className="wave" role="img" aria-label="wave">
                   👋🏼
                 </span>{" "}
-                I'm Josh Valentino. I'm a passionate software engineer seeking to work collaboratively and continue in lifelong learning. I graduated Magna Cum Laude with a Bachelors of Science in Computer Science and I'm an AWS Certified Cloud Practitioner.
+                I'm Josh Valentino. I'm a dedicated software engineer seeking to work collaboratively and continue in lifelong learning. I graduated Magna Cum Laude with a Bachelors of Science in Computer Science and I'm an AWS Certified Cloud Practitioner.
 
                 <br />
                 <br />

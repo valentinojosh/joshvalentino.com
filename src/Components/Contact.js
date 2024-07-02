@@ -10,10 +10,10 @@ const Contact = () => {
       <Fade in timeout={{ enter: 1200 }}>
         <div className='contact-content'>
           <h2>
-            Feel like connecting or simply saying hello?
+            More about me
           </h2>
           <p>
-            Feel free!
+            I enjoy astronomy, philosophy, kinesiology, working out, and everything tech! If you feel like connecting on LinkedIn or simply saying hello feel free:
             <br />
             <br />
             The best way to get in touch is through{' '}
