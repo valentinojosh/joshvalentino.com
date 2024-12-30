@@ -4,7 +4,7 @@ Personal / portfolio site of Josh.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4a97bf5c-a702-4b54-b193-b4e7ccdcc4f6/deploy-status)](https://app.netlify.com/sites/joshvalentinocom/deploys)
 
-<img src="./public/preview2.png" width="500px">
+<img src="./public/preview.png" width="500px">
 
 This site was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It heavily depends on [Material UI](https://material-ui.com/) for styling and responsiveness.
 
