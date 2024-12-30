@@ -61,20 +61,9 @@ const About = () => {
                 <span className="wave" role="img" aria-label="wave">
                   👋🏼
                 </span>{" "}
-                I'm Josh Valentino. I'm a dedicated software engineer seeking to work collaboratively and continue in lifelong learning. I graduated Magna Cum Laude with a Bachelors of Science in Computer Science and I'm an AWS Certified Cloud Practitioner.
+                I'm Josh Valentino. I'm an experienced swe with a proven track record of solving complex problems, driving optimizations, and demonstrating exceptional communication skills. Seeking to innovate, collaborate, and continue in lifelong learning.
 
-                <br />
-                <br />
-                Currently I work remotely as a production support engineer for{" "}
-                <a
-                  href="https://www.rxsense.com/"
-                  style={{ color: PURPLE }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  RxSense
-                </a>
-                .
+
                 <br />
                 <br />
                 Check out some of
@@ -101,7 +90,7 @@ const About = () => {
                 !
                 <br />
                 <br />
-                For more information on my experience, education, and skills check out my{" "}
+                For information on my experience, education, and skills check out my{" "}
                 <Link
                     to={res}
                     target='_blank'
