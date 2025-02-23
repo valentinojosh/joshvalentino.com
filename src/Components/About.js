@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ProgressiveImage from "react-progressive-image";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -9,7 +8,7 @@ import "../Styles/About.css";
 import {PURPLE} from "../constants";
 import Portrait from "../Assets/portrait.png";
 import MiniPortrait from "../Assets/mini-portrait.png"
-import res from "../Assets/resume.pdf";
+
 
 const About = () => {
   const useStyles = makeStyles((theme) => ({
@@ -61,47 +60,22 @@ const About = () => {
                 <span className="wave" role="img" aria-label="wave">
                   👋🏼
                 </span>{" "}
-                I'm Josh Valentino. I'm an experienced swe with a proven track record of solving complex problems, driving optimizations, and demonstrating exceptional communication skills. Seeking to innovate, collaborate, and continue in lifelong learning.
+                I'm Josh Valentino. I'm an experienced swe with a proven track record of solving complex problems,
+                driving optimizations, and demonstrating exceptional communication skills. Seeking to innovate,
+                collaborate, and continue in lifelong learning.
 
-
-                <br />
-                <br />
-                Check out some of
-                my{" "}
-                <Link
-                  to={`/projects`}
-                  style={{
-                    color: PURPLE,
-                  }}
-                  className="internal-link"
-                >
-                  projects
-                </Link>{" "}
-                and feel free to{" "}
-                <Link
-                  to={`/contact`}
-                  style={{
-                    color: PURPLE,
-                  }}
-                  className="internal-link"
-                >
-                  connect
-                </Link>
-                !
-                <br />
-                <br />
-                For information on my experience, education, and skills check out my{" "}
-                <Link
-                    to={res}
+                <br/>
+                <br/>
+                For more information on my experience, education, and skills feel free to send me an {" "}
+                <a
+                    href='mailto:valentinojosh03@gmail.com'
                     target='_blank'
-                    rel="noreferrer"
-                    style={{
-                      color: PURPLE,
-                    }}
-                    className="internal-link"
+                    style={{color: PURPLE}}
+                    rel='noopener noreferrer'
                 >
-                  resume
-                </Link>.
+                  email
+                </a>
+                !
               </p>
             </div>
           </Fade>

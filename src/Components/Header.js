@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Hidden from '@material-ui/core/Hidden';
 import { makeStyles } from '@material-ui/core/styles';
-import res from '../Assets/resume.pdf';
 
 import '../Styles/Header.css';
 import {
@@ -87,20 +86,20 @@ const Header = () => {
           title='contact'
           selected={page === 'contact'}
         />
-        <h3 id='slash'>/</h3>
-        <div className='header-link'>
-          <a
-            href={res}
-            target='_blank'
-            rel="noreferrer"
-            style={{ textDecoration: 'none' }}
-          >
-            <h3 className='resume'>resume</h3>
-            <div className='header-dot'>
-              <h3 style={{ color: PURPLE }}>•</h3>
-            </div>
-          </a>
-        </div>
+        {/*<h3 id='slash'>/</h3>*/}
+        {/*<div className='header-link'>*/}
+        {/*  <a*/}
+        {/*    href={res}*/}
+        {/*    target='_blank'*/}
+        {/*    rel="noreferrer"*/}
+        {/*    style={{ textDecoration: 'none' }}*/}
+        {/*  >*/}
+        {/*    <h3 className='resume'>resume</h3>*/}
+        {/*    <div className='header-dot'>*/}
+        {/*      <h3 style={{ color: PURPLE }}>•</h3>*/}
+        {/*    </div>*/}
+        {/*  </a>*/}
+        {/*</div>*/}
       </div>
     </div>
   );
