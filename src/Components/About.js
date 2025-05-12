@@ -68,7 +68,7 @@ const About = () => {
                 <br/>
                 For more information on my experience, education, and skills feel free to send me an {" "}
                 <a
-                    href='mailto:valentinojosh03@gmail.com'
+                    href='mailto:valentinojosh48@gmail.com'
                     target='_blank'
                     style={{color: PURPLE}}
                     rel='noopener noreferrer'

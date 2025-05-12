@@ -84,7 +84,7 @@ const Footer = () => {
         <div className='footer-link email'>
           <StyledTooltip title='Email' placement='top' arrow>
             <a
-              href='mailto:valentinojosh03@gmail.com'
+              href='mailto:valentinojosh48@gmail.com'
               target='_blank'
               rel='noopener noreferrer'
             >
