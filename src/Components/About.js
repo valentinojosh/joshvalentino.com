@@ -72,6 +72,7 @@ const About = () => {
                     target='_blank'
                     style={{color: PURPLE}}
                     rel='noopener noreferrer'
+                    title='valentinojosh48@gmail.com'
                 >
                   email
                 </a>

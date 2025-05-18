@@ -12,16 +12,17 @@ const Contact = () => {
           <p>
             Have an interesting opportunity, project, or just want to chat?
             <br/><br/>
-            Shoot me an {' '}
+            Feel free to shoot me an {' '}
             <a
-                href='mailto:valentinojosh03@gmail.com'
+                href='mailto:valentinojosh48@gmail.com'
                 target='_blank'
                 style={{color: PURPLE}}
                 rel='noopener noreferrer'
+                title='valentinojosh48@gmail.com'
             >
               email
             </a>
-            .
+            !
           </p>
         </div>
       </Fade>
