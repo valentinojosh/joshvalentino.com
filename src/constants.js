@@ -114,7 +114,6 @@ export const projectInfo = [
   //   description: (
   //     <span>
   //
-  //
   //       First web app I created freshman year of University
   //       <br />
   //       <br />
