@@ -26,7 +26,7 @@ export const projectInfo = [
     color: PURPLE,
     image: Datafy,
     mini: MiniDatafy,
-    name: 'data-fy',
+    name: 'spotify data analyzer',
     type: 'full stack web app',
     stack: 'Java, React, REST, Maven, Spring, Google Cloud',
     description: (
@@ -55,8 +55,8 @@ export const projectInfo = [
     color: PURPLE,
     image: CloudJams,
     mini: MiniCloudJams,
-    name: 'cloud-jams',
-    type: 'Lambda function',
+    name: 'automated api query',
+    type: 'Lambda',
     stack: 'Java, AWS',
     description: (
       <span>
@@ -86,7 +86,7 @@ export const projectInfo = [
     stack: 'React, Node.js, SQL, REST',
     description: (
       <span>
-          IMS is an incident management system for a local business, FVSRA, in Aurora, IL.
+          Incident management system for a local business, FVSRA, in Aurora, IL.
             Our team utilized React, Node.js, SQL, and REST architecture in an agile environment.
           <br/>
           <br/>
