@@ -53,6 +53,26 @@ export const projectInfo = [
   },
   {
     color: PURPLE,
+    image: IM,
+    mini: MiniIM,
+    name: 'incident management system',
+    type: 'full stack web app',
+    stack: 'React, Node.js, SQL, REST',
+    description: (
+        <span>
+          Full-stack incident management system built in a collaborative Agile environment, replacing paper-based forms and reducing retrieval time by 75%
+
+      </span>
+    ),
+    buttons: [
+      {
+        name: 'site',
+        link: 'https://valentinojosh.github.io/ims-prototype/documentation',
+      },
+    ],
+  },
+  {
+    color: PURPLE,
     image: CloudJams,
     mini: MiniCloudJams,
     name: 'automated api query',
@@ -74,33 +94,6 @@ export const projectInfo = [
       {
         name: 'code',
         link: 'https://github.com/valentinojosh/cloud-jams/',
-      },
-    ],
-  },
-  {
-    color: PURPLE,
-    image: IM,
-    mini: MiniIM,
-    name: 'ims',
-    type: 'full stack web app',
-    stack: 'React, Node.js, SQL, REST',
-    description: (
-      <span>
-          Incident management system for a local business, FVSRA, in Aurora, IL.
-            Our team utilized React, Node.js, SQL, and REST architecture in an agile environment.
-          <br/>
-          <br/>
-          I led the formal documentation, frontend design, and customer communication; I also translated verbal and written needs into technical requirements, stories, and other deliverables. In addition, I assisted in the development of the backend and the design of the database.
-      </span>
-    ),
-    buttons: [
-      {
-        name: 'site',
-        link: 'https://valentinojosh.github.io/ims-prototype/documentation',
-      },
-      {
-        name: 'code',
-        link: 'https://github.com/valentinojosh/ims',
       },
     ],
   },
