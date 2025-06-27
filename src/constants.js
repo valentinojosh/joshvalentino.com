@@ -67,7 +67,7 @@ export const projectInfo = [
     buttons: [
       {
         name: 'site',
-        link: 'https://valentinojosh.github.io/ims-prototype/documentation',
+        link: 'https://valentinojosh.github.io/ims-documentation',
       },
     ],
   },
