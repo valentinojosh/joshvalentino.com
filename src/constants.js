@@ -60,8 +60,8 @@ export const projectInfo = [
     stack: 'React, Node.js, SQL, REST',
     description: (
         <span>
-          Full-stack incident management system built in a collaborative Agile environment, replacing paper-based forms and reducing retrieval time by 75%
-
+          Full-stack incident management system built in a collaborative Agile environment, replacing paper-based forms, reducing retrieval time by 75%, and
+          eliminating form loss
       </span>
     ),
     buttons: [
