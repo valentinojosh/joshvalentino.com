@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedin, FaCode } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import { GoMarkGithub } from 'react-icons/go';
 import { IoMdMail } from 'react-icons/io';
 import Hidden from '@material-ui/core/Hidden';
@@ -59,17 +59,6 @@ const Footer = () => {
         </div>
       </Hidden>
       <div className={`footer-links-container ${footerContent}`}>
-        <div className='footer-link code'>
-          <StyledTooltip title='Site source code' placement='top' arrow>
-            <a
-              href='https://github.com/valentinojosh'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <FaCode size='1.7rem' />
-            </a>
-          </StyledTooltip>
-        </div>
         <div className='footer-link github'>
           <StyledTooltip title='GitHub' placement='top' arrow>
             <a
