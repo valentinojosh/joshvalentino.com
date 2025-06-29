@@ -7,7 +7,7 @@ import Hidden from '@material-ui/core/Hidden';
 import '../Styles/Projects.scss';
 
 const ProjectsCard = (props) => {
-  const { color, image, mini, name, type, stack, description, buttons } = props;
+  const { color, image, mini, name, stack, description, buttons } = props;
 
   const renderLinks = () =>
     buttons.map((button) => {
@@ -40,10 +40,10 @@ const ProjectsCard = (props) => {
           )}
         </ProgressiveImage>
         <div className='ProjectsCard-left-info'>
-          <span className='ProjectsCard-left-info-left'>type</span>
-          <span className='ProjectsCard-left-info-right' style={{ color }}>
-            {type}
-          </span>
+          {/*<span className='ProjectsCard-left-info-left'>type</span>*/}
+          {/*<span className='ProjectsCard-left-info-right' style={{ color }}>*/}
+          {/*  {type}*/}
+          {/*</span>*/}
           <span className='ProjectsCard-left-info-left'>stack</span>
           <span className='ProjectsCard-left-info-right' style={{ color }}>
             {stack}
@@ -64,7 +64,7 @@ const ProjectsCard = (props) => {
 };
 
 const ProjectsCardMobile = (props) => {
-  const { color, name, type, stack, description, buttons } = props;
+  const { color, name, stack, description, buttons } = props;
 
   const renderLinks = () =>
     buttons.map((button) => {
@@ -87,10 +87,10 @@ const ProjectsCardMobile = (props) => {
       <span className='ProjectsCardMobile-header'>{name}</span>
 
       <div className='ProjectsCardMobile-grid'>
-        <span className='ProjectsCardMobile-grid-left'>type</span>
-        <span className='ProjectsCardMobile-grid-right' style={{ color }}>
-          {type}
-        </span>
+        {/*<span className='ProjectsCardMobile-grid-left'>type</span>*/}
+        {/*<span className='ProjectsCardMobile-grid-right' style={{ color }}>*/}
+        {/*  {type}*/}
+        {/*</span>*/}
         <span className='ProjectsCardMobile-grid-left'>stack</span>
         <span className='ProjectsCardMobile-grid-right' style={{ color }}>
           {stack}

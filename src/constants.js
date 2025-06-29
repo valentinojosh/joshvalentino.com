@@ -28,10 +28,11 @@ export const projectInfo = [
     mini: MiniDatafy,
     name: 'spotify data analyzer',
     type: 'full stack web app',
-    stack: 'Java, React, REST, Maven, Spring, Google Cloud',
+    stack: 'Java, React, Maven, Spring, Google Cloud, Docker, REST',
     description: (
       <span>
-        Full-stack web application for visualizing user’s Spotify listening data, featuring a stateless Java backend, hosted on Google Cloud, with multithreading for efficient processing. Implemented with a user-friendly React frontend, hosted on Netlify, complementing the backend's MVC and RESTful architecture for a cohesive and scalable solution. Utilized Docker for assistance with build testing and Maven for build management
+        Built and deployed a cloud-based analytics service for Spotify listening data, designed as a standalone SaaS platform with production deployment on Google Cloud.
+        Integrated with Spotify’s public API to securely access user data, leveraging REST and MVC architecture for clean, maintainable backend design
         <br />
 
       </span>

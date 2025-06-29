@@ -52,7 +52,7 @@ const Footer = () => {
               marginRight: '1rem',
             }}
           >
-            josh valentino 2023
+            josh valentino
           </p>
           <h3>•</h3>
           <p style={{ marginLeft: '1rem' }}>all rights reserved</p>
