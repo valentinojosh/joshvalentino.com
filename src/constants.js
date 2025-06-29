@@ -32,7 +32,7 @@ export const projectInfo = [
     description: (
       <span>
         Built and deployed a cloud-based analytics service for Spotify listening data, designed as a standalone SaaS platform with production deployment on Google Cloud.
-        Integrated with Spotify’s public API to securely access user data, leveraging REST and MVC architecture for clean, maintainable backend design
+        Integrated with Spotify’s public API to securely access user data, leveraging REST and MVC architecture for clean, maintainable backend design.
         <br />
 
       </span>
@@ -62,7 +62,7 @@ export const projectInfo = [
     description: (
         <span>
           Full-stack incident management system built in a collaborative Agile environment, replacing paper-based forms, reducing retrieval time by 75%, and
-          eliminating form loss
+          eliminating form loss.
       </span>
     ),
     buttons: [
@@ -81,7 +81,7 @@ export const projectInfo = [
     stack: 'Java, AWS',
     description: (
       <span>
-        AWS Lambda function triggered weekly by CloudWatch Events. Queries the Spotify API for the global top 5 songs. Commits to Github repository, storing each week in a text file.
+        AWS Lambda function triggered weekly by CloudWatch Events.
           <br />
         <br />
           This function utilizes Java, JGit, and the Spotify API.
