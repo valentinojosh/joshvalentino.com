@@ -3,21 +3,17 @@ import React from 'react';
 import Datafy from './Assets/datafy.png';
 import CloudJams from './Assets/cloudjams.png';
 import IM from './Assets/im.png';
-// import Yahtzee from './Assets/yahtzee.png';
-// import StatsDB from './Assets/statsdb.png';
 import GitHub from './Assets/github.png';
+import RxSense from './Assets/rx.jpg';
 
 import MiniDatafy from './Assets/mini-datafy.png';
 import MiniCloudJams from './Assets/mini-cloudjams.png';
 import MiniIM from './Assets/mini-im.png';
-// import MiniYahtzee from './Assets/mini-yahtzee.png';
-// import MiniStatsDB from './Assets/mini-statsdb.png';
 import MiniGitHub from './Assets/mini-github.png';
+import MiniRxSense from './Assets/mini-rx.jpg';
 
 
 export const PURPLE = '#9c88f7';
-
-export const BLUE = '#8DEAFF';
 
 export const ALMOST_WHITE = '#F5F5F5';
 
@@ -74,17 +70,52 @@ export const projectInfo = [
   },
   {
     color: PURPLE,
+    image: RxSense,
+    mini: MiniRxSense,
+    name: 'file normalizer - rxsense',
+    type: 'full stack web app',
+    stack: 'Python',
+    description: (
+        <span>
+          internal project at rxsense.
+      </span>
+    ),
+    buttons: [
+      {
+        name: 'None',
+        link: '',
+      },
+    ],
+  },
+  {
+    color: PURPLE,
+    image: RxSense,
+    mini: MiniRxSense,
+    name: 'member move data processor - rxsense',
+    type: 'full stack web app',
+    stack: 'C#',
+    description: (
+        <span>
+          internal tool at rxsense
+      </span>
+    ),
+    buttons: [
+      {
+        name: 'None',
+        link: '',
+      },
+    ],
+  },
+  {
+    color: PURPLE,
     image: CloudJams,
     mini: MiniCloudJams,
     name: 'automated api query',
     type: 'Lambda',
-    stack: 'Java, AWS',
+    stack: 'Java, AWS, JGit, Spotify API',
     description: (
       <span>
         AWS Lambda function triggered weekly by CloudWatch Events.
-          <br />
-        <br />
-          This function utilizes Java, JGit, and the Spotify API.
       </span>
     ),
     buttons: [
@@ -98,72 +129,13 @@ export const projectInfo = [
       },
     ],
   },
-  // {
-  //   color: PURPLE,
-  //   image: Yahtzee,
-  //   mini: MiniYahtzee,
-  //   name: 'yahtzee',
-  //   type: 'web app',
-  //   stack: 'HTML, CSS, JS, jQuery',
-  //   description: (
-  //     <span>
-  //
-  //       First web app I created freshman year of University
-  //       <br />
-  //       <br />
-  //         I grew up playing Yahtzee with my mom; I still enjoy playing. If you can beat my high score of 291 feel free to{' '}
-  //         <a
-  //             href='https://www.linkedin.com/in/valentino-josh/'
-  //             style={{ color: PURPLE }}
-  //             target='_blank'
-  //             rel='noopener noreferrer'
-  //         >
-  //             reach out
-  //           </a>
-  //         !
-  //     </span>
-  //   ),
-  //   buttons: [
-  //     {
-  //       name: 'game',
-  //       link: 'https://valentinojosh.github.io/Yahtzee_Valentino.html',
-  //     },
-  //     {
-  //       name: 'code',
-  //       link: 'https://github.com/valentinojosh/yahtzee',
-  //     },
-  //   ],
-  // },
-  // {
-  //   color: PURPLE,
-  //   image: StatsDB,
-  //   mini: MiniStatsDB,
-  //   name: 'stats db',
-  //   type: 'database',
-  //   stack: 'SQL, MySQL',
-  //   description: (
-  //     <span>
-  //       Database exercise from University. Involved SQL, MySQL workbench, ERD design, table design, data sourcing, and query samples
-  //     </span>
-  //   ),
-  //   buttons: [
-  //     {
-  //       name: 'site',
-  //       link: 'https://valentinojosh.github.io/database.html',
-  //     },
-  //       {
-  //           name: 'paper',
-  //           link: 'https://valentinojosh.github.io/assets/pdfOverview.pdf',
-  //       },
-  //   ],
-  // },
   {
     color: PURPLE,
     image: GitHub,
     mini: MiniGitHub,
     name: "github",
     type: 'repositories',
-    stack: 'Java, React, SQL, AWS, GCP',
+    stack: 'None',
     description: (
       <span>
         For more information on the majority of my projects check out my GitHub!

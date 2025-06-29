@@ -13,6 +13,8 @@ const ProjectsCard = (props) => {
     buttons.map((button) => {
       const { name, link } = button;
 
+      if (name === "None") return null;
+
       return (
         <a href={link} target='_blank' rel='noopener noreferrer'>
           <div
@@ -40,14 +42,14 @@ const ProjectsCard = (props) => {
           )}
         </ProgressiveImage>
         <div className='ProjectsCard-left-info'>
-          {/*<span className='ProjectsCard-left-info-left'>type</span>*/}
-          {/*<span className='ProjectsCard-left-info-right' style={{ color }}>*/}
-          {/*  {type}*/}
-          {/*</span>*/}
-          <span className='ProjectsCard-left-info-left'>stack</span>
-          <span className='ProjectsCard-left-info-right' style={{ color }}>
-            {stack}
-          </span>
+            {stack !== "None" && (
+                <>
+                    <span className="ProjectsCard-left-info-left">stack</span>
+                    <span className="ProjectsCard-left-info-right" style={{ color }}>
+                  {stack}
+                </span>
+                </>
+            )}
         </div>
         <div className='ProjectsCard-left-buttons'>{renderLinks()}</div>
       </div>
