@@ -72,31 +72,12 @@ export const projectInfo = [
     color: PURPLE,
     image: RxSense,
     mini: MiniRxSense,
-    name: 'file normalizer - rxsense',
-    type: 'full stack web app',
-    stack: 'Python',
+    name: 'rxsense',
+    type: '',
+    stack: 'C#, Python, AWS, sFTP',
     description: (
         <span>
-          internal project at rxsense.
-      </span>
-    ),
-    buttons: [
-      {
-        name: 'None',
-        link: '',
-      },
-    ],
-  },
-  {
-    color: PURPLE,
-    image: RxSense,
-    mini: MiniRxSense,
-    name: 'member move data processor - rxsense',
-    type: 'full stack web app',
-    stack: 'C#',
-    description: (
-        <span>
-          internal tool at rxsense
+          internal tools/projects at rxsense.
       </span>
     ),
     buttons: [
