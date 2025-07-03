@@ -77,7 +77,15 @@ export const projectInfo = [
     stack: 'C#, Python, AWS, sFTP',
     description: (
         <span>
-          internal tools/projects at rxsense.
+          Internal tools and projects at rxsense. For more information, feel free to <a
+            href='mailto:valentinojosh48@gmail.com'
+            target='_blank'
+            style={{color: PURPLE}}
+            rel='noopener noreferrer'
+            title='valentinojosh48@gmail.com'
+        >
+                  reach out
+                </a>
       </span>
     ),
     buttons: [
@@ -95,7 +103,7 @@ export const projectInfo = [
     type: 'Lambda',
     stack: 'Java, AWS, JGit, Spotify API',
     description: (
-      <span>
+        <span>
         AWS Lambda function triggered weekly by CloudWatch Events.
       </span>
     ),
