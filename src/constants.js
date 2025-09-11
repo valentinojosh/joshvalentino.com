@@ -34,10 +34,10 @@ export const projectInfo = [
       </span>
     ),
     buttons: [
-      {
-        name: 'site',
-        link: 'https://data-fy.netlify.app/',
-      },
+      // {
+      //   name: 'site',
+      //   link: 'https://data-fy.netlify.app/',
+      // },
       {
         name: 'demo',
         link: '/datafydemo',
