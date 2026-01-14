@@ -20,6 +20,35 @@ export const ALMOST_WHITE = '#F5F5F5';
 export const projectInfo = [
   {
     color: PURPLE,
+    image: RxSense,
+    mini: MiniRxSense,
+    name: 'rxsense',
+    type: '',
+    stack: 'SQL, C#, Python, AWS',
+    description: (
+        <span>
+          Internal tools and projects at RxSense, supporting 400 million dollar organization software and systems.
+
+          For more information, feel free to <a
+            href='mailto:valentinojosh48@gmail.com'
+            target='_blank'
+            style={{color: PURPLE}}
+            rel='noopener noreferrer'
+            title='valentinojosh48@gmail.com'
+        >
+                  reach out
+                </a>
+      </span>
+    ),
+    buttons: [
+      {
+        name: 'None',
+        link: '',
+      },
+    ],
+  },
+  {
+    color: PURPLE,
     image: Datafy,
     mini: MiniDatafy,
     name: 'spotify data analyzer',
@@ -27,7 +56,7 @@ export const projectInfo = [
     stack: 'Java, React, Maven, Spring, Google Cloud, Docker, REST',
     description: (
       <span>
-        Built and deployed a cloud-based analytics service for Spotify listening data, designed as a standalone SaaS platform with production deployment on Google Cloud.
+        Built and deployed a cloud-based analytics service for Spotify listening data. Designed as a standalone SaaS platform with production deployment on Google Cloud.
         Integrated with Spotify’s public API to securely access user data, leveraging REST and MVC architecture for clean, maintainable backend design.
         <br />
 
@@ -38,10 +67,10 @@ export const projectInfo = [
       //   name: 'site',
       //   link: 'https://data-fy.netlify.app/',
       // },
-      {
-        name: 'demo',
-        link: '/datafydemo',
-      },
+      // {
+      //   name: 'demo',
+      //   link: '/datafydemo',
+      // },
       {
         name: 'code',
         link: 'https://github.com/valentinojosh/data-fy',
@@ -70,33 +99,6 @@ export const projectInfo = [
   },
   {
     color: PURPLE,
-    image: RxSense,
-    mini: MiniRxSense,
-    name: 'rxsense',
-    type: '',
-    stack: 'C#, Python, AWS, sFTP',
-    description: (
-        <span>
-          Internal tools and projects at rxsense. For more information, feel free to <a
-            href='mailto:valentinojosh48@gmail.com'
-            target='_blank'
-            style={{color: PURPLE}}
-            rel='noopener noreferrer'
-            title='valentinojosh48@gmail.com'
-        >
-                  reach out
-                </a>
-      </span>
-    ),
-    buttons: [
-      {
-        name: 'None',
-        link: '',
-      },
-    ],
-  },
-  {
-    color: PURPLE,
     image: CloudJams,
     mini: MiniCloudJams,
     name: 'automated api query',
@@ -104,7 +106,7 @@ export const projectInfo = [
     stack: 'Java, AWS, JGit, Spotify API',
     description: (
         <span>
-        AWS Lambda function triggered weekly by CloudWatch Events.
+        Proof of concept cloud hosted automation.
       </span>
     ),
     buttons: [

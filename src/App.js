@@ -23,7 +23,7 @@ const App = () => {
         <Route exact path='/datafydemo' component={Demo} />
         <Route path='*' component={Error} />
       </Switch>
-      <Footer />
+      {/*<Footer />*/}
     </Router>
   );
 };
