@@ -30,13 +30,11 @@ export const projectInfo = [
           Internal tools and projects at RxSense, supporting 400 million dollar organization software and systems.
 
           For more information, feel free to <a
-            href='mailto:valentinojosh48@gmail.com'
-            target='_blank'
+            href="/contact"
             style={{color: PURPLE}}
-            rel='noopener noreferrer'
-            title='valentinojosh48@gmail.com'
+            title='contact'
         >
-                  reach out
+                  reach out.
                 </a>
       </span>
     ),
