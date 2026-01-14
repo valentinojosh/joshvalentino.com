@@ -34,8 +34,8 @@ export const projectInfo = [
             style={{color: PURPLE}}
             title='contact'
         >
-                  reach out.
-                </a>
+                  reach out
+                </a>.
       </span>
     ),
     buttons: [
