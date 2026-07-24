@@ -1,16 +1,19 @@
 import React from 'react';
 
 import Datafy from './Assets/datafy.png';
-import CloudJams from './Assets/cloudjams.png';
+// import CloudJams from './Assets/cloudjams.png';
 import IM from './Assets/im.png';
 import GitHub from './Assets/github.png';
 import RxSense from './Assets/rx.jpg';
+import Dumbbell from './Assets/JEMA GER 1723-11.jpg';
+import Clipboard from './Assets/4368.jpg';
 
 import MiniDatafy from './Assets/mini-datafy.png';
-import MiniCloudJams from './Assets/mini-cloudjams.png';
+// import MiniCloudJams from './Assets/mini-cloudjams.png';
 import MiniIM from './Assets/mini-im.png';
 import MiniGitHub from './Assets/mini-github.png';
 import MiniRxSense from './Assets/mini-rx.jpg';
+
 
 
 export const PURPLE = '#9c88f7';
@@ -37,6 +40,58 @@ export const projectInfo = [
                   reach out
                 </a>.
       </span>
+    ),
+    buttons: [
+      {
+        name: 'None',
+        link: '',
+      },
+    ],
+  },
+  {
+    color: PURPLE,
+    image: Dumbbell,
+    mini: Dumbbell,
+    name: 'TrainWise AI',
+    type: '',
+    stack: 'Custom GPT, Prompt Engineering, Knowledge Base, OpenAI',
+    description: (
+        <span>
+      *In development* <br />An AI workout-planning and
+      personal-training assistant designed to turn a user&apos;s goals,
+      experience, schedule, available equipment, physical limitations, and
+      ongoing feedback into clear, structured training plans.
+
+      The initial version is being developed as a custom GPT focused on
+      exercise selection, progression, technique guidance, recovery, and
+      practical workout adjustments, with plans to eventually expand it into a
+      standalone application.
+    </span>
+    ),
+    buttons: [
+      {
+        name: 'None',
+        link: '',
+      },
+    ],
+  },
+  {
+    color: PURPLE,
+    image: Clipboard,
+    mini: Clipboard,
+    name: 'ApplyPilot AI',
+    type: '',
+    stack: 'TypeScript, React, Chrome Extensions API, Node.js, OpenAI API, Structured Outputs',
+    description: (
+        <span>
+      *In development* <br />An AI-powered Chrome extension that
+      extracts job descriptions, compares them against a
+      stored resume, and generates match scores, keyword gaps, suggests rewording, tailored professional summaries, and recruiter messages.
+
+      Designed with privacy-conscious local storage and a
+      secure backend, keeping resume data and preferences on the user&apos;s
+      device while sending only user-requested content for AI analysis.
+    </span>
     ),
     buttons: [
       {
@@ -95,29 +150,29 @@ export const projectInfo = [
       },
     ],
   },
-  {
-    color: PURPLE,
-    image: CloudJams,
-    mini: MiniCloudJams,
-    name: 'automated api query',
-    type: 'Lambda',
-    stack: 'Java, AWS, JGit, Spotify API',
-    description: (
-        <span>
-        Proof of concept cloud hosted automation.
-      </span>
-    ),
-    buttons: [
-      {
-        name: 'chart',
-        link: 'https://github.com/valentinojosh/cloud-jams/blob/main/WeeklyCharts/Charts.txt',
-      },
-      {
-        name: 'code',
-        link: 'https://github.com/valentinojosh/cloud-jams/',
-      },
-    ],
-  },
+  // {
+  //   color: PURPLE,
+  //   image: CloudJams,
+  //   mini: MiniCloudJams,
+  //   name: 'automated api query',
+  //   type: 'Lambda',
+  //   stack: 'Java, AWS, JGit, Spotify API',
+  //   description: (
+  //       <span>
+  //       Proof of concept cloud hosted automation.
+  //     </span>
+  //   ),
+  //   buttons: [
+  //     {
+  //       name: 'chart',
+  //       link: 'https://github.com/valentinojosh/cloud-jams/blob/main/WeeklyCharts/Charts.txt',
+  //     },
+  //     {
+  //       name: 'code',
+  //       link: 'https://github.com/valentinojosh/cloud-jams/',
+  //     },
+  //   ],
+  // },
   {
     color: PURPLE,
     image: GitHub,
