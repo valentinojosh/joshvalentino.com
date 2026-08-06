@@ -1,19 +1,32 @@
 # [joshvalentino.com](https://joshvalentino.com)
 
-Personal / portfolio site of Josh.
+Portfolio V2 is a static-first Astro site for Josh Valentino's software, systems, and IT work.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4a97bf5c-a702-4b54-b193-b4e7ccdcc4f6/deploy-status)](https://app.netlify.com/sites/joshvalentinocom/deploys)
 
-<img src="./public/preview3.png">
+## Local development
 
-This site was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It heavily depends on [Material UI](https://material-ui.com/) for styling and responsiveness.
+```sh
+npm install
+npm run dev
+```
 
-It is statically hosted on [Netlify](http://netlify.com/). Read about enabling redirects on Netlify to fix client-side routing for SPAs [here](https://www.blog.karenying.com/posts/404-react-page-not-found).
+Quality checks:
 
-Credit goes to [Karen Ying](https://github.com/karenying) for their awesome front-end project, which I used to bootstrap my own.
+```sh
+npm run verify
+```
 
-## Installation
+The production build is emitted to `dist/` and deployed as a static site on Netlify. Project records live in `src/content/projects`. Homepage presentation is controlled in each record through:
 
-1. Clone this repo
-2. `npm install`
-3. `npm start`
+- `displayOrder` for order
+- `prominence` for `standard` or full-grid `wide` presentation
+- `category` and `statusLabel` for restrained public metadata
+- `visible` for homepage inclusion
+- `detailPage` for static case-study generation
+
+The optional intro is controlled by `site.intro.mode` in `src/data/site.ts`: `always`, `session`, or `off`. It is decorative, non-interactive, and skipped for reduced-motion users. During local development, `?intro=always&intro-motion=force` is available for deliberate animation review without changing the production accessibility behavior.
+
+## History and licensing
+
+Portfolio V2 is an original Astro implementation. Earlier versions of this repository were adapted from Karen Ying's MIT-licensed portfolio; the historical attribution remains documented in `NOTICE.md` and `LICENSE.md`.

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a090d"/>
+  <g opacity=".28" stroke="#2c2834">
+    <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200"/>
+    <path d="M90 0v630M180 0v630M270 0v630M360 0v630M450 0v630M540 0v630M630 0v630M720 0v630M810 0v630M900 0v630M990 0v630M1080 0v630"/>
+  </g>
+  <path d="M94 112h1012" stroke="#464050"/>
+  <text x="94" y="91" fill="#b39afa" font-family="Consolas, monospace" font-size="18" letter-spacing="2">SOFTWARE / SYSTEMS / APPLICATION ENGINEERING</text>
+  <text x="86" y="316" fill="#f4f1f7" font-family="Arial, sans-serif" font-size="112" font-weight="700" letter-spacing="-6">Josh Valentino</text>
+  <text x="94" y="380" fill="#9c96a5" font-family="Arial, sans-serif" font-size="29">Applications, production systems, data, APIs, and automation.</text>
+  <path d="M94 499h504" stroke="#8f69f4" stroke-width="4"/>
+  <rect x="94" y="493" width="12" height="12" transform="rotate(45 100 499)" fill="#8f69f4"/>
+  <text x="984" y="543" fill="#b39afa" font-family="Consolas, monospace" font-size="18">JV / 2026</text>
+</svg>

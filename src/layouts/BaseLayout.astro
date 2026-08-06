@@ -1,0 +1,34 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import ContactFooter from '../components/ContactFooter.astro';
+import IntroOverlay from '../components/intro/IntroOverlay.astro';
+import { site } from '../data/site';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  type?: 'website' | 'article';
+  showIntro?: boolean;
+}
+
+const { title, description, canonicalPath, type = 'website', showIntro = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} canonicalPath={canonicalPath} type={type} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <SiteHeader />
+    <main id="main-content">
+      <slot />
+    </main>
+    <ContactFooter />
+    {showIntro && site.intro.mode !== 'off' && <IntroOverlay />}
+  </body>
+</html>

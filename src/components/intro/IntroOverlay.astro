@@ -1,0 +1,154 @@
+---
+import { site } from '../../data/site';
+
+const fragments = [
+  [7, 16, 22, -12], [18, 7, 12, 8], [34, 14, 18, -4], [57, 8, 10, 12], [77, 14, 20, -7],
+  [92, 29, 13, 5], [88, 52, 17, -11], [94, 76, 11, 7], [78, 90, 20, 4], [58, 94, 12, -8],
+  [39, 89, 16, 10], [18, 93, 11, -5], [7, 78, 19, 8], [4, 56, 12, -9], [10, 37, 16, 5],
+  [26, 28, 9, -12], [72, 31, 14, 9], [82, 66, 9, -6], [28, 71, 13, 11], [48, 20, 8, -8],
+  [51, 82, 10, 7], [63, 63, 7, -12], [38, 46, 9, 6], [65, 43, 12, -5],
+] as const;
+---
+
+<div
+  class="intro-overlay"
+  data-intro-overlay
+  data-mode={site.intro.mode}
+  data-session-key={site.intro.sessionKey}
+  aria-hidden="true"
+>
+  <div class="fragment-field">
+    {fragments.map(([x, y, length, angle], index) => (
+      <i
+        data-fragment
+        style={`--x:${x}%;--y:${y}%;--length:${length}px;--angle:${angle}deg;--tone:${index % 4};`}
+      ></i>
+    ))}
+  </div>
+</div>
+
+<script>
+  const overlay = document.querySelector<HTMLElement>('[data-intro-overlay]');
+
+  if (overlay) {
+    const query = new URLSearchParams(window.location.search);
+    const queryMode = query.get('intro');
+    const configuredMode = overlay.dataset.mode ?? 'session';
+    const mode = ['always', 'session', 'off'].includes(queryMode ?? '') ? queryMode : configuredMode;
+    const forceMotionPreview = import.meta.env.DEV && query.get('intro-motion') === 'force';
+    if (forceMotionPreview) overlay.dataset.forceMotion = 'true';
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches && !forceMotionPreview;
+    const sessionKey = overlay.dataset.sessionKey ?? 'jv-signal-intro-seen';
+    let alreadySeen = false;
+
+    try {
+      alreadySeen = sessionStorage.getItem(sessionKey) === 'true';
+    } catch {
+      alreadySeen = false;
+    }
+
+    if (mode === 'off' || reducedMotion || (mode === 'session' && alreadySeen)) {
+      overlay.remove();
+    } else {
+      if (mode === 'session') {
+        try {
+          sessionStorage.setItem(sessionKey, 'true');
+        } catch {
+          // The animation is decorative; storage failure is safe to ignore.
+        }
+      }
+
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const fragments = overlay.querySelectorAll<HTMLElement>('[data-fragment]');
+
+      requestAnimationFrame(() => {
+        fragments.forEach((fragment, index) => {
+          const rect = fragment.getBoundingClientRect();
+          const startX = rect.left + rect.width / 2;
+          const startY = rect.top + rect.height / 2;
+          const dx = centerX - startX;
+          const dy = centerY - startY;
+          const distance = Math.max(1, Math.hypot(dx, dy));
+          const swirl = index % 2 === 0 ? 1 : -1;
+          const perpendicularX = (-dy / distance) * 34 * swirl;
+          const perpendicularY = (dx / distance) * 34 * swirl;
+
+          fragment.animate(
+            [
+              { opacity: 0, transform: 'translate(0, 0) rotate(0deg) scaleX(0.35)' },
+              { opacity: 0.78, offset: 0.2 },
+              {
+                opacity: 0.92,
+                transform: `translate(${dx * 0.72 + perpendicularX}px, ${dy * 0.72 + perpendicularY}px) rotate(${swirl * 38}deg) scaleX(1.05)`,
+                offset: 0.58,
+              },
+              {
+                opacity: 0.95,
+                transform: `translate(${dx}px, ${dy}px) rotate(${swirl * 58}deg) scaleX(0.55)`,
+                offset: 0.76,
+              },
+              {
+                opacity: 0,
+                transform: `translate(${dx * 1.12}px, ${dy * 1.12}px) rotate(${swirl * 72}deg) scaleX(0.08)`,
+              },
+            ],
+            {
+              duration: 800 + (index % 5) * 22,
+              delay: (index % 6) * 9,
+              easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              fill: 'forwards',
+            },
+          );
+        });
+
+        overlay.animate(
+          [{ opacity: 1 }, { opacity: 1, offset: 0.7 }, { opacity: 0 }],
+          { duration: 920, easing: 'ease-out', fill: 'forwards' },
+        );
+      });
+
+      window.setTimeout(() => overlay.remove(), 1020);
+    }
+  }
+</script>
+
+<style>
+  .intro-overlay {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    overflow: hidden;
+    background: #09080c;
+    pointer-events: none;
+  }
+
+  .fragment-field {
+    position: absolute;
+    inset: 0;
+  }
+
+  i {
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    width: var(--length);
+    height: 2px;
+    opacity: 0;
+    background: color-mix(in srgb, var(--color-accent) 82%, white);
+    box-shadow: 0 0 14px color-mix(in srgb, var(--color-accent) 58%, transparent);
+    transform: rotate(var(--angle));
+    transform-origin: center;
+  }
+
+  i:nth-child(4n + 2) {
+    height: 3px;
+    border-radius: 999px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .intro-overlay:not([data-force-motion='true']) {
+      display: none;
+    }
+  }
+</style>

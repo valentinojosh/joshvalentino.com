@@ -1,0 +1,75 @@
+<section class="hero shell" aria-labelledby="hero-title">
+  <p class="hero-kicker">Software <span aria-hidden="true">•</span> Systems <span aria-hidden="true">•</span> IT</p>
+  <h1 id="hero-title">Josh Valentino</h1>
+  <p class="hero-summary">
+    I work across software, enterprise systems, data, APIs, automation, and infrastructure—turning unclear technical problems into dependable tools and practical outcomes.
+  </p>
+  <a class="hero-link" href="#projects">View projects <span aria-hidden="true">↓</span></a>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    min-height: min(34rem, calc(100svh - 4.75rem));
+    justify-content: center;
+    flex-direction: column;
+    padding-block: clamp(4.5rem, 9vw, 7rem);
+  }
+
+  .hero-kicker {
+    margin: 0 0 1.1rem;
+    color: var(--color-accent-soft);
+    font-size: 0.92rem;
+    font-weight: 650;
+  }
+
+  .hero-kicker span {
+    margin-inline: 0.4rem;
+    color: var(--color-accent);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.45rem, 6.5vw, 5.25rem);
+    font-weight: 760;
+    letter-spacing: -0.07em;
+    line-height: 0.95;
+  }
+
+  .hero-summary {
+    max-width: 43rem;
+    margin: 1.75rem 0 0;
+    color: var(--color-text-soft);
+    font-size: clamp(1.08rem, 2vw, 1.35rem);
+    line-height: 1.55;
+  }
+
+  .hero-link {
+    display: inline-flex;
+    width: fit-content;
+    min-height: 2.75rem;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 0.55rem;
+    color: var(--color-text);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .hero-link span {
+    color: var(--color-accent);
+    transition: transform 160ms var(--ease-out);
+  }
+
+  .hero-link:hover span {
+    transform: translateY(0.18rem);
+  }
+
+  @media (max-width: 30rem) {
+    .hero {
+      min-height: auto;
+      padding-block: 4.5rem 5rem;
+    }
+  }
+</style>
