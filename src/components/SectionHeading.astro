@@ -1,0 +1,21 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  title: string;
+  description?: string;
+}
+const { id, label, title, description } = Astro.props;
+---
+
+<header class="section-heading">
+  <p class="eyebrow">{label}</p>
+  <h2 id={id}>{title}</h2>
+  {description && <p class="section-description">{description}</p>}
+</header>
+
+<style>
+  .section-heading { margin-bottom: clamp(2rem, 4vw, 3rem); }
+  h2 { margin: 0.75rem 0 0; font-size: clamp(2.2rem, 4.8vw, 3.75rem); font-weight: 720; letter-spacing: -0.055em; line-height: 1.08; }
+  .section-description { max-width: 43rem; margin: 1.1rem 0 0; color: var(--color-text-muted); }
+</style>

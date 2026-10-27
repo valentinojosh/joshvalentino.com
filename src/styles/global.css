@@ -6,9 +6,11 @@
   box-sizing: border-box;
 }
 
+[hidden] { display: none !important; }
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
+  scroll-padding-top: 8rem;
   background: var(--color-canvas);
 }
 
@@ -25,8 +27,9 @@ body {
 
 main {
   display: block;
-  overflow: clip;
 }
+
+p, h1, h2, h3, h4, a, dd, li { overflow-wrap: anywhere; }
 
 img,
 svg {

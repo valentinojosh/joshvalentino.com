@@ -1,0 +1,75 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile, readdir, access } from 'node:fs/promises';
+import path from 'node:path';
+
+const root = path.resolve(process.env.PORTFOLIO_BUILD_DIR || 'dist');
+const read = (file) => readFile(path.join(root, file), 'utf8');
+const attributes = (html, name) => [...html.matchAll(new RegExp(`\\b${name}="([^"]*)"`, 'g'))].map((match) => match[1]);
+const htmlFiles = [];
+async function collect(directory = '') {
+  for (const entry of await readdir(path.join(root, directory), { withFileTypes: true })) {
+    const relative = path.join(directory, entry.name);
+    if (entry.isDirectory()) await collect(relative);
+    else if (entry.name.endsWith('.html')) htmlFiles.push(relative);
+  }
+}
+await collect();
+const pages = new Map(await Promise.all(htmlFiles.map(async (file) => [file, await read(file)])));
+const routeFile = (pathname) => pathname.endsWith('.html') ? pathname.slice(1) : path.join(pathname.slice(1), 'index.html');
+
+test('generated internal links, fragments and asset references resolve', async () => {
+  for (const [file, html] of pages) {
+    const pathname = `/${file.replaceAll(path.sep, '/').replace(/index\.html$/, '')}`;
+    const references = [...attributes(html, 'href'), ...attributes(html, 'src')];
+    for (const srcset of attributes(html, 'srcset')) references.push(...srcset.split(',').map((candidate) => candidate.trim().split(/\s+/)[0]));
+    for (const reference of references) {
+      if (/^(?:https?:|mailto:|data:|tel:)/.test(reference)) continue;
+      const url = new URL(reference, `https://joshvalentino.com${pathname}`);
+      if (url.pathname.startsWith('/_astro/') || path.extname(url.pathname)) {
+        await access(path.join(root, decodeURIComponent(url.pathname.slice(1))));
+      } else {
+        const target = routeFile(url.pathname);
+        assert.ok(pages.has(target), `${file}: missing route ${reference}`);
+        if (url.hash) assert.ok(attributes(pages.get(target), 'id').includes(decodeURIComponent(url.hash.slice(1))), `${file}: missing fragment ${reference}`);
+      }
+    }
+  }
+});
+
+test('content pages have one h1, unique ids, descriptions and canonical metadata', () => {
+  for (const [file, html] of pages) {
+    if (/http-equiv="refresh"/i.test(html)) continue;
+    assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, `${file}: h1 count`);
+    const ids = attributes(html, 'id');
+    assert.equal(new Set(ids).size, ids.length, `${file}: duplicate IDs`);
+    assert.match(html, /<meta name="description" content="[^"]+"/);
+    assert.match(html, /<link rel="canonical" href="https:\/\/joshvalentino\.com\//);
+    for (const image of html.matchAll(/<img\b[^>]*>/g)) assert.match(image[0], /\balt="[^"]+"/);
+  }
+  assert.match(pages.get('404.html'), /content="noindex, follow"/);
+});
+
+test('sitemap includes every published content page and excludes redirects and drafts', async () => {
+  const sitemap = await read('sitemap.xml');
+  const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+  assert.equal(new Set(urls).size, urls.length, 'duplicate sitemap URLs');
+  const expected = [...pages].filter(([file, html]) => file !== '404.html' && !/http-equiv="refresh"/i.test(html)).map(([file]) => `https://joshvalentino.com/${file.replaceAll(path.sep, '/').replace(/index\.html$/, '')}`);
+  assert.deepEqual(urls.sort(), expected.sort());
+  assert.match(await read('robots.txt'), /Sitemap: https:\/\/joshvalentino\.com\/sitemap\.xml/);
+  const contentPath = path.resolve('src/content/projects');
+  for (const file of await readdir(contentPath)) {
+    const content = await readFile(path.join(contentPath, file), 'utf8');
+    if (!/^visible: false$/m.test(content)) continue;
+    const slug = file.replace(/\.md$/, '');
+    assert.ok(!urls.some((url) => url.includes(`/work/${slug}/`)), `${slug}: hidden in sitemap`);
+    assert.ok(!pages.has(path.join('work', slug, 'index.html')), `${slug}: hidden route generated`);
+  }
+});
+
+test('published output excludes local paths and private source markers', () => {
+  for (const [file, html] of pages) {
+    assert.doesNotMatch(html, /(?:[A-Z]:\\Users\\|file:\/\/|RxSense_Master_Dossier|Realm [AB] —|Career-fit signal)/i, file);
+    assert.doesNotMatch(html, /(?:TrainWise AI|ApplyPilot AI|Agentic Code Review &amp; Test Generator|Regulated Domain Knowledge Assistant)/, file);
+  }
+});

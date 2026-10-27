@@ -11,7 +11,7 @@ import { site } from '../data/site';
         <a href={`mailto:${site.email}`}>{site.email}</a>
         <a href={site.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
         <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-        <button type="button" data-copy-email={site.email}>Copy email</button>
+        <button type="button" data-copy-email={site.email} hidden>Copy email</button>
         <span class="copy-status" data-copy-status role="status" aria-live="polite"></span>
       </div>
     </div>
@@ -22,8 +22,11 @@ import { site } from '../data/site';
 <script>
   const copyButton = document.querySelector<HTMLButtonElement>('[data-copy-email]');
   const copyStatus = document.querySelector<HTMLElement>('[data-copy-status]');
+  let resetTimer: ReturnType<typeof setTimeout> | undefined;
+  if (copyButton) copyButton.hidden = false;
 
   copyButton?.addEventListener('click', async () => {
+    window.clearTimeout(resetTimer);
     const email = copyButton.dataset.copyEmail;
     if (!email) return;
     try {
@@ -33,7 +36,7 @@ import { site } from '../data/site';
     } catch {
       if (copyStatus) copyStatus.textContent = `Copy unavailable. Email ${email}.`;
     }
-    window.setTimeout(() => {
+    resetTimer = window.setTimeout(() => {
       copyButton.textContent = 'Copy email';
       if (copyStatus) copyStatus.textContent = '';
     }, 1800);

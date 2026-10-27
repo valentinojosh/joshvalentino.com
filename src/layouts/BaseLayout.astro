@@ -12,20 +12,21 @@ interface Props {
   canonicalPath?: string;
   type?: 'website' | 'article';
   showIntro?: boolean;
+  noindex?: boolean;
 }
 
-const { title, description, canonicalPath, type = 'website', showIntro = false } = Astro.props;
+const { title, description, canonicalPath, type = 'website', showIntro = false, noindex = false } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} canonicalPath={canonicalPath} type={type} />
+    <BaseHead title={title} description={description} canonicalPath={canonicalPath} type={type} noindex={noindex} />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <SiteHeader />
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <ContactFooter />

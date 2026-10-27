@@ -4,7 +4,7 @@ import { z } from 'astro/zod';
 
 const projectLink = z.object({
   label: z.string(),
-  href: z.string(),
+  href: z.url({ protocol: /^https$/ }),
   kind: z.enum(['source', 'documentation', 'live']),
 });
 
@@ -29,8 +29,12 @@ const projects = defineCollection({
       deployment: z.enum(['live', 'retired', 'not-public', 'not-deployed']),
       deploymentNote: z.string(),
       image: image().optional(),
-      imageAlt: z.string().optional(),
+      imageAlt: z.string().min(1).optional(),
       nextStep: z.string().optional(),
+    }).superRefine((project, context) => {
+      if (project.image && !project.imageAlt) {
+        context.addIssue({ code: 'custom', path: ['imageAlt'], message: 'Project images require descriptive alt text.' });
+      }
     }),
 });
 

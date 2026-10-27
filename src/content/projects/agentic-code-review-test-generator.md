@@ -6,7 +6,7 @@ prominence: standard
 category: AI / Automation
 status: in-development
 statusLabel: Provisional concept
-visible: true
+visible: false
 detailPage: false
 provisionalNote: Provisional concept; implementation evidence is not yet public.
 role: Agent workflow design, repository analysis, test planning, and review controls

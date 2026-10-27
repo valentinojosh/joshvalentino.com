@@ -30,7 +30,7 @@ const { data } = project;
       <span>{data.category}</span>
       <span>{data.statusLabel}</span>
     </div>
-    <h3>{data.title}</h3>
+    <h3>{data.detailPage ? <a href={`/work/${project.id}/`}>{data.title}</a> : data.title}</h3>
     <p class="project-role">{data.role}</p>
     <p class="project-description">{data.shortDescription}</p>
 
@@ -46,7 +46,7 @@ const { data } = project;
 
     {(data.detailPage || data.links.length > 0) && (
       <div class="project-links">
-        {data.detailPage && <a href={`/work/${project.id}/`}>Case study <span aria-hidden="true">→</span></a>}
+        {data.detailPage && <a href={`/work/${project.id}/`} aria-label={`Read the ${data.title} case study`}>Case study <span aria-hidden="true">→</span></a>}
         {data.links.map((link) => (
           <a href={link.href} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>
         ))}
@@ -73,7 +73,7 @@ const { data } = project;
   }
 
   .project-image {
-    height: clamp(9rem, 20vw, 12rem);
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     border-bottom: 1px solid var(--color-rule);
     background: #eef0f3;
@@ -82,7 +82,7 @@ const { data } = project;
   .project-image :global(img) {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: top center;
   }
 
@@ -115,10 +115,12 @@ const { data } = project;
     line-height: 1.1;
   }
 
+  h3 a { text-decoration: none; }
+
   .project-role {
     margin: 0.55rem 0 0;
     color: var(--color-text-soft);
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     font-weight: 650;
     line-height: 1.45;
   }
@@ -142,7 +144,7 @@ const { data } = project;
     position: relative;
     padding-left: 0.9rem;
     color: var(--color-text-muted);
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     line-height: 1.5;
   }
 
@@ -160,7 +162,7 @@ const { data } = project;
     margin: auto 0 0;
     padding-top: 1.25rem;
     color: var(--color-text-muted);
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     line-height: 1.55;
   }
 
@@ -199,7 +201,7 @@ const { data } = project;
     }
 
     .project-image {
-      height: clamp(10rem, 48vw, 15rem);
+      height: auto;
     }
   }
 </style>

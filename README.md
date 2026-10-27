@@ -1,29 +1,33 @@
 # [joshvalentino.com](https://joshvalentino.com)
 
-Portfolio V2 is a static-first Astro site for Josh Valentino's software, systems, and IT work.
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4a97bf5c-a702-4b54-b193-b4e7ccdcc4f6/deploy-status)](https://app.netlify.com/sites/joshvalentinocom/deploys)
+Portfolio V2 is a static Astro site for Josh Valentino's software, data, and systems engineering work. The original React site is preserved at `portfolio-v1-archive`.
 
 ## Local development
 
 ```sh
-npm install
 npm run dev
 ```
 
-Quality checks:
+Use the existing locked local dependencies. Installing packages requires separate authorization for this controlled review. Node 24 or newer is required. Quality checks:
 
 ```sh
 npm run verify
+npm run test:build
 ```
 
-The production build is emitted to `dist/` and deployed as a static site on Netlify. Project records live in `src/content/projects`. Homepage presentation is controlled in each record through:
+The production build is emitted to `dist/`. The existing Netlify configuration is retained; building locally does not deploy. Nothing in this task authorizes publishing. Project records live in `src/content/projects`. Homepage presentation is controlled in each record through:
 
 - `displayOrder` for order
 - `prominence` for `standard` or full-grid `wide` presentation
 - `category` and `statusLabel` for restrained public metadata
 - `visible` for homepage inclusion
 - `detailPage` for static case-study generation
+
+Public employment stories, expertise and additional projects live in `src/data/profile.ts`; site metadata/contact details live in `src/data/site.ts`. Private employer sources never belong in either file. `visible: false` excludes draft projects from both case-study routing and the sitemap, as well as the homepage. Images require descriptive alt text. The sitemap is generated from the same collection without another package.
+
+The homepage presents professional experience, four selected engineering projects, technical expertise, background/education and contact. Header navigation remains visible and keyboard accessible at mobile widths without JavaScript. Existing `/about`, `/projects`, `/contact` and `/datafydemo` URLs retain redirects. The Systems Lab case study retains its existing `home-lab-network-security` content identifier.
+
+Sanitized audit, decisions, validation and continuation notes live in `docs/portfolio-v2-worklog/`, outside the published site. See `handoff.md` before resuming. No React runtime, analytics, remote fonts or new dependencies have been added.
 
 The optional intro is controlled by `site.intro.mode` in `src/data/site.ts`: `always`, `session`, or `off`. It is decorative, non-interactive, and skipped for reduced-motion users. During local development, `?intro=always&intro-motion=force` is available for deliberate animation review without changing the production accessibility behavior.
 

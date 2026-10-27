@@ -1,28 +1,17 @@
 ---
-title: RxSense — Production Support Engineer
-shortDescription: Enterprise engineering and production support across pharmacy-benefit systems, internal tools, data workflows, integrations, and release validation.
-displayOrder: 1
-prominence: standard
+title: RxSense professional experience
+shortDescription: Internal software, SQL workflows, automation, and application investigation.
+displayOrder: 99
 category: Professional Work
-status: active
-statusLabel: Current professional work
-visible: true
+status: archived
+statusLabel: Aug 2022 – Jan 2026
+visible: false
 detailPage: false
-provisionalNote: Metrics pending final résumé verification.
-role: Production support engineering, systems analysis, automation, and cross-functional delivery
-technologies:
-  - Python
-  - C#
-  - Java
-  - SQL Server
-  - REST APIs
-  - ETL
-  - Jira
-  - Confluence
-engineeringHighlights:
-  - Supports an enterprise platform processing more than 500,000 pharmacy claims daily within an organization reporting approximately $400M in annual revenue.
-  - Worked through 800+ development tickets and 700+ data-processing or support requests, identified 30+ reproducible defects, and built automation that reduced recurring formatting or process time by about 90% and integration effort by about 50%.
+role: Production Support Engineer
+technologies: [Python, C#, SQL Server, REST APIs, ETL]
 links: []
 deployment: not-public
-deploymentNote: Described at a capability level to protect proprietary systems, customer data, and internal implementation details.
+deploymentNote: Professional experience is presented in the dedicated experience section, separate from independent projects.
 ---
+
+The dedicated experience section is the maintained public summary. Employer implementation details and private source material are excluded.

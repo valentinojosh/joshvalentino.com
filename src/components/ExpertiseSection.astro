@@ -1,0 +1,30 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { expertise } from '../data/profile';
+---
+
+<section id="expertise" class="expertise-section shell" aria-labelledby="expertise-title">
+  <SectionHeading id="expertise-title" label="03 / Technical expertise" title="A connected technical toolkit." description="Software implementation, data investigation, and systems work inform how I approach a problem from end to end." />
+  <div class="expertise-grid">
+    {expertise.map((area) => (
+      <article>
+        <h3>{area.title}</h3>
+        <p>{area.description}</p>
+        <ul aria-label={`${area.title} tools and practices`}>
+          {area.tools.map((tool) => <li>{tool}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .expertise-section { padding-block: var(--section-space); border-top: 1px solid var(--color-rule); }
+  .expertise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 4rem; }
+  article { min-width: 0; padding-top: 1.25rem; border-top: 1px solid var(--color-rule); }
+  h3 { margin: 0; font-size: 1.25rem; letter-spacing: -0.025em; }
+  article p { max-width: 35rem; margin: 0.75rem 0 1.2rem; color: var(--color-text-soft); font-size: 0.95rem; }
+  ul { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
+  li { border: 1px solid var(--color-rule); padding: 0.25rem 0.65rem; border-radius: 0.25rem; color: var(--color-accent-soft); font-size: 0.8rem; }
+  @media (max-width: 42rem) { .expertise-grid { grid-template-columns: 1fr; } }
+</style>

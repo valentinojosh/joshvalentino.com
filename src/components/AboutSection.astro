@@ -1,12 +1,17 @@
 <section id="about" class="about-section shell" aria-labelledby="about-title">
-  <h2 id="about-title">About</h2>
+  <div><p class="eyebrow">04 / Background</p><h2 id="about-title">About</h2></div>
   <div class="about-copy">
     <p>
-      I’m a computer science professional whose work spans software development, enterprise support, systems analysis, data, APIs, and automation. I’m most useful where technical depth and operational context need to meet: understanding a problem, tracing how a system behaves, and building a clearer path forward.
+      I’m a computer science graduate based in DeKalb, Illinois. My professional work at RxSense brought together backend development, SQL, internal tools, and application investigation. My independent projects extend that practice into full-stack software, reproducible experiments, and physical systems.
     </p>
     <p>
-      My current interests include infrastructure, practical security, internal tooling, and AI-assisted workflows that keep human review and dependable system behavior at the center.
+      I enjoy understanding how the pieces fit together, implementing a useful solution, and checking that it behaves as intended. That approach carries through code reviews, testing, documentation, and careful handling of sensitive data.
     </p>
+    <div class="education" aria-labelledby="education-title">
+      <h3 id="education-title">Education</h3>
+      <p class="university">Aurora University</p>
+      <p>B.S. Computer Science <span aria-hidden="true">·</span> GPA 3.88/4.0</p>
+    </div>
   </div>
 </section>
 
@@ -16,10 +21,11 @@
     padding-block: var(--section-space);
     grid-template-columns: minmax(10rem, 1fr) minmax(0, 2fr);
     gap: clamp(2rem, 8vw, 7rem);
+    border-top: 1px solid var(--color-rule);
   }
 
   h2 {
-    margin: 0;
+    margin: 0.75rem 0 0;
     font-size: clamp(2.4rem, 5vw, 4.25rem);
     font-weight: 720;
     letter-spacing: -0.055em;
@@ -40,6 +46,12 @@
   p + p {
     margin-top: 1.25rem;
   }
+
+  .education { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-rule); }
+  .education h3 { margin: 0 0 0.75rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); }
+  .education .university { color: var(--color-text); font-weight: 650; }
+  .education p { font-size: 0.95rem; }
+  .education p + p { margin-top: 0.3rem; }
 
   @media (max-width: 42rem) {
     .about-section {

@@ -4,6 +4,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import AboutSection from '../components/AboutSection.astro';
+import ExperienceSection from '../components/ExperienceSection.astro';
+import ExpertiseSection from '../components/ExpertiseSection.astro';
+import AdditionalProjects from '../components/AdditionalProjects.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 
 const projects = await getCollection('projects');
 const visibleProjects = projects
@@ -13,28 +17,24 @@ const visibleProjects = projects
 
 <BaseLayout showIntro={true}>
   <Hero />
+  <ExperienceSection />
 
   <section id="projects" class="projects-section shell" aria-labelledby="projects-title">
-    <h2 id="projects-title">Projects</h2>
+    <SectionHeading id="projects-title" label="02 / Selected projects" title="Built, tested, understood." description="Independent software, a collaborative academic application, and hands-on systems work. Each case study explains the implementation and its current status." />
     <div class="project-grid">
       {visibleProjects.map((project) => <ProjectCard project={project} />)}
     </div>
+    <AdditionalProjects />
   </section>
 
+  <ExpertiseSection />
   <AboutSection />
 </BaseLayout>
 
 <style>
   .projects-section {
     padding-block: var(--section-space);
-  }
-
-  h2 {
-    margin: 0 0 clamp(2rem, 5vw, 3.5rem);
-    font-size: clamp(2.4rem, 5vw, 4.25rem);
-    font-weight: 720;
-    letter-spacing: -0.055em;
-    line-height: 1;
+    border-top: 1px solid var(--color-rule);
   }
 
   .project-grid {

@@ -6,7 +6,7 @@ prominence: standard
 category: AI / Automation
 status: in-development
 statusLabel: In development
-visible: true
+visible: false
 detailPage: false
 role: Prompt architecture, knowledge design, and product direction
 technologies:

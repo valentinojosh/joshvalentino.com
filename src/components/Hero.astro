@@ -1,10 +1,14 @@
 <section class="hero shell" aria-labelledby="hero-title">
-  <p class="hero-kicker">Software <span aria-hidden="true">•</span> Systems <span aria-hidden="true">•</span> IT</p>
+  <p class="hero-kicker">Software <span aria-hidden="true">/</span> Data <span aria-hidden="true">/</span> Systems</p>
   <h1 id="hero-title">Josh Valentino</h1>
   <p class="hero-summary">
-    I work across software, enterprise systems, data, APIs, automation, and infrastructure—turning unclear technical problems into dependable tools and practical outcomes.
+    I build backend software and practical automation, work through complex data, and trace problems across applications and systems.
   </p>
-  <a class="hero-link" href="#projects">View projects <span aria-hidden="true">↓</span></a>
+  <p class="hero-context">Python & C# development. SQL & data transformation. Hands-on technical ownership.</p>
+  <div class="hero-actions">
+    <a class="hero-link" href="#projects">Explore the work <span aria-hidden="true">↓</span></a>
+    <a class="hero-link hero-link--secondary" href="#experience">Professional experience <span aria-hidden="true">→</span></a>
+  </div>
 </section>
 
 <style>
@@ -15,6 +19,10 @@
     flex-direction: column;
     padding-block: clamp(4.5rem, 9vw, 7rem);
   }
+
+  .hero-context { max-width: 42rem; margin: 1.25rem 0 0; color: var(--color-text-muted); font-size: 0.9rem; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; margin-top: 1.5rem; }
+  .hero-link.hero-link--secondary { color: var(--color-text-soft); }
 
   .hero-kicker {
     margin: 0 0 1.1rem;
@@ -49,7 +57,7 @@
     width: fit-content;
     min-height: 2.75rem;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 0;
     gap: 0.55rem;
     color: var(--color-text);
     font-size: 0.92rem;

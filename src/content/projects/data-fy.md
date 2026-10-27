@@ -1,44 +1,46 @@
 ---
 title: Data-fy
-shortDescription: A cloud-hosted listening-history analyzer that turns Spotify data into an explorable visual summary.
+shortDescription: A full-stack Spotify analytics application connecting OAuth, concurrent API processing, and a visual listening dashboard.
 displayOrder: 2
 prominence: standard
 category: Software
 status: archived
-statusLabel: Deployment retired
+statusLabel: Historical project · 2023
 visible: true
 detailPage: true
-role: Application architecture, backend services, frontend, and deployment
-technologies:
-  - Java
-  - Spring Boot
-  - React
-  - Spotify API
-  - Docker
-  - Google Cloud
+role: Independent full-stack development and cloud deployment
+technologies: [Java, Spring Boot, React, Spotify API, Docker, Google Cloud]
 engineeringHighlights:
-  - Designed an OAuth-aware service that retrieves paginated listening history and consolidates it into a stable domain model.
-  - Added concurrent processing and caching to reduce repeat API work while keeping the backend stateless.
+  - Consolidated multiple Spotify responses into one domain model, with bounded pagination and concurrent processing.
+  - Separated a stateless backend from the dashboard, with environment-specific secret providers.
 links:
   - label: Source on GitHub
     href: https://github.com/valentinojosh/data-fy
     kind: source
 deployment: retired
-deploymentNote: The original hosted deployment is retired; source and product evidence remain available.
+deploymentNote: The original hosted deployment is retired. The project remains a technical record, with no live demo advertised.
 image: ../../media/projects/data-fy.png
-imageAlt: Data-fy interface showing a radial chart of Spotify genres and controls for selecting listening data.
+imageAlt: Historical Data-fy interface with a radial top-genres chart and listening-data controls.
 ---
 
-## Overview
+## What I built
 
-Data-fy explores a listener's Spotify history through artist, genre, track, and listening-pattern views. The project spans authentication, third-party API access, backend data processing, frontend visualization, and cloud delivery.
+Data-fy is an independent Java and React application built in 2023 to turn Spotify account data into ranked artists, tracks, genres, recommendations, and a summary dashboard. I worked across the service architecture, frontend, API integration, container packaging, and original cloud deployment.
 
-## Engineering
+## One response from several API resources
 
-The Java and Spring Boot backend receives and verifies Spotify access, walks paginated listening-history responses, and maps multiple API payloads into a consolidated domain model. Processing was split across data segments where concurrency improved the response path, while caching reduced avoidable calls to an external API.
+The Spring Boot backend exchanges an authorization code for Spotify access and assembles multiple API responses into a consolidated domain model. Genre ranking combines artist information, while recommendations are seeded from top tracks and enriched into full records.
 
-The frontend consumes the backend through REST endpoints and presents the resulting data as interactive visual summaries. The system evolved toward a stateless service boundary so frontend and backend deployment could remain independently understandable.
+A two-thread executor runs the listening-minutes calculation while the request thread fetches the other resources. The response waits for that calculation before returning. Offset-based pagination has an explicit 350-track boundary, keeping the work bounded.
 
-## Delivery and status
+## State and configuration boundaries
 
-Container builds were used to verify deployment behavior before publishing to Google Cloud. The original hosted application is no longer maintained as a live service, so the portfolio links to source rather than presenting a broken demo.
+The backend does not retain user sessions or use a database. The React client supplies the access token and stores its resulting aggregate locally until logout. Backend Caffeine caching applies to Google Secret Manager reads; it does not cache users' listening data.
+
+Separate secret providers support local, container, and historical Google Cloud environments. The original deployment paired a Netlify frontend with Google App Engine. Docker packaging preserves the frontend/backend boundary.
+
+## Validation and limits
+
+The source includes deterministic tests for input validation, pagination, incomplete responses, and external-fetch failures. The annual listening-minutes figure is a rough extrapolation from top-track durations, rather than a measurement of Spotify play-count history.
+
+The hosted service is retired. Historical screenshots describe the original product.

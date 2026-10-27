@@ -1,0 +1,27 @@
+---
+import { additionalProjects } from '../data/profile';
+---
+
+<div class="additional-projects" aria-labelledby="additional-projects-title">
+  <h3 id="additional-projects-title">More ways I build</h3>
+  <div class="additional-grid">
+    {additionalProjects.map((project) => (
+      <article>
+        <p class="project-type">{project.type}</p>
+        <h4>{project.title}</h4>
+        <p>{project.description}</p>
+      </article>
+    ))}
+  </div>
+</div>
+
+<style>
+  .additional-projects { margin-top: 3rem; }
+  h3 { margin: 0 0 1.5rem; font-size: 1.35rem; letter-spacing: -0.025em; }
+  .additional-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem; }
+  article { border-top: 1px solid var(--color-rule); padding-top: 1.25rem; }
+  .project-type { margin: 0; color: var(--color-accent); font-size: 0.75rem; }
+  h4 { margin: 0.55rem 0; font-size: 1.1rem; }
+  article > p:last-child { margin: 0; color: var(--color-text-muted); font-size: 0.95rem; }
+  @media (max-width: 42rem) { .additional-grid { grid-template-columns: 1fr; } }
+</style>
