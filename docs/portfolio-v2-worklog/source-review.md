@@ -18,7 +18,7 @@ The inventory below describes the earlier task and is retained as historical con
 - Systems Lab index and strongest case-study sections: segmented network, Windows Jellyfin host, storage recovery, Phase-1 simulator, workstation, technician toolkit, hardware repair and Windows deployment. Do not infer Linux server hosting or completed custom cooling. No further editorial audit of that repository.
 - Cloud Jams README: historical serverless experiment; omit from featured work because stronger evidence exists and historical credential practices need dedicated review.
 - SAP Achievement Tracker README and event-hook source: read-only achievement overlay, C#/Unity/MelonLoader, event-driven refresh. Suitable concise additional project.
-- BetterDates.ai README and maintainer/public-private guidance: local-first Python/SQLite application and reviewed research proposals. Publish only a general software summary; no profiles, runtime data, activity corpus or private artifacts accessed/copied.
+- An additional source was later explicitly identified as private. Its name and product details are omitted from the maintained notes, and it is excluded from public portfolio data.
 - VTS README, agent guidance and status: separate founder-led business website; no completed contracts/customer roster inferred. Defer portfolio promotion until explicit public project selection.
 - aws-commit file inventory (single output artifact; not a standalone engineering case), profile README, historical GitHub Pages README. No new prominent cards.
 - Existing V1 React routes, metadata, project constants, about/contact behavior and existing phase-1 audit. The archive tag resolves to the same commit as local main.

@@ -26,6 +26,7 @@ The final verify transcript is in ignored scratch `final-verify.log`; browser re
 - Text-token contrast minimum 7.00:1 against the four dark surfaces. Purple action text also remains readable. This is a local token calculation plus targeted checks, not formal accessibility certification.
 - Four overview bodies: 118–136 words, with original routes/canonicals/sitemap maintained. No page removed or renamed. IMS Pages destination absent; public source links use the user's supplied roots. All original project assets remain unchanged.
 - Exact approved contact message and email/copy placement pass. No resume page, section, navigation, link, download or PDF/Word document exists in public output. Private project and dossier/source markers absent. VTS and study-abroad wording avoid unconfirmed details.
+- Final repository-note review also removed obsolete private-project descriptions from historical working documentation. Prior Git history remains intact as required.
 - New homepage HTML is about 32 KB (about 7.8 KB gzip); no framework runtime, external fonts/analytics or new dependencies. This is not a Lighthouse or field performance score.
 
 ### Limitations and release boundary
