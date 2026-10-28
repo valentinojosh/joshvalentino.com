@@ -1,5 +1,14 @@
 # Decisions
 
+## Focused final polish
+
+- Preserve the approved page structure, charcoal/violet identity, experience, expertise and overview pages. Remove only the home-location clauses and apply the owner's precise education corrections. The newly confirmed ICS name supersedes the earlier cautious generic entry; no degree, year or partner-university claim is added.
+- Use one 16:9 card slot. AI Driver fits natively; Data-fy anchors at the top, trimming only spare lower whitespace; IMS centers a modest crop of outer margins while retaining the login panel. Keep the complete hardware photograph in a dark frame. Absolute image positioning prevents intrinsic dimensions from overflowing the slot. Fractional grid rows equalize all cards without fixed/clipping content heights.
+- Choose “Additional Work” as a straightforward companion to “Selected Work,” accommodating both a public mod and an in-development private project. “Other Projects” would be a reasonable alternative. Add an optional link/status secondary type; preserve featured public-source validation.
+- The owner now explicitly authorizes the private AI project's generic public summary. Describe optional AI-assisted research alongside preference-based recommendations; do not imply a configured/active provider, public access, offline inference or publish source/runtime details. SAP keeps its established source action.
+- Coordinate contact as compact text actions with the same font/height system; keep copy immediately beside mailto and preserve the exact approved message, feedback, keyboard and no-JS behavior.
+- Evaluate the supplied reference independently. Page-content access succeeded; browser rendering was network-denied. No newly considered feature was implemented. A contribution graph adds weak recruiting signal and unnecessary data-refresh/provider burden for this site.
+
 ## Professional presentation refinement
 
 - Preserve the Astro architecture and original media, but change the composition materially: a split hero, projects before employment, differentiated charcoal surfaces, smaller headings, contextual expertise and a combined personal/education panel. Keep purple for key hierarchy and actions.

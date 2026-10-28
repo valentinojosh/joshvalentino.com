@@ -1,5 +1,19 @@
 # Progress
 
+## Current polish — A
+
+Confirmed clean expected branch/HEAD and unchanged protected references; reviewed prior handoff/worklog and the precise user-approved boundaries. New preservation baseline captures 598 ignored files and 14 reference Git states. Inspected all media dimensions and generic private-project documentation/AI adapter source without running it or opening user data. Reference homepage was read within the narrowly authorized scope; assessment will distinguish observed features from the proposed contribution-calendar idea. Next: implement the focused media/content/contact corrections and fresh validation mirror.
+
+## Current polish — B/D
+
+Removed location clauses, applied full Aurora degree/GPA and confirmed ICS wording, selected Additional Work, restored the approved generic private AI-project entry without a link, and coordinated compact contact actions. Preserved approved experience/expertise and all overview routes. Implemented uniform 16:9 card media with individually appropriate fitting and content-driven equal rows. Visual review caught an intrinsic image-box overflow missed by the initial fit-only checks; constrained image bounds and added explicit measurements. All four cards were inspected at 320/390/768/1440px. Source assets unchanged.
+
+Astro check/build pass; 8/8 build checks and 40 browser page/viewport samples pass after correcting a test-only ampersand encoding assumption. Reference browser rendering was network-denied, but the web reader returned homepage content; the practical assessment records that limit and recommends no new feature implementation. Historical resume objects were identified and left intact. Next: final source/privacy/preservation checks, local commits and task-specific export.
+
+## Current polish — E/F
+
+Implementation saved locally at `29364ffe918b9162261bc125de0dd6a7b58d4bb6`. Final verify/build and eight checks pass; forty browser samples and all required grid/contact/education captures inspected. Matched all 80 mirror inputs, all 598 pre-existing files and all 14 reference Git states. Historical resume/ignored QA boundaries and reference-inspection limitation documented. No implementation blocker remains. Final notes checkpoint follows, then replace/verify Desktop review export from `3b88b6b4` through final HEAD. Next: user visual approval; no publishing or history change is authorized.
+
 ## New refinement — A/B
 
 Confirmed clean authorized branch at `0490522d`, protected references unchanged, previous commits intact and no applicable AGENTS files. Read prior worklogs, current source and new feedback. Recorded preservation hashes and external Git states in separate ignored scratch. Defined project-first composition, broader technical scope, short GitHub-linked overviews, education/personal context and exact contact behavior. Next: implement the unified visual/content refinement, then verify against all new acceptance requirements.

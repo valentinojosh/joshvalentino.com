@@ -1,5 +1,13 @@
 # Source and implementation assessment
 
+## Current polish source update
+
+The owner explicitly authorizes a generic BetterDates.ai secondary entry while keeping its repository private. Read only generic maintainer guidance, README sections and the adapter declaration/source to confirm preference-based recommendation behavior, optional provider-enabled AI research and review controls. No runtime profiles, private configuration, recommendation histories, research datasets or credentials were opened/copied. No external source tests or provider calls were run. The public sentence omits implementation details and does not imply the optional provider is currently configured.
+
+The owner directly confirms International College of Seville (ICS), International Studies and Spanish Language & Culture, and requests omission of the visible Aurora graduation year. No additional credential or partner university was inferred. Existing professional/technical facts remain unchanged.
+
+Current tracked source/public assets contain no resume document. A reachable local object-path scan found six versions of the historical `src/Assets/resume.pdf`; archive source also retains old commented resume-navigation/style references. These are historical privacy considerations, not current downloads. No history, tag or branch was rewritten, and no historical document contents were copied/exported. The unrelated dependency region code `CV.js` was excluded as a filename false positive.
+
 ## Refinement source update
 
 The new user request explicitly supplies approved public roots for AI Driver, Systems Lab, Data-fy, IMS and SAP; no remote confirmation was attempted. Local paths and README structure support the project framing. Refreshed Systems Lab index/hardware-repair material, IMS and SAP introductions, VTS site configuration and the relevant dossier practices for systems, access review, security-aware handling and CI/CD. The complete dossier review from the preceding task remains available; no duplicate interview or publication of the source occurred.

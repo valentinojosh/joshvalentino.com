@@ -1,5 +1,46 @@
 # Validation
 
+## Current final polish — results
+
+Baseline `3b88b6b4594568f745e92bc8dfc7314d854e5a2a`; implementation `29364ffe918b9162261bc125de0dd6a7b58d4bb6`. Fresh ignored mirror: `tmp/portfolio-v2-polish-20261027/site/`. All 80 source/public/script/config files were SHA-256 matched to the authorized repository. Every new verification transcript uses an absolute path inside this task's ignored scratch; nothing was written to the repository's parent directory.
+
+| Command/check | Actual result |
+| --- | --- |
+| `npm run verify` (new mirror) | Passed; 23 files checked, zero errors/warnings/hints, successful static build |
+| `npm run test:build` (new mirror) | 8/8 passed: routes/assets, headings/metadata, sitemap/drafts, privacy/location, source links, no resume, corrected education/contact, approved private secondary without a link |
+| `npm run build` (new mirror after media-box correction) | Passed |
+| `node tmp/portfolio-v2-polish-20261027/browser-qa.cjs` (bundled Node/Playwright, installed Edge) | Forty page/viewport samples plus interaction/media checks passed |
+| `git diff --check`, staged equivalent | Passed |
+| Preservation checks | All 598 pre-existing ignored files and 14 reference Git states unchanged; protected main/audit/tag references unchanged |
+| Current source/public document scan | Zero PDF/Word assets; no resume route/action/link in current generated output |
+
+### Visual and behavioral verification
+
+- Tested homepage and four unchanged overview routes at 320, 375, 390, 430, 768, 1024, 1440 and 1920px. No horizontal overflow, broken images or controls below the existing 24px target check.
+- Measured all four card/media dimensions, image-element bounds, same-row action alignment and private-secondary no-action behavior. Fractional rounding differences stay below 2px. Screenshots fill the 16:9 slots; full photo uses contained framing. Actual all-card captures/contact sheets inspected at 320/390/768/1440, including all image details and the complete hardware photo.
+- Verified Data-fy's top anchor preserves its header, chart, labels and legend; IMS's crop retains its full login panel; AI Driver retains telemetry/track/control labels. No source images or other raster assets changed, no artificial thumbnails or generated evidence.
+- Inspected hero after location removal, two secondary rows, compact contact actions, desktop and 320px corrected education. Long-element screenshots can include sticky/focused UI artifacts; a clean 320px About capture with only screenshot-time header/skip-link visibility suppression confirmed content layout. No application CSS was altered to hide those controls.
+- Verified keyboard skip/focus transfer and outline, header anchors, mailto, adjacent same-row copy, clipboard success/failure via test stub, 200% zoom, reduced-motion/session intro behavior, no-JS rendering/copy hiding, redirects and 404/noindex. No unexpected page/runtime/asset failures or external requests from local portfolio pages.
+- An initial new education assertion expected an encoded ampersand; static Astro text used a literal ampersand. Corrected test normalization; actual copy was correct. Visual review also caught intrinsic image-box overflow that fit-only checks missed; fixed positioning and added bounds checks before final successful checks/screenshots.
+
+### Content, privacy and history
+
+No home-city/state text remains in current public copy or metadata. Aurora uses the full degree and GPA with no visible graduation year. ICS, International Studies, location and Spanish Language & Culture appear exactly as newly confirmed; no partner-university or credential claims. Approved experience, six expertise categories, overview prose/routes and GitHub destinations remain intact.
+
+The private AI project receives only its authorized high-level sentence, optional-AI wording and Private · In development label. No repository URL, runtime profiles/configuration/history, credentials, data samples or private source files were copied. No provider calls or external source tests were run.
+
+Current tracked/public source and generated output contain no resume document, page, navigation or download. Historical local Git contains six distinct PDF blobs at `src/Assets/resume.pdf`; the archive retains old commented resume navigation/style references. Older ignored resume QA PNGs remain preserved locally and excluded from the site/export. Historical content was not opened/exported or erased. Any history cleanup would require a separate decision; no purge, rewrite or remote operation occurred.
+
+### Reference inspection and limits
+
+The single authorized reference homepage was read through the web tool. A constrained direct browser attempt failed with `net::ERR_NETWORK_ACCESS_DENIED`; no browser rendering, visual interactions or live provider behavior was verified. `reference-assessment.md` separates observed page-content features from recommendations and rejects a contribution graph for this iteration. No external feature was implemented or asset/code reused.
+
+No new packages, configured lint command, screen-reader session, Safari/Firefox check, hosted deployment verification, network dependency audit or live GitHub link check. No formal accessibility certification claimed. No unresolved local build/runtime issue remains.
+
+### Task export
+
+Export only cumulative added/modified tracked files from this baseline through final local HEAD, plus the two `_review/` metadata files. Preserve relative paths; report deletions/renames; hash source/copy/archive bytes; verify exact archive membership and unchanged Git state. Preserve any prior review output in new ignored task scratch before replacing the explicitly authorized Desktop folder. ZIP SHA-256 is reported outside its own archive.
+
 ## Current refinement task — final results
 
 Baseline `0490522d4db5d871fb4c0a249a48f385f42e1773`; implementation `0eaeec1a41564a3f517053a8f42c92fbdec12aa7`. Checks use existing installed dependencies and a NEW isolated mirror at `tmp/portfolio-v2-refinement-20261027/site/`. All 80 source/public/script/config inputs match repository SHA-256 hashes. Previous task scratch and root generated artifacts are not refreshed or overwritten.

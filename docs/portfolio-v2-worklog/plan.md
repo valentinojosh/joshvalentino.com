@@ -1,5 +1,14 @@
 # Portfolio V2 working plan
 
+## Current polish task — 2026-10-27
+
+- Starting branch: `feat/portfolio-v2-astro`; clean baseline `3b88b6b4594568f745e92bc8dfc7314d854e5a2a`. Use this baseline for this task's cumulative export.
+- Main/audit/archive references unchanged; no applicable AGENTS instructions in repository or ancestors. Preserve 598 pre-existing ignored files and 14 reference Git states recorded in fresh ignored scratch `tmp/portfolio-v2-polish-20261027/`.
+- Preserve approved structure, colors, professional experience, six expertise areas, four overview routes and public source links. Changes are limited to location removal, individually fitted card media, secondary rows with optional source links, confirmed education corrections and coordinated compact contact actions.
+- Restore only the newly authorized high-level private AI-project summary; inspect generic implementation/documentation read-only, without runtime profiles/configuration/datasets. No private URL or fake action.
+- Assess only the supplied reference homepage and necessary first-party presentation assets. No GitHub/network Git access, borrowed assets/code or implementation of reference-derived features.
+- Validate current source/build privacy and reachable local history separately, run checks in a NEW isolated mirror, visually inspect requested grid widths, commit locally and produce the verified Desktop ZIP. Keep every new log at an absolute path inside this task's ignored scratch.
+
 ## Current refinement task — 2026-10-27
 
 - Starting/working branch: `feat/portfolio-v2-astro`; clean starting HEAD `0490522d4db5d871fb4c0a249a48f385f42e1773`. This is the baseline for the NEW task export.
