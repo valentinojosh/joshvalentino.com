@@ -1,6 +1,34 @@
 # Validation
 
-## Current final polish — results
+## Final editorial audit — current results
+
+Baseline `0cce610b828e3d05c2d88768e50190dbbf62783f`; clean authorized feature branch. Fresh mirror: `tmp/portfolio-v2-editorial-20261027/site/`. All 80 source/public/script/config inputs SHA-256 match the working repository. No existing build/scratch was reused or overwritten; all new logs use absolute paths inside the fresh task scratch.
+
+| Command/check | Actual result |
+| --- | --- |
+| `npm run verify` (new mirror, telemetry disabled) | Passed: 23 Astro files, zero errors/warnings/hints; successful six-page static build |
+| `npm run test:build` (new mirror) | 8/8 passed, including corrected AI identity/intended self-hosting/status/no-source behavior |
+| `node tmp/portfolio-v2-editorial-20261027/browser-qa.cjs` (bundled Node, existing Playwright/Edge) | Passed: five pages at eight widths, 40 samples; no overflow, broken images, undersized checked targets, unexpected asset failures or page errors |
+| `node tmp/portfolio-v2-editorial-20261027/visual-qa.cjs` | Targeted captures at 320/390/768/1440px; actual revised copy visually reviewed |
+| `python -B tmp/portfolio-v2-editorial-20261027/audit-checks.py` (bundled Python) | 80 inputs match; no source/public PDF/Word assets, obsolete public phrasing or candidate secrets in scanned text; six historical PDF objects confirmed without opening them |
+| `python -B tmp/portfolio-v2-editorial-20261027/preserve.py verify` | All 909 pre-existing files, 2,089 tracked/nonignored reference-file hashes and all 14 reference branch/HEAD/status snapshots unchanged |
+| `git diff --check` | Passed; changed source and documentation reviewed |
+
+### Browser and editorial review
+
+Tested homepage and all four overview routes at 320, 375, 390, 430, 768, 1024, 1440 and 1920px. Card heights/media bounds/actions remain unified; source destinations, public project order, private-secondary no-action behavior, contact email/copy adjacency and education boundaries pass. Also verified keyboard skip/focus and anchor clearance, clipboard success/error through a stub, 200% zoom, no-JS usability, reduced-motion/session intro, legacy redirects and custom 404/noindex. All local portfolio requests observed in the main QA context stayed on localhost; no external link was followed.
+
+Visually inspected revised secondary rows at all four required widths, desktop hero/section headings/expertise/About, 320px About/education/contact and desktop/mobile grids. No CSS adjustment was necessary after description removal. Targeted captures suppress sticky/focused controls only during capture to avoid long-element screenshot artifacts; application behavior remains unchanged.
+
+Read all public copy/labels/metadata, README and four complete overview Markdown records. Changed only the AI-product identity, abstract hero scope label, redundant Selected Work/expertise introductions, narrow About paragraph and awkward Data-fy processing sentence. Retained professional contribution boundaries, project statuses/generalization limits, education and exact contact copy. Current notes explicitly supersede the previous AI characterization without erasing history. Coverage matrix: final-content-audit.md.
+
+### Privacy and limits
+
+Current generated output passes no-resume/no-private-source checks. No private dossier, runtime data, configuration, credentials or private source URL was published. Public worklogs were reviewed for unnecessary sensitive detail. Six historical resume PDF objects remain a separate publication/privacy issue; no historical contents were opened/exported, no history/tag was changed. Protected refs match the original baseline.
+
+No packages, network operations, external repository execution or deployment. No live GitHub destination check, provider/model execution, hosted behavior, Safari/Firefox run, screen-reader session, exhaustive security audit or formal accessibility certification. Existing Edge-based functional/visual checks passed. Documentation-only completion does not require another unchanged build suite. Final commit and exact export hashes are recorded in the Desktop manifest; the export verifies source/copy/archive bytes, exact entries and unchanged Git state.
+
+## Previous final polish — historical results
 
 Baseline `3b88b6b4594568f745e92bc8dfc7314d854e5a2a`; implementation `29364ffe918b9162261bc125de0dd6a7b58d4bb6`. Fresh ignored mirror: `tmp/portfolio-v2-polish-20261027/site/`. All 80 source/public/script/config files were SHA-256 matched to the authorized repository. Every new verification transcript uses an absolute path inside this task's ignored scratch; nothing was written to the repository's parent directory.
 

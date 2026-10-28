@@ -94,8 +94,8 @@ export const additionalProjects: readonly AdditionalProject[] = [
   },
   {
     title: 'BetterDates.ai',
-    type: 'Local-first application / Optional AI',
-    description: 'A local-first date and activity discovery project combining structured venue research, preference-based recommendations, and optional AI-assisted research.',
+    type: 'AI / Personalized planning',
+    description: 'An AI-powered date and activity planning project for personalized recommendations, with self-hosted AI models as the intended primary approach.',
     status: 'Private · In development',
   },
 ];

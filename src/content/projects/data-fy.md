@@ -26,7 +26,7 @@ cardImagePosition: center top
 
 I developed Data-fy's React dashboard, Spring Boot backend, Spotify integration, container packaging, and original cloud deployment. The application combines ranked artists, tracks, genres, recommendations, and a listening summary.
 
-A stateless backend assembles several external resources into one response. Bounded pagination and a parallel calculation keep that processing explicit; secret providers separate local, container, and historical cloud configuration.
+The stateless backend combines several API resources into one response, with bounded pagination and concurrent processing. Separate secret providers support local, container, and historical cloud configuration.
 
 ## Preserving the project accurately
 

@@ -126,7 +126,10 @@ test('private secondary work has an approved summary and status without a source
   const publicProject = entries.find((entry) => entry.includes('SAP Achievement Tracker'));
   assert.ok(privateProject && publicProject);
   assert.ok(privateProject.includes('Private · In development'));
-  assert.ok(privateProject.includes('optional AI-assisted research'));
+  assert.ok(privateProject.includes('AI / Personalized planning'));
+  assert.ok(privateProject.includes('AI-powered date and activity planning project for personalized recommendations'));
+  assert.ok(privateProject.includes('self-hosted AI models as the intended primary approach'));
+  assert.doesNotMatch(privateProject, /local-first|optional AI|AI-assisted research/i);
   assert.equal(attributes(privateProject, 'href').length, 0);
   assert.ok(attributes(publicProject, 'href').includes('https://github.com/valentinojosh/SAP-achievement-tracker'));
   assert.ok(home.includes('Additional Work'));

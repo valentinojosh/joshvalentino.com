@@ -1,5 +1,11 @@
 # Progress
 
+## Final editorial audit — complete
+
+Started clean at `0cce610b828e3d05c2d88768e50190dbbf62783f` on the authorized branch. Reused prior source notes, verified focused claim boundaries read-only, corrected the private AI project's identity and intended self-hosted direction, removed two redundant introductions, simplified the hero scope label, broadened About and clarified one Data-fy paragraph. Added a compact sanitized coverage matrix; no material professional omission warranted another story or project.
+
+Current verify/build, eight build tests, forty browser samples and targeted visual review pass. All 80 mirror inputs match, 909 pre-existing files and 2,089 reference-file hashes/14 Git states remain unchanged. No current public resume/private source appears; historical resume exposure remains a separate owner decision. Next: save one coherent local commit and generate the cumulative baseline-to-final Desktop export; then user approval and the historical-privacy decision. No publication is authorized.
+
 ## Current polish — A
 
 Confirmed clean expected branch/HEAD and unchanged protected references; reviewed prior handoff/worklog and the precise user-approved boundaries. New preservation baseline captures 598 ignored files and 14 reference Git states. Inspected all media dimensions and generic private-project documentation/AI adapter source without running it or opening user data. Reference homepage was read within the narrowly authorized scope; assessment will distinguish observed features from the proposed contribution-calendar idea. Next: implement the focused media/content/contact corrections and fresh validation mirror.

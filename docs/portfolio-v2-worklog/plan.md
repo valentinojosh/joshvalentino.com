@@ -1,5 +1,13 @@
 # Portfolio V2 working plan
 
+## Final editorial audit — 2026-10-27
+
+- Clean starting HEAD: `0cce610b828e3d05c2d88768e50190dbbf62783f`, on `feat/portfolio-v2-astro`. No staged, unstaged or nonignored untracked changes; root/ancestor AGENTS instructions absent. Protected main/audit/archive references match the established baseline.
+- Fresh ignored scratch: `tmp/portfolio-v2-editorial-20261027/`. Captured 909 pre-existing files and 2,089 tracked/nonignored files across 14 read-only reference repositories, plus their branch/HEAD/status. Preserve previous output and use an isolated source mirror.
+- Preserve layout, colors, image treatment, project order/routes, professional stories, education and exact contact copy. Correct the private AI project's product direction, remove redundant introductions, broaden About and make only justified wording changes.
+- Sources: prior source-review notes first; focused private-project docs/provider declarations, relevant confirmed dossier sections, Systems Lab index/representative cases and project READMEs. Owner-confirmed self-hosted AI direction supersedes the earlier public characterization; implementation and intent must remain distinct.
+- Completion: sanitized coverage matrix, reviewed public copy/metadata/labels and all four Markdown records, successful existing checks plus localhost browser/visual review, privacy/preservation verification, coherent local commit and a cumulative baseline-to-final verified Desktop review export. No network access, new packages, external source execution, publishing or history changes.
+
 ## Current polish task — 2026-10-27
 
 - Starting branch: `feat/portfolio-v2-astro`; clean baseline `3b88b6b4594568f745e92bc8dfc7314d854e5a2a`. Use this baseline for this task's cumulative export.

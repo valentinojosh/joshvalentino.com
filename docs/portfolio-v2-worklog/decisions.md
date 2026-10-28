@@ -1,6 +1,13 @@
 # Decisions
 
-## Focused final polish
+## Final editorial audit — authoritative
+
+- Correct BetterDates.ai to “AI / Personalized planning” and an AI-powered personalized planning project with self-hosted models as the intended primary approach. Retain private/in-development status and no action. The owner establishes product direction; current deterministic fallback/provider support does not justify presenting AI as peripheral. The earlier optional-AI editorial decision below is superseded.
+- Remove redundant Selected Work and expertise introductions. Replace the abstract hero scope label with “Areas of work.” Broaden About to independent software, AI and physical systems, removing its repeated employment recap. Clarify Data-fy's backend paragraph; preserve technical facts, source links and limitations.
+- Coverage is sufficient across the strongest professional/independent categories. Preserve the three employment stories, six expertise areas, four-project selection/order, education, contact and design. Do not add a cloud experiment, security title, extra skills inventory or future feature. See the sanitized matrix in final-content-audit.md.
+- Preserve prior notes as historical records. No external browsing/operations or package changes. Historical resume exposure remains a separate owner decision; no history rewrite is authorized.
+
+## Previous focused final polish — historical
 
 - Preserve the approved page structure, charcoal/violet identity, experience, expertise and overview pages. Remove only the home-location clauses and apply the owner's precise education corrections. The newly confirmed ICS name supersedes the earlier cautious generic entry; no degree, year or partner-university claim is added.
 - Use one 16:9 card slot. AI Driver fits natively; Data-fy anchors at the top, trimming only spare lower whitespace; IMS centers a modest crop of outer margins while retaining the login panel. Keep the complete hardware photograph in a dark frame. Absolute image positioning prevents intrinsic dimensions from overflowing the slot. Fractional grid rows equalize all cards without fixed/clipping content heights.

@@ -1,6 +1,12 @@
 # Source and implementation assessment
 
-## Current polish source update
+## Final editorial source update — authoritative
+
+The owner's latest product clarification supersedes the earlier BetterDates.ai characterization below. AI is central to its intended personalized date/activity planning product; self-hosted models are the intended primary approach, not a completed capability claim. Focused read-only review confirms deterministic recommendations and existing provider-adapter/task support; no runtime data or provider configuration was inspected. Public wording, current tests and decisions now reflect this distinction. The compact matrix in `final-content-audit.md` records professional and independent coverage; no additional experience story or featured project was warranted.
+
+Rechecked relevant confirmed dossier sections for SQL authorship/change controls, Python architecture, delivery/testing and bounded security work; refreshed project READMEs and representative Systems Lab cases. Retained all four project's status/contribution limits and approved education. Original source documents remain outside the public repository.
+
+## Previous polish source update — historical
 
 The owner explicitly authorizes a generic BetterDates.ai secondary entry while keeping its repository private. Read only generic maintainer guidance, README sections and the adapter declaration/source to confirm preference-based recommendation behavior, optional provider-enabled AI research and review controls. No runtime profiles, private configuration, recommendation histories, research datasets or credentials were opened/copied. No external source tests or provider calls were run. The public sentence omits implementation details and does not imply the optional provider is currently configured.
 

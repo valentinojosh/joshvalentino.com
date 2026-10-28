@@ -16,7 +16,7 @@ const visibleProjects = projects.filter((project) => project.data.visible).sort(
 <BaseLayout showIntro={true}>
   <Hero />
   <section id="projects" class="projects-section shell" aria-labelledby="projects-title">
-    <SectionHeading id="projects-title" label="01 / Selected work" title="Projects across software & systems" description="Independent builds and collaborative work, with code, experiments, and detailed technical documentation on GitHub." />
+    <SectionHeading id="projects-title" label="01 / Selected work" title="Projects across software & systems" />
     <div class="project-grid">
       {visibleProjects.map((project) => <ProjectCard project={project} />)}
     </div>
