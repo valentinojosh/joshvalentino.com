@@ -1,5 +1,13 @@
 # Source and implementation assessment
 
+## Refinement source update
+
+The new user request explicitly supplies approved public roots for AI Driver, Systems Lab, Data-fy, IMS and SAP; no remote confirmation was attempted. Local paths and README structure support the project framing. Refreshed Systems Lab index/hardware-repair material, IMS and SAP introductions, VTS site configuration and the relevant dossier practices for systems, access review, security-aware handling and CI/CD. The complete dossier review from the preceding task remains available; no duplicate interview or publication of the source occurred.
+
+Read-only text checks of the accessible real resume variants did not establish a more precise Seville institution/date. Use the user's confirmed language/culture study location without guesses. The current request directly confirms Aurora graduation in 2022, GPA 3.88 and College of DuPage attendance before transfer. No resume files copied. The private secondary project named by the user is omitted from public data; prior history remains intact.
+
+The inventory below describes the earlier task and is retained as historical context; current editorial decisions are in design-refinement.md.
+
 ## Sources reviewed (read-only)
 
 - Canonical private RxSense dossier: all 15 sections, whole-dossier synthesis and concluding guardrails. Only independently written, sanitized summaries enter the site; no private passages or source files are copied.

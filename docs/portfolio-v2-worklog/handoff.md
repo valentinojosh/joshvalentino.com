@@ -1,11 +1,11 @@
 # Handoff
 
-- Branch: `feat/portfolio-v2-astro` only.
-- Initial task HEAD: `590e41e9b18b73868a3e95438b364819b6a8eb97`; latest implementation commit `0081d895`, audit commit `e6a71433`. A documentation-only checkpoint follows; resolve latest local commit with `git rev-parse HEAD` and compare to the Desktop export manifest.
-- Completed: phases A–E, full source review, experience/expertise/education, four featured case studies, responsive refinements, metadata/sitemap, build regressions and actual browser/visual review.
-- Review state: implementation is ready for user review. Desktop export is generated after the final documentation checkpoint; its manifest identifies the authoritative final snapshot. If absent, generate it from the initial baseline above before closing the task.
-- Next three actions: review copy/design locally; confirm any new public source links before adding them; perform hosted release checks only after separate authorization. Do not create a speculative cosmetic backlog.
-- Validation completed: final Astro check/build, four build tests, 35 browser viewport/page samples, functional/no-JS/motion checks, privacy/routes/assets, unchanged pre-existing files and external Git states. See validation.md for limits. Revalidate only when subsequent changes justify it.
-- Restrictions: no remote GitHub commands/contact; no deployments; external repositories and resume sources read-only; preserve all existing untracked files; no history rewrite or automatic stash. Desktop review export is explicitly required, outside the repository as a deliverable only.
-- Baselines for pre-existing files and external Git states are saved in ignored task scratch `tmp/portfolio-v2-task-20261027/`.
-- Local review preview uses the isolated build at `http://127.0.0.1:4327/` when the task-started preview server is running. It is not a deployment. The root `.astro`/`dist` artifacts intentionally remain at their pre-task contents.
+- Authorized branch: `feat/portfolio-v2-astro`; current refinement baseline `0490522d4db5d871fb4c0a249a48f385f42e1773`.
+- Latest implementation: `0eaeec1a41564a3f517053a8f42c92fbdec12aa7` — `feat: refine portfolio design and GitHub project presentation`. A documentation-only checkpoint follows; resolve final local HEAD with `git rev-parse HEAD` and the new Desktop export manifest.
+- Completed phases A–E: safety/source/render review, broader profile and project-first architecture, cohesive dark/violet presentation, direct GitHub navigation, shortened visual overviews, About/education/VTS, exact contact behavior, seven build tests and forty browser page/viewport samples. Implementation is ready for user visual review.
+- Phase F: local implementation commit complete. Final notes commit and cumulative Desktop export follow. Export from this task's baseline above, NOT the prior task's 590e41e9 baseline. Its manifest must identify the final snapshot. Regenerate if tracked files change afterward.
+- No known implementation blocker. Seville study date/institution remains unverified; public copy deliberately uses confirmed location and subject only. No public resume functionality or document assets. Private secondary project omitted.
+- Next three actions: review the local design/copy; incorporate specific user feedback if requested; perform any external/hosted release checks only after separate authorization.
+- Local current preview: `http://127.0.0.1:4328/` from new isolated build. The previous 4327 preview belongs to the earlier task and should not be used to review current changes. Root .astro/dist and all earlier scratch remain unchanged.
+- Validation details: validation.md. Source mirror hashes match all 80 inputs; all 348 pre-existing ignored files and 14 external Git states match this task's starting baseline. New QA/scripts/results are ignored under `tmp/portfolio-v2-refinement-20261027/`.
+- Safety: write only this repository on the authorized feature branch and the requested Desktop export. Other repositories/resume sources read-only. No remote Git/GitHub contact, installs, deploy, merge, rebase, amend, reset, stash or history rewrite. Main/audit/archive tag unchanged.

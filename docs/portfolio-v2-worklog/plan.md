@@ -1,5 +1,14 @@
 # Portfolio V2 working plan
 
+## Current refinement task — 2026-10-27
+
+- Starting/working branch: `feat/portfolio-v2-astro`; clean starting HEAD `0490522d4db5d871fb4c0a249a48f385f42e1773`. This is the baseline for the NEW task export.
+- Main, audit and archive tag match the original references below. Prior three task commits remain intact. No staged, unstaged or nonignored untracked files; prior generated/scratch artifacts remain ignored and must be preserved.
+- Reuse layouts, content collection, image pipeline, tests, metadata and static Astro. No new dependencies, remote access, publishing, other-repository writes or public resume functionality.
+- Implementation: project-first homepage; balanced software/systems/IT identity; lighter charcoal/violet palette; more compact editorial composition; direct approved GitHub links; short visual overviews at existing routes; clearer stacked experience; broader expertise; personal background, education/study abroad and modest independent-venture reference; exact requested contact copy and adjacent copy action.
+- Validate all eight requested widths, images, keyboard/contact, motion/no-JS, routes/sitemap and explicit content acceptance requirements. Commit locally; replace Desktop review package using ONLY this baseline through final HEAD.
+- Pre-existing file hashes and external Git states for this task live in ignored `tmp/portfolio-v2-refinement-20261027/`.
+
 ## Safety baseline — 2026-10-27
 
 - Starting branch: `main`, HEAD `c0f80b153db220acfd3463f5cd488dc334857e20`.
