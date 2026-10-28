@@ -4,27 +4,29 @@ import { expertise } from '../data/profile';
 ---
 
 <section id="expertise" class="expertise-section shell" aria-labelledby="expertise-title">
-  <SectionHeading id="expertise-title" label="03 / Technical expertise" title="A connected technical toolkit." description="Software implementation, data investigation, and systems work inform how I approach a problem from end to end." />
+  <SectionHeading id="expertise-title" label="03 / Technical scope" title="Software, systems & hands-on technology" description="Professional application and data experience, complemented by independent networking, systems, hardware, and recovery work." />
   <div class="expertise-grid">
-    {expertise.map((area) => (
+    {expertise.map((area, index) => (
       <article>
-        <h3>{area.title}</h3>
-        <p>{area.description}</p>
-        <ul aria-label={`${area.title} tools and practices`}>
-          {area.tools.map((tool) => <li>{tool}</li>)}
-        </ul>
+        <div class="area-heading"><span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><h3>{area.title}</h3></div>
+        <p class="area-context">{area.context}</p>
+        <p class="area-description">{area.description}</p>
+        <p class="area-tools" aria-label={`${area.title} tools and practices`}>{area.tools.join(' · ')}</p>
       </article>
     ))}
   </div>
 </section>
 
 <style>
-  .expertise-section { padding-block: var(--section-space); border-top: 1px solid var(--color-rule); }
-  .expertise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 4rem; }
-  article { min-width: 0; padding-top: 1.25rem; border-top: 1px solid var(--color-rule); }
-  h3 { margin: 0; font-size: 1.25rem; letter-spacing: -0.025em; }
-  article p { max-width: 35rem; margin: 0.75rem 0 1.2rem; color: var(--color-text-soft); font-size: 0.95rem; }
-  ul { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
-  li { border: 1px solid var(--color-rule); padding: 0.25rem 0.65rem; border-radius: 0.25rem; color: var(--color-accent-soft); font-size: 0.8rem; }
-  @media (max-width: 42rem) { .expertise-grid { grid-template-columns: 1fr; } }
+  .expertise-section { padding-block: var(--section-space); }
+  .expertise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem 2.25rem; }
+  article { min-width: 0; padding-top: 1.25rem; border-top: 1px solid var(--color-rule-strong); }
+  .area-heading { display: flex; align-items: baseline; gap: 0.65rem; }
+  .area-heading span { color: var(--color-accent); font: 0.65rem var(--font-mono); }
+  h3 { margin: 0; font-size: 1.1rem; letter-spacing: -0.02em; font-weight: 650; line-height: 1.4; }
+  .area-context { margin: 0.5rem 0 0; font-size: 0.72rem; line-height: 1.6; color: var(--color-accent-soft); }
+  .area-description { margin: 0.9rem 0 1rem; font-size: 0.93rem; line-height: 1.75; color: var(--color-text-soft); }
+  .area-tools { margin: 0; font-size: 0.78rem; color: var(--color-text-muted); line-height: 1.8; }
+  @media (max-width: 63rem) { .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 38rem) { .expertise-grid { grid-template-columns: 1fr; gap: 1.75rem; } }
 </style>

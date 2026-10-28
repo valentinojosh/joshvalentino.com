@@ -8,14 +8,18 @@ interface Props {
 const { id, label, title, description } = Astro.props;
 ---
 
-<header class="section-heading">
-  <p class="eyebrow">{label}</p>
-  <h2 id={id}>{title}</h2>
+<header class:list={['section-heading', { 'section-heading--split': description }]}>
+  <div>
+    <p class="eyebrow">{label}</p>
+    <h2 id={id}>{title}</h2>
+  </div>
   {description && <p class="section-description">{description}</p>}
 </header>
 
 <style>
-  .section-heading { margin-bottom: clamp(2rem, 4vw, 3rem); }
-  h2 { margin: 0.75rem 0 0; font-size: clamp(2.2rem, 4.8vw, 3.75rem); font-weight: 720; letter-spacing: -0.055em; line-height: 1.08; }
-  .section-description { max-width: 43rem; margin: 1.1rem 0 0; color: var(--color-text-muted); }
+  .section-heading { margin-bottom: 2.25rem; }
+  .section-heading--split { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 2rem 4rem; align-items: end; }
+  h2 { max-width: 26ch; margin: 0.65rem 0 0; font-size: clamp(1.9rem, 3.2vw, 2.7rem); font-weight: 650; letter-spacing: -0.04em; line-height: 1.18; text-wrap: balance; }
+  .section-description { max-width: 37rem; margin: 0; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.75; }
+  @media (max-width: 46rem) { .section-heading--split { grid-template-columns: 1fr; gap: 1rem; } }
 </style>

@@ -3,11 +3,11 @@
 }
 
 .prose h2 {
-  margin: 3.6rem 0 1rem;
+  margin: 2rem 0 0.8rem;
   padding-top: 1.2rem;
   border-top: 1px solid var(--color-rule);
   color: var(--color-text);
-  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.65rem);
   font-weight: 690;
   letter-spacing: -0.035em;
   line-height: 1.15;
@@ -16,7 +16,7 @@
 .prose p {
   max-width: 45rem;
   margin: 0 0 1.25rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-soft);
 }
 
 .prose strong {

@@ -10,42 +10,25 @@ import AdditionalProjects from '../components/AdditionalProjects.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
 const projects = await getCollection('projects');
-const visibleProjects = projects
-  .filter((project) => project.data.visible)
-  .sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+const visibleProjects = projects.filter((project) => project.data.visible).sort((a, b) => a.data.displayOrder - b.data.displayOrder);
 ---
 
 <BaseLayout showIntro={true}>
   <Hero />
-  <ExperienceSection />
-
   <section id="projects" class="projects-section shell" aria-labelledby="projects-title">
-    <SectionHeading id="projects-title" label="02 / Selected projects" title="Built, tested, understood." description="Independent software, a collaborative academic application, and hands-on systems work. Each case study explains the implementation and its current status." />
+    <SectionHeading id="projects-title" label="01 / Selected work" title="Projects across software & systems" description="Independent builds and collaborative work, with code, experiments, and detailed technical documentation on GitHub." />
     <div class="project-grid">
       {visibleProjects.map((project) => <ProjectCard project={project} />)}
     </div>
     <AdditionalProjects />
   </section>
-
+  <ExperienceSection />
   <ExpertiseSection />
   <AboutSection />
 </BaseLayout>
 
 <style>
-  .projects-section {
-    padding-block: var(--section-space);
-    border-top: 1px solid var(--color-rule);
-  }
-
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  @media (max-width: 46rem) {
-    .project-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+  .projects-section { padding-block: 2rem var(--section-space); }
+  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  @media (max-width: 44rem) { .project-grid { grid-template-columns: 1fr; } .projects-section { padding-top: 0.75rem; } }
 </style>

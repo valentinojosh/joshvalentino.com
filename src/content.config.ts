@@ -30,10 +30,14 @@ const projects = defineCollection({
       deploymentNote: z.string(),
       image: image().optional(),
       imageAlt: z.string().min(1).optional(),
+      mediaKind: z.enum(['interface', 'photograph']).default('interface'),
       nextStep: z.string().optional(),
     }).superRefine((project, context) => {
       if (project.image && !project.imageAlt) {
         context.addIssue({ code: 'custom', path: ['imageAlt'], message: 'Project images require descriptive alt text.' });
+      }
+      if (project.visible && !project.links.some((link) => link.kind === 'source')) {
+        context.addIssue({ code: 'custom', path: ['links'], message: 'Published projects require a direct source destination.' });
       }
     }),
 });

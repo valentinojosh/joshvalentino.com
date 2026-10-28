@@ -1,68 +1,79 @@
-// Public summaries only. Keep employer source material and implementation details private.
+// Public summaries only. Employer records and private project material stay outside the site.
 export const experience = {
   employer: 'RxSense',
   title: 'Production Support Engineer',
   start: { date: '2022-08', label: 'Aug 2022' },
   end: { date: '2026-01', label: 'Jan 2026' },
   overview:
-    'Developed internal software and automation, maintained SQL data workflows, and investigated application behavior in sensitive production healthcare systems. The work connected backend development, data integrity, API debugging, testing, and technical operations.',
+    'Developed internal applications and automation, improved data workflows, and investigated production software across code, APIs, databases, and environment configuration.',
+  practices: ['Git & peer review', 'CI/CD', 'Testing & validation', 'Technical documentation'],
   stories: [
     {
       number: '01',
-      title: 'From scripts to a transformation application',
-      tools: 'Python / ETL / Git',
+      title: 'Internal data-transformation software',
+      tools: 'Python / ETL / Application architecture',
       summary:
-        'Contributed backend Python code to a team-built application for turning inconsistent CSV, Excel, and JSON inputs into reusable internal formats.',
-      contributions: [
-        'Implemented parsing, field mapping, normalization, and reusable object-oriented modules.',
-        'Helped restructure an informal script collection into a modular application and establish branching, peer review, and development planning.',
-      ],
+        'Developed backend components for a team-built application that parsed CSV, Excel, and JSON, mapped fields, and normalized inconsistent inputs.',
+      contribution:
+        'Helped turn an informal script collection into reusable object-oriented modules and establish reviewed Git collaboration and development planning.',
     },
     {
       number: '02',
-      title: 'SQL workflows and purpose-built C# tools',
-      tools: 'SQL Server / C# / Validation',
+      title: 'SQL workflows & C# automation',
+      tools: 'SQL Server / C# / Data integrity',
       summary:
-        'Maintained and extended supervisor-authored migration templates across related member and group records, including specialized input handling, reject checks, and conditional batches.',
-      contributions: [
-        'Independently built C# utilities for extracting structured inputs and generating populated SQL script packages; teammates used the tooling.',
-        'Tested changes in lower environments and prepared validation details for DBA execution. Production SQL access was read-only.',
-      ],
+        'Extended established, multi-stage migration workflows with specialized input handling, reject checks, relational dependency management, and performance-conscious batches.',
+      contribution:
+        'Independently built C# preprocessing and script-generation tools, validated changes in lower environments, and prepared tested packages for DBA-controlled production execution.',
     },
     {
       number: '03',
-      title: 'Following a problem across application layers',
-      tools: 'DevTools / Postman / C# / SQL',
+      title: 'Cross-layer application investigation',
+      tools: 'DevTools / APIs / C# debugging / SQL',
       summary:
-        'Used a recurring diagnostic workflow to connect browser behavior with API requests, backend execution, database state, and environment configuration.',
-      contributions: [
-        'Reproduced failures with browser Developer Tools, Swagger and Postman; used C# breakpoints, logs, and SQL to narrow the cause.',
-        'Documented reproducible defects for the owning engineers and retested fixes, including input, permission, and release-related behavior.',
-      ],
+        'Connected browser symptoms with API requests, backend execution, SQL state, and configuration to distinguish input, access, application, and environment issues.',
+      contribution:
+        'Used reproducible test cases, logs, Swagger, Postman, and debugger traces to document actionable findings and verify fixes with the responsible engineers.',
     },
   ],
 } as const;
 
 export const expertise = [
   {
-    title: 'Backend software & tooling',
-    description: 'Reusable components, modular architecture, internal applications, and automation for recurring technical work.',
-    tools: ['Python', 'C#', 'Java', 'Spring Boot', 'Git & code review'],
+    title: 'Software & applications',
+    context: 'Professional development + independent projects',
+    description: 'Backend components, full-stack applications, modular architecture, and tools built around real workflows.',
+    tools: ['Python', 'C#', 'Java / Spring Boot', 'React / Node.js'],
   },
   {
-    title: 'Data & integration',
-    description: 'Relational investigation, multi-stage SQL workflows, file ingestion, mapping, and data-quality checks.',
-    tools: ['SQL Server / T-SQL', 'ETL', 'CSV / Excel / JSON', 'REST APIs'],
+    title: 'Data, integration & automation',
+    context: 'Professional engineering',
+    description: 'Complex relational workflows, file transformation, data-quality checks, and utilities that reduce repeated manual work.',
+    tools: ['SQL Server / T-SQL', 'ETL & field mapping', 'REST APIs', 'C# / Python tooling'],
   },
   {
-    title: 'Application investigation',
-    description: 'Trace behavior from a reproducible symptom to requests, code paths, data, and configuration; verify the result.',
-    tools: ['Postman', 'Swagger', 'Browser DevTools', 'C# debugging', 'Test scenarios'],
+    title: 'Systems & IT',
+    context: 'Professional support + independent systems',
+    description: 'Application and access troubleshooting, Windows deployment, local service administration, and tested backup and recovery.',
+    tools: ['Windows', 'Self-hosted services', 'Deployment & drivers', 'Backup / restoration'],
   },
   {
-    title: 'Systems & reliable operations',
-    description: 'Hands-on service administration, network isolation, recovery, and deliberate validation of technical changes.',
-    tools: ['Windows', 'Linux recovery tools', 'Networking', 'Backup & restoration', 'Sensitive-data handling'],
+    title: 'Networking & infrastructure',
+    context: 'Independent systems work',
+    description: 'Practical network boundaries, reliable wired connectivity, and local services designed around household requirements.',
+    tools: ['OpenWrt-based routing', 'Managed switching', 'IoT isolation', 'DNS filtering'],
+  },
+  {
+    title: 'Hardware & diagnostics',
+    context: 'Independent builds, repair & recovery',
+    description: 'PC integration, firmware and thermal validation, component repair, and source-preserving storage investigation.',
+    tools: ['PC commissioning', 'Firmware / telemetry', 'Windows / macOS recovery', 'Bootable Linux tools'],
+  },
+  {
+    title: 'Security-aware practices',
+    context: 'Applied within engineering & operations',
+    description: 'Access-control investigation and reviews, sensitive-data handling, and deliberate validation of permission boundaries.',
+    tools: ['Permissions & access logs', 'Access reviews', 'Protected test data', 'Controlled changes'],
   },
 ] as const;
 
@@ -70,11 +81,7 @@ export const additionalProjects = [
   {
     title: 'SAP Achievement Tracker',
     type: 'C# / Unity / MelonLoader',
-    description: 'A read-only game mod that surfaces existing achievement progress through event-driven UI overlays, without changing progression or gameplay.',
-  },
-  {
-    title: 'BetterDates.ai',
-    type: 'Python / SQLite / Local-first application',
-    description: 'An activity discovery application with explainable person and group recommendations, private local profiles, and a human review step for research proposals.',
+    description: 'An event-driven, read-only game overlay that shows existing achievement progress without changing gameplay.',
+    href: 'https://github.com/valentinojosh/SAP-achievement-tracker',
   },
 ] as const;

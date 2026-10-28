@@ -1,48 +1,35 @@
 ---
 title: Systems Lab
-shortDescription: Hands-on engineering across segmented networking, self-hosted services, PC integration, storage recovery, and Windows deployment.
-displayOrder: 4
+shortDescription: A collection of hands-on systems work spanning networking, self-hosted services, PC integration, and storage recovery.
+displayOrder: 1
 category: Systems / Infrastructure
 status: active
-statusLabel: Ongoing systems practice
+statusLabel: Ongoing independent work
 visible: true
 detailPage: true
-role: Independent system design, integration, operation, and validation
-technologies: [Windows, Jellyfin, Networking, DNS filtering, Linux recovery tools]
+role: Independent design, integration, operation, and validation
+technologies: [Windows, Networking, Jellyfin, Hardware diagnostics, Recovery]
 engineeringHighlights:
-  - Operates a LAN-restricted Windows media service with separate administration and viewing accounts and tested recovery.
-  - Completed Phase 1 of a high-end simulator PC; custom cooling and the full simulator expansion remain planned.
-links: []
+  - Built and commissioned an operational Phase-1 simulator PC, alongside a segmented home network and recoverable local services.
+links:
+  - label: View on GitHub
+    href: https://github.com/valentinojosh/systems-lab
+    kind: source
 deployment: not-public
-deploymentNote: Physical and local-network systems. The simulator PC's Phase 1 is complete, with later expansion planned.
+deploymentNote: Local and physical systems. The simulator PC's air-cooled Phase 1 is complete; custom cooling and full simulator expansion are planned.
 image: ../../media/projects/systems-lab.webp
 imageAlt: Completed air-cooled Phase-1 simulator PC with a white chassis, installed GPU, and controllable fan layout.
+mediaKind: photograph
 ---
 
-## Engineering beyond the application
+## Systems as complete projects
 
-Systems Lab brings together systems I have designed, built, configured, operated, repaired, or recovered. The common approach is to establish the requirements, understand the dependencies, commission a usable baseline, and validate both normal operation and recovery.
+Systems Lab collects my independent work across networks, self-hosted infrastructure, hardware integration, deployment, repair, and recovery. The focus is how the parts behave together: establish requirements, commission a working baseline, validate the result, and plan for recovery.
 
-## Segmented home network
+Examples include isolating IoT devices from trusted endpoints, operating a LAN-restricted Windows Jellyfin host with tested state restoration, and protecting unstable storage before attempting repair.
 
-The network separates trusted computers and household services from less-trusted IoT devices. An OpenWrt-based gateway, managed wired distribution, and conservative DNS filtering support that boundary while preserving everyday compatibility and low-latency use.
+## A staged simulator build
 
-The implemented boundary prevents IoT-side access to trusted endpoints and the local media service. Further review of exact segmentation, firewall, and congestion settings remains a separate validation task.
+The featured photograph shows the completed air-cooled first phase of a Ryzen 7 9800X3D / RTX 5090 system. I handled assembly, rear-connector integration, an 18-fan control layout, firmware, Windows deployment, and stability commissioning. Custom water cooling and the complete simulator remain later phases.
 
-## Self-hosted service and recoverability
-
-A repurposed Windows machine serves as both a Jellyfin host and a directly connected home-theater PC. NVIDIA hardware acceleration handles supported transcode stages. The service stays on the LAN, and normal viewing accounts are separated from administration.
-
-Storage grew from 2 TB to 4 TB to 8 TB. Reviewed Robocopy operations and representative-file checks supported the transitions. Tested cold/off-site media and successful restoration of Jellyfin state provide recovery evidence beyond simply having a backup copy.
-
-## Racing simulator PC: Phase 1 complete
-
-I assembled and commissioned a Ryzen 7 9800X3D / RTX 5090 platform with rear-connector integration, an 18-fan iCUE LINK installation, firmware and memory configuration, Windows 11 Pro, drivers, and stability checks. The air-cooled Phase 1 was handed over operational.
-
-Custom CPU/GPU water cooling and the complete multi-display simulator remain future phases. Completing the baseline first established a working reference before adding those variables.
-
-## Recovery, deployment, and repair
-
-Windows/macOS storage recovery prioritizes protecting the source, inspecting health evidence, imaging or cloning when appropriate, and validating recovered files before destructive repair. Bootable Linux tools provide offline access independently of the installed operating system; this is separate from the Windows-hosted media service.
-
-Related work covers reproducible Windows installation media, firmware and driver reconciliation, workstation integration, component repair, and post-change functional checks. Private topology, device identifiers, access details, and raw configurations stay outside the portfolio.
+The GitHub collection contains the detailed build, network, media-server, recovery, workstation, and deployment write-ups.

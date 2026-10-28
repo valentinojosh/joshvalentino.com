@@ -1,83 +1,40 @@
 <section class="hero shell" aria-labelledby="hero-title">
-  <p class="hero-kicker">Software <span aria-hidden="true">/</span> Data <span aria-hidden="true">/</span> Systems</p>
-  <h1 id="hero-title">Josh Valentino</h1>
-  <p class="hero-summary">
-    I build backend software and practical automation, work through complex data, and trace problems across applications and systems.
-  </p>
-  <p class="hero-context">Python & C# development. SQL & data transformation. Hands-on technical ownership.</p>
-  <div class="hero-actions">
-    <a class="hero-link" href="#projects">Explore the work <span aria-hidden="true">↓</span></a>
-    <a class="hero-link hero-link--secondary" href="#experience">Professional experience <span aria-hidden="true">→</span></a>
+  <div class="hero-introduction">
+    <p class="eyebrow">Software, systems & practical engineering</p>
+    <h1 id="hero-title">Josh Valentino<span class="name-period" aria-hidden="true">.</span></h1>
+    <p class="hero-lead">I work across software, data, and the systems they depend on.</p>
+    <p class="hero-summary">From internal applications and production investigations to networks, custom PCs, and recovery work, I bring a hands-on approach to technical problems.</p>
+    <div class="hero-actions">
+      <a class="button-link" href="#projects">Explore my work <span aria-hidden="true">↓</span></a>
+      <a class="quiet-link" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+    </div>
   </div>
+  <aside class="hero-scope" aria-labelledby="scope-title">
+    <h2 id="scope-title">A connected technical perspective</h2>
+    <ul>
+      <li><span class="scope-index" aria-hidden="true">01</span><div><h3>Applications & data</h3><p>Development, integration, automation</p></div></li>
+      <li><span class="scope-index" aria-hidden="true">02</span><div><h3>Systems & infrastructure</h3><p>Networking, services, deployment</p></div></li>
+      <li><span class="scope-index" aria-hidden="true">03</span><div><h3>Hardware & diagnostics</h3><p>Integration, troubleshooting, recovery</p></div></li>
+    </ul>
+    <p class="hero-location">Based in DeKalb, Illinois</p>
+  </aside>
 </section>
 
 <style>
-  .hero {
-    display: flex;
-    min-height: min(34rem, calc(100svh - 4.75rem));
-    justify-content: center;
-    flex-direction: column;
-    padding-block: clamp(4.5rem, 9vw, 7rem);
-  }
-
-  .hero-context { max-width: 42rem; margin: 1.25rem 0 0; color: var(--color-text-muted); font-size: 0.9rem; }
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; margin-top: 1.5rem; }
-  .hero-link.hero-link--secondary { color: var(--color-text-soft); }
-
-  .hero-kicker {
-    margin: 0 0 1.1rem;
-    color: var(--color-accent-soft);
-    font-size: 0.92rem;
-    font-weight: 650;
-  }
-
-  .hero-kicker span {
-    margin-inline: 0.4rem;
-    color: var(--color-accent);
-  }
-
-  h1 {
-    margin: 0;
-    font-size: clamp(2.45rem, 6.5vw, 5.25rem);
-    font-weight: 760;
-    letter-spacing: -0.07em;
-    line-height: 0.95;
-  }
-
-  .hero-summary {
-    max-width: 43rem;
-    margin: 1.75rem 0 0;
-    color: var(--color-text-soft);
-    font-size: clamp(1.08rem, 2vw, 1.35rem);
-    line-height: 1.55;
-  }
-
-  .hero-link {
-    display: inline-flex;
-    width: fit-content;
-    min-height: 2.75rem;
-    align-items: center;
-    margin-top: 0;
-    gap: 0.55rem;
-    color: var(--color-text);
-    font-size: 0.92rem;
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .hero-link span {
-    color: var(--color-accent);
-    transition: transform 160ms var(--ease-out);
-  }
-
-  .hero-link:hover span {
-    transform: translateY(0.18rem);
-  }
-
-  @media (max-width: 30rem) {
-    .hero {
-      min-height: auto;
-      padding-block: 4.5rem 5rem;
-    }
-  }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(17rem, 0.85fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; padding-block: clamp(3.25rem, 6vw, 5.5rem); }
+  h1 { margin: 1.2rem 0 1.5rem; font-size: clamp(2.55rem, 5.1vw, 4.5rem); font-weight: 720; line-height: 1.04; letter-spacing: -0.055em; }
+  .name-period { color: var(--color-accent); }
+  .hero-lead { max-width: 29ch; margin: 0; font-size: clamp(1.35rem, 2.3vw, 1.9rem); line-height: 1.4; letter-spacing: -0.025em; color: var(--color-text); }
+  .hero-summary { max-width: 38rem; margin: 1.15rem 0 0; color: var(--color-text-soft); font-size: 1rem; line-height: 1.75; }
+  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.75rem; margin-top: 1.75rem; }
+  .hero-scope { padding: clamp(1.4rem, 2.4vw, 2rem); border: 1px solid var(--color-rule); border-top: 2px solid var(--color-accent); border-radius: 0.25rem 0.25rem 0.9rem 0.9rem; background: var(--color-canvas-soft); }
+  .hero-scope h2 { margin: 0 0 1.4rem; color: var(--color-text-muted); font-size: 0.85rem; line-height: 1.5; font-weight: 500; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { display: flex; gap: 1rem; align-items: baseline; padding-block: 1rem; border-top: 1px solid var(--color-rule); }
+  .scope-index { color: var(--color-accent); font: 0.7rem var(--font-mono); }
+  h3 { margin: 0; font-size: 1rem; font-weight: 650; letter-spacing: -0.015em; }
+  li p { margin: 0.3rem 0 0; font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.6; }
+  .hero-location { margin: 1.2rem 0 0; font-size: 0.78rem; color: var(--color-text-muted); }
+  @media (max-width: 53rem) { .hero { grid-template-columns: 1fr; gap: 2.25rem; } .hero-scope { max-width: none; } ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; } li { gap: 0.65rem; } }
+  @media (max-width: 38rem) { .hero { padding-block: 2.5rem 2.75rem; gap: 1.75rem; } ul { grid-template-columns: 1fr; gap: 0; } .hero-scope { padding: 1.1rem; } .hero-scope h2 { margin-bottom: 0.75rem; } li { padding-block: 0.6rem; } .hero-location { margin-top: 0.65rem; } }
 </style>

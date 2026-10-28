@@ -1,61 +1,59 @@
+---
+import SectionHeading from './SectionHeading.astro';
+---
+
 <section id="about" class="about-section shell" aria-labelledby="about-title">
-  <div><p class="eyebrow">04 / Background</p><h2 id="about-title">About</h2></div>
-  <div class="about-copy">
-    <p>
-      I’m a computer science graduate based in DeKalb, Illinois. My professional work at RxSense brought together backend development, SQL, internal tools, and application investigation. My independent projects extend that practice into full-stack software, reproducible experiments, and physical systems.
-    </p>
-    <p>
-      I enjoy understanding how the pieces fit together, implementing a useful solution, and checking that it behaves as intended. That approach carries through code reviews, testing, documentation, and careful handling of sensitive data.
-    </p>
-    <div class="education" aria-labelledby="education-title">
-      <h3 id="education-title">Education</h3>
-      <p class="university">Aurora University</p>
-      <p>B.S. Computer Science <span aria-hidden="true">·</span> GPA 3.88/4.0</p>
+  <div class="about-panel">
+    <SectionHeading id="about-title" label="04 / A little background" title="Curiosity, with a practical side." />
+    <div class="about-layout">
+      <div class="about-copy">
+        <p>I’m based in DeKalb, Illinois, and I’m drawn to understanding how things work. Sometimes that means following a problem through an application. Other times it means assembling a PC, improving a network, or getting data safely off a failing drive.</p>
+        <p>My professional work gave me experience with complex software and sensitive production systems. Independent projects give me room to explore the physical side of technology, learn by building, and take a project from an idea to something useful.</p>
+        <div class="independent-initiative">
+          <p class="initiative-label">Independent initiative</p>
+          <h3>Valentino Technology Solutions</h3>
+          <p>I’m also developing a personal technology-services venture and am open to independent technical work.</p>
+          <a class="quiet-link" href="https://valentinotechsolutions.com" target="_blank" rel="noopener noreferrer">Visit the services website <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="education" aria-labelledby="education-title">
+        <h3 id="education-title">Education & perspective</h3>
+        <article class="education-entry">
+          <p class="education-kind">Computer science</p>
+          <h4>Aurora University</h4>
+          <p>B.S. Computer Science · 2022</p>
+          <p class="education-note">GPA 3.88/4.0</p>
+          <p class="transfer-note">Earlier study at College of DuPage before transferring to Aurora.</p>
+        </article>
+        <article class="education-entry">
+          <p class="education-kind">Study abroad</p>
+          <h4>Seville, Spain</h4>
+          <p>Spanish language & culture</p>
+          <p class="education-note">An opportunity to learn in a different cultural setting, alongside my technical education.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .about-section {
-    display: grid;
-    padding-block: var(--section-space);
-    grid-template-columns: minmax(10rem, 1fr) minmax(0, 2fr);
-    gap: clamp(2rem, 8vw, 7rem);
-    border-top: 1px solid var(--color-rule);
-  }
-
-  h2 {
-    margin: 0.75rem 0 0;
-    font-size: clamp(2.4rem, 5vw, 4.25rem);
-    font-weight: 720;
-    letter-spacing: -0.055em;
-    line-height: 1;
-  }
-
-  .about-copy {
-    max-width: 43rem;
-  }
-
-  p {
-    margin: 0;
-    color: var(--color-text-soft);
-    font-size: clamp(1rem, 1.45vw, 1.15rem);
-    line-height: 1.7;
-  }
-
-  p + p {
-    margin-top: 1.25rem;
-  }
-
-  .education { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--color-rule); }
-  .education h3 { margin: 0 0 0.75rem; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); }
-  .education .university { color: var(--color-text); font-weight: 650; }
-  .education p { font-size: 0.95rem; }
-  .education p + p { margin-top: 0.3rem; }
-
-  @media (max-width: 42rem) {
-    .about-section {
-      grid-template-columns: 1fr;
-    }
-  }
+  .about-section { padding-bottom: var(--section-space); }
+  .about-panel { padding: clamp(1.5rem, 3.5vw, 3rem); border: 1px solid var(--color-rule); border-radius: 1rem; background: var(--color-canvas-soft); }
+  .about-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.85fr); gap: 2.5rem clamp(2rem, 6vw, 6rem); }
+  .about-copy > p { margin: 0; color: var(--color-text-soft); font-size: 1rem; line-height: 1.8; }
+  .about-copy > p + p { margin-top: 1rem; }
+  .independent-initiative { margin-top: 1.75rem; padding-top: 1.35rem; border-top: 1px solid var(--color-rule); }
+  .initiative-label { color: var(--color-accent-soft); font-size: 0.72rem; margin: 0 0 0.5rem; }
+  .independent-initiative h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+  .independent-initiative > p:not(.initiative-label) { margin: 0.5rem 0; font-size: 0.9rem; color: var(--color-text-muted); }
+  .independent-initiative a { font-size: 0.8rem; }
+  .education h3 { margin: 0 0 1.25rem; font-size: 0.85rem; font-weight: 500; color: var(--color-text-muted); }
+  .education-entry { border-left: 2px solid var(--color-rule-strong); padding-left: 1.25rem; }
+  .education-entry + .education-entry { margin-top: 1.75rem; }
+  .education-kind { margin: 0 0 0.4rem; color: var(--color-accent-soft); font-size: 0.72rem; }
+  h4 { margin: 0 0 0.35rem; font-size: 1.1rem; font-weight: 600; }
+  .education-entry > p:not(.education-kind) { margin: 0.3rem 0 0; color: var(--color-text-soft); font-size: 0.88rem; line-height: 1.7; }
+  .education-entry > p.education-note, .education-entry > p.transfer-note { color: var(--color-text-muted); font-size: 0.82rem; }
+  .education-entry > p.transfer-note { margin-top: 0.8rem; }
+  @media (max-width: 48rem) { .about-layout { grid-template-columns: 1fr; } .education { padding-top: 1.5rem; border-top: 1px solid var(--color-rule); } }
 </style>

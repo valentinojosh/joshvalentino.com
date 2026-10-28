@@ -1,43 +1,34 @@
 ---
 title: Incident Management System
-shortDescription: A four-person academic team project that translated a local organization's paper reports into a full-stack browser application.
-displayOrder: 3
+shortDescription: A four-person academic team project that moved a local organization's incident reports from paper into a full-stack browser application.
+displayOrder: 4
 category: Software
 status: archived
-statusLabel: Academic team project · 2022
+statusLabel: Retired team project · 2022
 visible: true
 detailPage: true
-role: Software development contributor within a four-person team
+role: Software development contributor within a four-person college team
 technologies: [React, Node.js, Express, MySQL, REST APIs]
 engineeringHighlights:
-  - The team delivered six report workflows with structured forms, administrator review, and CSV export.
-  - Connected form state, JSON requests, API controllers, and relational persistence while preserving familiar document layouts.
+  - The team connected six structured report workflows with administrator review, CSV exports, and relational storage.
 links:
-  - label: Historical system documentation
-    href: https://valentinojosh.github.io/ims-documentation/
-    kind: documentation
+  - label: View on GitHub
+    href: https://github.com/valentinojosh/ims
+    kind: source
 deployment: retired
-deploymentNote: Completed in spring 2022 and permanently retired; preserved as a historical team project.
+deploymentNote: Completed in spring 2022 and permanently retired. Preserved as a historical collaborative software-engineering project.
 image: ../../media/projects/incident-management.png
 imageAlt: Historical IMS entry screen with separate administrator login and employee report access.
 ---
 
-## A real workflow, implemented as a team
+## Turning an existing workflow into software
 
-I contributed to a four-person college software-engineering team that continued a multi-semester incident-reporting project for a local recreation organization. Completed in spring 2022, the shared application translated paper forms into browser entry, retrievable records, and administrator tools. The architecture and delivered features described here belong to the team as a whole.
+I contributed to a four-person college software-engineering team that continued a multi-semester project for a local recreation organization. We translated familiar paper reports into structured browser forms, digital records, and administrator tools.
 
-## From familiar forms to structured records
+The shared application connected React form state to Express controllers and MySQL models across six report types. Preserving the paper forms' terminology and layout was part of the client requirement, alongside review, retrieval, and CSV export.
 
-The client wanted the web forms to retain the terminology, section order, and visual familiarity of the existing paperwork. The resulting React client supported six specialized report types, with five available through the employee workflow and all six through the administrator workflow.
+## A collaborative project and a useful reference
 
-JSON requests connected form state to an Express route/controller layer and MySQL models. The widest workflow mapped more than one hundred fields across the interface, API, and persistence. Administrator views supported reviewing records, exporting CSV data, and managing administrator accounts.
+Completed in spring 2022, IMS is permanently retired. Its value here is the experience of implementing a real workflow within a team, connecting UI/API/data contracts, and validating behavior with a 30-case Postman matrix.
 
-## Validation and outcome
-
-The team's historical Postman matrix contained 30 API cases spanning collection and item reads, report creation, and deletion. Testing and client discussions estimated report retrieval to be approximately 75% faster than the paper process. This was a project estimate, rather than a controlled production benchmark.
-
-## Lessons and status
-
-The project developed practical experience in requirements, complex forms, API/data contracts, and shared integration work. A comparable system today would need stronger centralized server validation and authorization, automated tests, accessibility, and explicit privacy and retention controls. Separate employee and administrator navigation alone does not establish a secure authorization boundary.
-
-IMS is permanently retired. Historical documentation and interface captures preserve the team's implementation without offering an operational application or publishing incident records.
+The public repository preserves the architecture, historical interface, testing approach, team context, and retrospective on validation, authorization, accessibility, and privacy.

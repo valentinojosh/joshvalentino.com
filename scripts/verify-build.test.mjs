@@ -70,6 +70,47 @@ test('sitemap includes every published content page and excludes redirects and d
 test('published output excludes local paths and private source markers', () => {
   for (const [file, html] of pages) {
     assert.doesNotMatch(html, /(?:[A-Z]:\\Users\\|file:\/\/|RxSense_Master_Dossier|Realm [AB] —|Career-fit signal)/i, file);
-    assert.doesNotMatch(html, /(?:TrainWise AI|ApplyPilot AI|Agentic Code Review &amp; Test Generator|Regulated Domain Knowledge Assistant)/, file);
+    assert.doesNotMatch(html, /(?:TrainWise AI|ApplyPilot AI|Agentic Code Review &amp; Test Generator|Regulated Domain Knowledge Assistant|BetterDates(?:\.ai)?|better-dates-ai)/i, file);
   }
+});
+
+test('featured cards and retained overviews link directly to their canonical repositories', () => {
+  const destinations = {
+    'ai-driver': 'ai-driver',
+    'data-fy': 'data-fy',
+    'home-lab-network-security': 'systems-lab',
+    'incident-management-system': 'ims',
+  };
+  const home = pages.get('index.html');
+  for (const [slug, repository] of Object.entries(destinations)) {
+    const href = `https://github.com/valentinojosh/${repository}`;
+    assert.ok(attributes(home, 'href').includes(href), `${repository}: missing homepage source`);
+    const overview = pages.get(path.join('work', slug, 'index.html'));
+    assert.ok(attributes(overview, 'href').includes(href), `${repository}: missing overview source`);
+    assert.match(overview, /class="project-actions"/);
+  }
+  assert.ok(attributes(home, 'href').includes('https://github.com/valentinojosh/SAP-achievement-tracker'));
+  for (const [file, html] of pages) assert.doesNotMatch(html, /valentinojosh\.github\.io\/ims-documentation/i, `${file}: retired documentation link`);
+});
+
+test('public output contains no resume page, link, download or document asset', async () => {
+  for (const [file, html] of pages) {
+    assert.doesNotMatch(file, /(?:resume|résumé|curriculum|\bcv\b)/i);
+    assert.doesNotMatch(html, /(?:href|id)="[^"]*(?:resume|r%C3%A9sum%C3%A9|résumé|curriculum|\.pdf|\.docx)/i, file);
+    assert.doesNotMatch(html, />\s*(?:résumé|resume|cv)(?:\s+download)?\s*</i, file);
+  }
+  async function inspect(directory) {
+    for (const entry of await readdir(directory, { withFileTypes: true })) {
+      if (entry.isDirectory()) await inspect(path.join(directory, entry.name));
+      else assert.doesNotMatch(entry.name, /\.(?:pdf|docx?)$/i);
+    }
+  }
+  await inspect(root);
+});
+
+test('approved contact, education and broader technical context are retained', () => {
+  const home = pages.get('index.html');
+  assert.ok(home.includes('Have an interesting opportunity, project, or just want to chat? Feel free to shoot me an email.'));
+  for (const text of ['Aurora University', 'B.S. Computer Science · 2022', 'GPA 3.88/4.0', 'Seville, Spain', 'College of DuPage', 'Valentino Technology Solutions', 'Hardware &amp; diagnostics', 'Networking &amp; infrastructure', 'Security-aware practices']) assert.ok(home.includes(text), `Missing public context: ${text}`);
+  assert.doesNotMatch(home, /I’m a computer science graduate|supervisor-authored|Production SQL access was read-only/);
 });

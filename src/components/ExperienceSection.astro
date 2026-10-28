@@ -3,55 +3,58 @@ import SectionHeading from './SectionHeading.astro';
 import { experience } from '../data/profile';
 ---
 
-<section id="experience" class="experience-section shell" aria-labelledby="experience-title">
-  <SectionHeading id="experience-title" label="01 / Professional experience" title="Engineering in practice." />
-  <div class="experience-overview">
-    <div>
-      <h3>{experience.employer}</h3>
-      <p class="job-title">{experience.title}</p>
-      <p class="dates"><time datetime={experience.start.date}>{experience.start.label}</time> — <time datetime={experience.end.date}>{experience.end.label}</time> <span aria-hidden="true">·</span> Remote</p>
-    </div>
-    <p class="overview-copy">{experience.overview}</p>
-  </div>
-  <div class="experience-stories">
-    {experience.stories.map((story) => (
-      <article class="story">
-        <span class="story-number" aria-hidden="true">{story.number}</span>
-        <div>
-          <p class="story-tools">{story.tools}</p>
-          <h4>{story.title}</h4>
-          <p>{story.summary}</p>
-          <ul>{story.contributions.map((contribution) => <li>{contribution}</li>)}</ul>
+<section id="experience" class="experience-section" aria-labelledby="experience-title">
+  <div class="shell">
+    <SectionHeading id="experience-title" label="02 / Professional experience" title="Engineering in a production environment" />
+    <div class="experience-layout">
+      <div class="employment">
+        <p class="employment-label">RxSense</p>
+        <h3>{experience.title}</h3>
+        <p class="dates"><time datetime={experience.start.date}>{experience.start.label}</time> — <time datetime={experience.end.date}>{experience.end.label}</time></p>
+        <p class="employment-location">Remote</p>
+        <p class="overview-copy">{experience.overview}</p>
+        <div class="practices">
+          <p>How the work was delivered</p>
+          <ul>{experience.practices.map((practice) => <li>{practice}</li>)}</ul>
         </div>
-      </article>
-    ))}
+      </div>
+      <div class="experience-stories">
+        {experience.stories.map((story) => (
+          <article class="story">
+            <div class="story-heading">
+              <span class="story-number" aria-hidden="true">{story.number}</span>
+              <h4>{story.title}</h4>
+            </div>
+            <p class="story-tools">{story.tools}</p>
+            <p>{story.summary}</p>
+            <p>{story.contribution}</p>
+          </article>
+        ))}
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
-  .experience-section { padding-block: var(--section-space); border-top: 1px solid var(--color-rule); }
-  .experience-overview { display: grid; grid-template-columns: 1fr 1.8fr; gap: 2rem 4rem; padding-bottom: 2.5rem; }
-  h3 { margin: 0; font-size: 1.65rem; letter-spacing: -0.035em; }
-  .job-title { margin: 0.4rem 0; color: var(--color-text-soft); font-weight: 600; }
-  .dates { margin: 0.6rem 0 0; color: var(--color-text-muted); font-size: 0.85rem; }
-  .dates span { margin-inline: 0.35rem; }
-  .overview-copy { max-width: 43rem; margin: 0; color: var(--color-text-soft); font-size: 1.08rem; }
-  .experience-stories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--color-rule); }
-  .story { min-width: 0; padding: 2rem 1.75rem 0 0; }
-  .story + .story { padding-left: 1.75rem; border-left: 1px solid var(--color-rule); }
-  .story-number { color: var(--color-accent); font-family: var(--font-mono); font-size: 0.8rem; }
-  .story-tools { margin: 1.6rem 0 0.6rem; color: var(--color-accent-soft); font-size: 0.75rem; }
-  h4 { margin: 0; font-size: 1.3rem; line-height: 1.3; letter-spacing: -0.025em; }
-  .story p:not(.story-tools), li { color: var(--color-text-soft); font-size: 0.95rem; line-height: 1.65; }
-  .story p:not(.story-tools) { margin: 1rem 0; }
-  ul { margin: 0; padding-left: 1.1rem; }
-  li + li { margin-top: 0.8rem; }
-  li::marker { color: var(--color-accent); }
-  @media (max-width: 58rem) {
-    .experience-stories { grid-template-columns: 1fr; }
-    .story, .story + .story { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 0.75rem; padding: 1.75rem 0; border-left: 0; }
-    .story + .story { border-top: 1px solid var(--color-rule); }
-    .story-tools { margin-top: 0; }
-  }
-  @media (max-width: 42rem) { .experience-overview { grid-template-columns: 1fr; } }
+  .experience-section { padding-block: var(--section-space); background: var(--color-canvas-soft); border-block: 1px solid var(--color-rule); }
+  .experience-layout { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr); gap: 2.5rem clamp(2.5rem, 7vw, 7rem); align-items: start; }
+  .employment { padding: 1.5rem; background: var(--color-surface); border: 1px solid var(--color-rule); border-radius: 0.75rem; }
+  .employment-label { margin: 0 0 0.5rem; color: var(--color-accent-soft); font-weight: 650; font-size: 1.05rem; }
+  h3 { margin: 0; font-size: 1.25rem; font-weight: 600; line-height: 1.4; letter-spacing: -0.02em; }
+  .dates { margin: 0.9rem 0 0; color: var(--color-text-soft); font-size: 0.85rem; }
+  .employment-location { margin: 0.15rem 0 0; font-size: 0.8rem; color: var(--color-text-muted); }
+  .overview-copy { margin: 1.25rem 0 0; color: var(--color-text-soft); font-size: 0.95rem; line-height: 1.75; }
+  .practices { margin-top: 1.5rem; padding-top: 1.15rem; border-top: 1px solid var(--color-rule); }
+  .practices p { margin: 0 0 0.6rem; font-size: 0.78rem; color: var(--color-text-muted); }
+  .practices ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem 1rem; list-style: none; margin: 0; padding: 0; color: var(--color-text-soft); font-size: 0.78rem; }
+  .story { padding: 0 0 1.65rem; }
+  .story + .story { padding-top: 1.65rem; border-top: 1px solid var(--color-rule); }
+  .story:last-child { padding-bottom: 0; }
+  .story-heading { display: flex; align-items: baseline; gap: 0.8rem; }
+  .story-number { flex-shrink: 0; color: var(--color-accent); font: 0.7rem var(--font-mono); }
+  h4 { margin: 0; font-size: 1.2rem; font-weight: 650; letter-spacing: -0.02em; line-height: 1.4; }
+  .story-tools { margin: 0.55rem 0 0.9rem; color: var(--color-accent-soft); font-size: 0.77rem; }
+  .story p:not(.story-tools) { margin: 0.6rem 0 0; color: var(--color-text-soft); font-size: 0.95rem; line-height: 1.75; }
+  @media (max-width: 51rem) { .experience-layout { grid-template-columns: 1fr; gap: 2rem; } .practices ul { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 34rem) { .practices ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 </style>

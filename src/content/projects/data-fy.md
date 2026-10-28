@@ -1,46 +1,34 @@
 ---
 title: Data-fy
-shortDescription: A full-stack Spotify analytics application connecting OAuth, concurrent API processing, and a visual listening dashboard.
-displayOrder: 2
-prominence: standard
+shortDescription: A full-stack Spotify analytics application connecting account authorization, API processing, and an interactive listening dashboard.
+displayOrder: 3
 category: Software
 status: archived
-statusLabel: Historical project · 2023
+statusLabel: Retired deployment · 2023
 visible: true
 detailPage: true
-role: Independent full-stack development and cloud deployment
-technologies: [Java, Spring Boot, React, Spotify API, Docker, Google Cloud]
+role: Independent full-stack development and original cloud deployment
+technologies: [Java, Spring Boot, React, Spotify API, Docker]
 engineeringHighlights:
-  - Consolidated multiple Spotify responses into one domain model, with bounded pagination and concurrent processing.
-  - Separated a stateless backend from the dashboard, with environment-specific secret providers.
+  - Consolidated several Spotify resources into one response model, with bounded pagination and concurrent processing.
 links:
-  - label: Source on GitHub
+  - label: View on GitHub
     href: https://github.com/valentinojosh/data-fy
     kind: source
 deployment: retired
-deploymentNote: The original hosted deployment is retired. The project remains a technical record, with no live demo advertised.
+deploymentNote: Built in 2023. The original hosted service is retired; source, tests, architecture, and historical interface captures remain available.
 image: ../../media/projects/data-fy.png
 imageAlt: Historical Data-fy interface with a radial top-genres chart and listening-data controls.
 ---
 
-## What I built
+## An application across service boundaries
 
-Data-fy is an independent Java and React application built in 2023 to turn Spotify account data into ranked artists, tracks, genres, recommendations, and a summary dashboard. I worked across the service architecture, frontend, API integration, container packaging, and original cloud deployment.
+I developed Data-fy's React dashboard, Spring Boot backend, Spotify integration, container packaging, and original cloud deployment. The application combines ranked artists, tracks, genres, recommendations, and a listening summary.
 
-## One response from several API resources
+A stateless backend assembles several external resources into one response. Bounded pagination and a parallel calculation keep that processing explicit; secret providers separate local, container, and historical cloud configuration.
 
-The Spring Boot backend exchanges an authorization code for Spotify access and assembles multiple API responses into a consolidated domain model. Genre ranking combines artist information, while recommendations are seeded from top tracks and enriched into full records.
+## Preserving the project accurately
 
-A two-thread executor runs the listening-minutes calculation while the request thread fetches the other resources. The response waits for that calculation before returning. Offset-based pagination has an explicit 350-track boundary, keeping the work bounded.
+The original service is retired, so the interface shown here is a historical capture. Its listening-minutes figure is an estimate derived from track durations, rather than measured play-count history. Backend caching applies to secret lookups, not listening data.
 
-## State and configuration boundaries
-
-The backend does not retain user sessions or use a database. The React client supplies the access token and stores its resulting aggregate locally until logout. Backend Caffeine caching applies to Google Secret Manager reads; it does not cache users' listening data.
-
-Separate secret providers support local, container, and historical Google Cloud environments. The original deployment paired a Netlify frontend with Google App Engine. Docker packaging preserves the frontend/backend boundary.
-
-## Validation and limits
-
-The source includes deterministic tests for input validation, pagination, incomplete responses, and external-fetch failures. The annual listening-minutes figure is a rough extrapolation from top-track durations, rather than a measurement of Spotify play-count history.
-
-The hosted service is retired. Historical screenshots describe the original product.
+The repository contains the source, architecture, tests, deployment history, and implementation limits.
