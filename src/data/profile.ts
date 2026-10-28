@@ -77,11 +77,25 @@ export const expertise = [
   },
 ] as const;
 
-export const additionalProjects = [
+interface AdditionalProject {
+  title: string;
+  type: string;
+  description: string;
+  href?: string;
+  status?: string;
+}
+
+export const additionalProjects: readonly AdditionalProject[] = [
   {
     title: 'SAP Achievement Tracker',
     type: 'C# / Unity / MelonLoader',
     description: 'An event-driven, read-only game overlay that shows existing achievement progress without changing gameplay.',
     href: 'https://github.com/valentinojosh/SAP-achievement-tracker',
   },
-] as const;
+  {
+    title: 'BetterDates.ai',
+    type: 'Local-first application / Optional AI',
+    description: 'A local-first date and activity discovery project combining structured venue research, preference-based recommendations, and optional AI-assisted research.',
+    status: 'Private · In development',
+  },
+];

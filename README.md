@@ -27,9 +27,11 @@ Public employment stories, expertise and additional projects live in `src/data/p
 
 The homepage presents a broad technical introduction, four selected projects, professional experience, technical scope, background/education and contact. GitHub links on project cards and at the top of overview pages are the primary path to code and detailed documentation. The four existing `/work/` pages remain as short, visual introductions, avoiding a second copy of each repository's README. Systems Lab retains its existing `home-lab-network-security` identifier.
 
-Header navigation remains visible and keyboard accessible at mobile widths without JavaScript. Existing `/about`, `/projects`, `/contact` and `/datafydemo` URLs retain redirects. The public site deliberately has no resume page, section, link, PDF or download. Private projects and source documents must stay outside public copy and generated output.
+Header navigation remains visible and keyboard accessible at mobile widths without JavaScript. Existing `/about`, `/projects`, `/contact` and `/datafydemo` URLs retain redirects. The public site deliberately has no resume page, section, link, PDF or download. Private source documents, runtime data and implementation details stay outside public copy and generated output; private projects appear only through explicitly approved high-level summaries.
 
-Project `mediaKind` selects interface or photograph presentation. Images retain their aspect ratios inside a dark frame; the hardware photograph stays uncropped. `npm run test:build` checks routes, assets, metadata, source destinations, privacy/draft exclusion, approved contact/education content and the no-resume boundary.
+Featured cards share a 16:9 media slot and content-driven equal grid rows. `mediaKind` preserves the full hardware photograph while screenshots fill their slot. `cardImagePosition` permits a top anchor for Data-fy's header/chart; other screenshots use a centered fit. No source images are stretched or replaced. Secondary entries support an optional public link or a plain status label, so a private project never needs a placeholder action.
+
+`npm run test:build` checks routes, assets, metadata, source destinations, privacy/draft exclusion, approved contact/education content, private-secondary link behavior and the no-resume boundary. Reachable historical Git objects are separate from current source/build output; earlier resume assets remain in local history and have not been erased.
 
 Sanitized audit, decisions, validation and continuation notes live in `docs/portfolio-v2-worklog/`, outside the published site. See `handoff.md` before resuming. No React runtime, analytics, remote fonts or new dependencies have been added.
 

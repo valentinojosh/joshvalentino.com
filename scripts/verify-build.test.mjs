@@ -70,7 +70,7 @@ test('sitemap includes every published content page and excludes redirects and d
 test('published output excludes local paths and private source markers', () => {
   for (const [file, html] of pages) {
     assert.doesNotMatch(html, /(?:[A-Z]:\\Users\\|file:\/\/|RxSense_Master_Dossier|Realm [AB] —|Career-fit signal)/i, file);
-    assert.doesNotMatch(html, /(?:TrainWise AI|ApplyPilot AI|Agentic Code Review &amp; Test Generator|Regulated Domain Knowledge Assistant|BetterDates(?:\.ai)?|better-dates-ai)/i, file);
+    assert.doesNotMatch(html, /(?:TrainWise AI|ApplyPilot AI|Agentic Code Review &amp; Test Generator|Regulated Domain Knowledge Assistant|github\.com\/valentinojosh\/better-dates-ai|DeKalb|Illinois)/i, file);
   }
 });
 
@@ -110,7 +110,24 @@ test('public output contains no resume page, link, download or document asset', 
 
 test('approved contact, education and broader technical context are retained', () => {
   const home = pages.get('index.html');
+  const decoded = home.replaceAll('&amp;', '&');
   assert.ok(home.includes('Have an interesting opportunity, project, or just want to chat? Feel free to shoot me an email.'));
-  for (const text of ['Aurora University', 'B.S. Computer Science · 2022', 'GPA 3.88/4.0', 'Seville, Spain', 'College of DuPage', 'Valentino Technology Solutions', 'Hardware &amp; diagnostics', 'Networking &amp; infrastructure', 'Security-aware practices']) assert.ok(home.includes(text), `Missing public context: ${text}`);
+  for (const text of ['Aurora University', 'Bachelor of Science in Computer Science', 'GPA: 3.88/4.0', 'International Studies', 'International College of Seville (ICS)', 'Spanish Language & Culture', 'Seville, Spain', 'College of DuPage', 'Valentino Technology Solutions', 'Hardware & diagnostics', 'Networking & infrastructure', 'Security-aware practices']) assert.ok(decoded.includes(text), `Missing public context: ${text}`);
   assert.doesNotMatch(home, /I’m a computer science graduate|supervisor-authored|Production SQL access was read-only/);
+  const education = home.match(/<div class="education"[^>]*>[\s\S]*?<\/div>/)?.[0];
+  assert.ok(education);
+  assert.doesNotMatch(education, /2022|Study abroad|University of Seville/i);
+});
+
+test('private secondary work has an approved summary and status without a source action', () => {
+  const home = pages.get('index.html');
+  const entries = [...home.matchAll(/<article\b[^>]*>[\s\S]*?<\/article>/g)].map((match) => match[0]);
+  const privateProject = entries.find((entry) => entry.includes('BetterDates.ai'));
+  const publicProject = entries.find((entry) => entry.includes('SAP Achievement Tracker'));
+  assert.ok(privateProject && publicProject);
+  assert.ok(privateProject.includes('Private · In development'));
+  assert.ok(privateProject.includes('optional AI-assisted research'));
+  assert.equal(attributes(privateProject, 'href').length, 0);
+  assert.ok(attributes(publicProject, 'href').includes('https://github.com/valentinojosh/SAP-achievement-tracker'));
+  assert.ok(home.includes('Additional Work'));
 });

@@ -10,7 +10,7 @@ const source = data.links.find((link) => link.kind === 'source');
 
 <article class:list={['project-card', `project-card--${data.prominence}`]}>
   {data.image && data.imageAlt && (
-    <div class:list={['project-image', `project-image--${data.mediaKind}`]}>
+    <div class:list={['project-image', `project-image--${data.mediaKind}`]} style={`--card-image-position: ${data.cardImagePosition};`}>
       <Image src={data.image} alt={data.imageAlt} widths={[480, 720, 960, 1200]}
         sizes="(max-width: 704px) calc(100vw - 36px), (max-width: 1264px) calc((100vw - 72px) / 2), 580px"
         format="webp" quality={86} loading="lazy" />
@@ -33,9 +33,30 @@ const source = data.links.find((link) => link.kind === 'source');
   .project-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--color-rule); border-radius: 0.85rem; background: var(--color-surface); transition: border-color 160ms ease, box-shadow 160ms ease; }
   .project-card:hover, .project-card:focus-within { border-color: var(--color-rule-strong); box-shadow: 0 8px 24px #00000018; }
   .project-card--wide { grid-column: 1 / -1; }
-  .project-image { aspect-ratio: 16 / 10; display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--color-rule); background: #14151c; }
-  .project-image :global(img) { width: 100%; height: 100%; object-fit: contain; object-position: center; }
-  .project-image--photograph { background: #13141a; }
+  .project-image {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-rule);
+    background: #14151c;
+  }
+
+  .project-image :global(img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--card-image-position);
+  }
+
+  .project-image--photograph {
+    background: #13141a;
+  }
+
+  .project-image--photograph :global(img) {
+    object-fit: contain;
+  }
   .project-content { display: flex; flex: 1; flex-direction: column; padding: clamp(1.25rem, 2.3vw, 1.8rem); }
   .project-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 0.75rem; font-size: 0.72rem; line-height: 1.6; color: var(--color-text-muted); }
   .project-meta span:first-child { color: var(--color-accent-soft); }

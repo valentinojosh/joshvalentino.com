@@ -7,15 +7,17 @@ import { site } from '../data/site';
     <div class="contact-introduction"><p class="eyebrow">05 / Get in touch</p><h2>Contact</h2></div>
     <div class="contact-main">
       <p class="contact-message">Have an interesting opportunity, project, or just want to chat? Feel free to shoot me an email.</p>
-      <div class="email-group">
-        <a class="email-address" href={`mailto:${site.email}`}>{site.email}</a>
-        <button type="button" data-copy-email={site.email} hidden>Copy email</button>
+      <div class="contact-actions">
+        <div class="email-group">
+          <a class="email-address" href={`mailto:${site.email}`}>{site.email}</a>
+          <button type="button" data-copy-email={site.email} hidden>Copy email</button>
+        </div>
+        <nav class="social-links" aria-label="Professional links">
+          <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        </nav>
       </div>
       <p class="copy-status" data-copy-status role="status" aria-live="polite" aria-atomic="true"></p>
-      <nav class="social-links" aria-label="Professional links">
-        <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-        <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-      </nav>
     </div>
   </div>
   <div class="shell footer-base"><span>© {new Date().getFullYear()} Josh Valentino</span><a href="#main-content">Back to top <span aria-hidden="true">↑</span></a></div>
@@ -51,15 +53,68 @@ import { site } from '../data/site';
   .contact-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr); gap: 2rem clamp(2.5rem, 7vw, 7rem); padding-bottom: 3rem; }
   h2 { margin: 0.65rem 0 0; font-size: clamp(2.1rem, 3.5vw, 3rem); font-weight: 650; letter-spacing: -0.04em; line-height: 1.2; }
   .contact-message { max-width: 38rem; margin: 0 0 1.5rem; color: var(--color-text-soft); font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.7; }
-  .email-group { display: inline-flex; max-width: 100%; align-items: center; gap: 0.8rem; padding: 0.35rem 0.75rem; border: 1px solid var(--color-rule-strong); border-radius: 0.5rem; background: var(--color-surface); }
-  .email-address { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: clamp(0.83rem, 1.1vw, 1rem); font-weight: 550; text-decoration: none; }
-  button { min-height: 2.75rem; flex-shrink: 0; padding: 0 0 0 0.8rem; border: 0; border-left: 1px solid var(--color-rule); background: transparent; color: var(--color-accent-soft); font: inherit; font-size: 0.75rem; font-weight: 600; cursor: pointer; }
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 2rem;
+  }
+
+  .email-group {
+    display: inline-flex;
+    max-width: 100%;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .email-address,
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-size: 0.86rem;
+    font-weight: 550;
+    text-decoration: none;
+  }
+
+  button {
+    min-height: 2.75rem;
+    flex-shrink: 0;
+    padding: 0 0 0 0.65rem;
+    border: 0;
+    border-left: 1px solid var(--color-rule);
+    background: transparent;
+    color: var(--color-accent-soft);
+    font: inherit;
+    font-size: 0.75rem;
+    font-weight: 550;
+    cursor: pointer;
+  }
   .copy-status { min-height: 1.5em; margin: 0.45rem 0 0.5rem; color: var(--color-accent-soft); font-size: 0.78rem; }
-  .social-links { display: flex; gap: 1.75rem; }
-  .social-links a { display: inline-flex; min-height: 2.75rem; align-items: center; gap: 0.5rem; font-size: 0.86rem; font-weight: 600; text-decoration: none; }
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .social-links a {
+    gap: 0.5rem;
+  }
   .social-links span { color: var(--color-accent); }
   .footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; min-height: 4.5rem; gap: 0.5rem 1.5rem; padding-block: 0.6rem; border-top: 1px solid var(--color-rule); color: var(--color-text-muted); font-size: 0.75rem; }
   .footer-base a { display: inline-flex; align-items: center; min-height: 2.75rem; gap: 0.5rem; text-decoration: none; }
   @media (max-width: 46rem) { .contact-grid { grid-template-columns: 1fr; gap: 1.25rem; } }
-  @media (max-width: 24rem) { .email-group { gap: 0.5rem; padding-inline: 0.5rem; } .email-address { font-size: 0.8rem; } button { font-size: 0.72rem; padding-left: 0.5rem; } }
+  @media (max-width: 24rem) {
+    .email-group {
+      gap: 0.5rem;
+    }
+
+    .email-address,
+    .social-links a {
+      font-size: 0.83rem;
+    }
+
+    button {
+      padding-left: 0.5rem;
+    }
+  }
 </style>

@@ -29,6 +29,11 @@ const visibleProjects = projects.filter((project) => project.data.visible).sort(
 
 <style>
   .projects-section { padding-block: 2rem var(--section-space); }
-  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1.5rem;
+  }
   @media (max-width: 44rem) { .project-grid { grid-template-columns: 1fr; } .projects-section { padding-top: 0.75rem; } }
 </style>

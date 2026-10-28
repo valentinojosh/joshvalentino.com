@@ -19,6 +19,7 @@ deployment: retired
 deploymentNote: Built in 2023. The original hosted service is retired; source, tests, architecture, and historical interface captures remain available.
 image: ../../media/projects/data-fy.png
 imageAlt: Historical Data-fy interface with a radial top-genres chart and listening-data controls.
+cardImagePosition: center top
 ---
 
 ## An application across service boundaries

@@ -3,23 +3,98 @@ import { additionalProjects } from '../data/profile';
 ---
 
 <div class="additional-projects" aria-labelledby="additional-projects-title">
-  <h3 id="additional-projects-title">Also built</h3>
+  <h3 id="additional-projects-title">Additional Work</h3>
   {additionalProjects.map((project) => (
     <article>
       <div class="additional-title"><h4>{project.title}</h4><p>{project.type}</p></div>
       <p class="additional-description">{project.description}</p>
-      <a class="quiet-link" href={project.href} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} on GitHub`}>View on GitHub <span aria-hidden="true">↗</span></a>
+      <div class="additional-access">
+        {project.href
+          ? <a class="quiet-link" href={project.href} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} on GitHub`}>View on GitHub <span aria-hidden="true">↗</span></a>
+          : project.status && <p class="project-status">{project.status}</p>}
+      </div>
     </article>
   ))}
 </div>
 
 <style>
-  .additional-projects { margin-top: 2.5rem; }
-  h3 { margin: 0 0 1rem; color: var(--color-text-muted); font-size: 0.8rem; font-weight: 500; }
-  article { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) auto; gap: 1rem 2rem; align-items: center; border-block: 1px solid var(--color-rule); padding-block: 1.2rem; }
-  h4 { margin: 0; font-size: 1rem; font-weight: 600; }
-  .additional-title p { margin: 0.3rem 0 0; color: var(--color-accent-soft); font-size: 0.75rem; }
-  .additional-description { margin: 0; color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.7; }
-  @media (max-width: 50rem) { article { grid-template-columns: minmax(0, 1fr) auto; } .additional-description { grid-column: 1 / -1; grid-row: 2; } }
-  @media (max-width: 30rem) { article { grid-template-columns: 1fr; gap: 0.7rem; } .additional-description { grid-row: auto; } article a { justify-self: start; } }
+  .additional-projects {
+    margin-top: 2.5rem;
+  }
+
+  h3 {
+    margin: 0 0 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(9rem, auto);
+    gap: 1rem 2rem;
+    align-items: center;
+    border-top: 1px solid var(--color-rule);
+    padding-block: 1.2rem;
+  }
+
+  article:last-child {
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .additional-title p {
+    margin: 0.3rem 0 0;
+    color: var(--color-accent-soft);
+    font-size: 0.75rem;
+  }
+
+  .additional-description {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .additional-access {
+    justify-self: end;
+  }
+
+  .project-status {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 50rem) {
+    article {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .additional-description {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    article {
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+
+    .additional-description {
+      grid-row: auto;
+    }
+
+    .additional-access {
+      justify-self: start;
+    }
+  }
 </style>

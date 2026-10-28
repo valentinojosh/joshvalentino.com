@@ -31,6 +31,7 @@ const projects = defineCollection({
       image: image().optional(),
       imageAlt: z.string().min(1).optional(),
       mediaKind: z.enum(['interface', 'photograph']).default('interface'),
+      cardImagePosition: z.enum(['center', 'center top']).default('center'),
       nextStep: z.string().optional(),
     }).superRefine((project, context) => {
       if (project.image && !project.imageAlt) {
