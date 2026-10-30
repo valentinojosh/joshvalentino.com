@@ -1,0 +1,22 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import '../styles/parity.css';
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+const { title, description, canonicalPath, type = 'website', noindex = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head><BaseHead title={title} description={description} canonicalPath={canonicalPath} type={type} noindex={noindex} /></head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <SiteHeader />
+    <main id="main-content" tabindex="-1"><slot /></main>
+  </body>
+</html>

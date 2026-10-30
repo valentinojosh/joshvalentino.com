@@ -1,0 +1,21 @@
+---
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const current = pathname === '/' ? '/about' : pathname.startsWith('/work/') || pathname === '/datafydemo' ? '/projects' : pathname;
+const links = [
+  { title: 'about', href: '/about' },
+  { title: 'projects', href: '/projects' },
+  { title: 'experience', href: '/experience' },
+  { title: 'contact', href: '/contact' },
+];
+---
+<header class="header-container">
+  <a class="header-logo" href="/">joshvalentino.com</a>
+  <nav class="header-content" aria-label="Primary navigation">
+    {links.map((link, index) => <>
+      {index > 0 && <span class="slash" aria-hidden="true">/</span>}
+      <a class="header-link" href={link.href} aria-current={current === link.href ? 'page' : undefined}>
+        <span>{link.title}</span><span class="header-dot" aria-hidden="true">•</span>
+      </a>
+    </>)}
+  </nav>
+</header>

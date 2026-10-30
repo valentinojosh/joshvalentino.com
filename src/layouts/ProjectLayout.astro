@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+interface Props { project: CollectionEntry<'projects'>; }
+const { project } = Astro.props;
+const { data } = project;
+---
+<BaseLayout title={`${data.title} | Josh Valentino`} description={data.shortDescription} canonicalPath={`/work/${project.id}/`} type="article">
+  <article class="text-panel project-overview page-fade">
+    <a class="back-link" href="/projects">← all projects</a>
+    <h1>{data.title}</h1>
+    {data.status === 'in-development' && <p class="project-status">{data.statusLabel}</p>}
+    <p>{data.shortDescription}</p>
+    {data.image && <img class="overview-image" src={data.image.src} width={data.image.width} height={data.image.height} alt={data.imageAlt} />}
+    <dl>
+      <div><dt>contribution</dt><dd>{data.role}</dd></div>
+      <div><dt>stack</dt><dd>{data.technologies.join(', ')}</dd></div>
+      <div><dt>status</dt><dd>{data.deploymentNote}</dd></div>
+    </dl>
+    <div class="prose"><slot /></div>
+    <div class="detail-links">
+      {data.links.map(link => <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}
+      {project.id === 'data-fy' && <a href="/datafydemo">Watch the original demos</a>}
+    </div>
+    <a href="/projects">← all projects</a>
+  </article>
+</BaseLayout>

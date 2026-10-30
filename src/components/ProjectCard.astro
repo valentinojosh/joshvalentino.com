@@ -1,0 +1,35 @@
+---
+import type { ImageMetadata } from 'astro';
+interface CardLink { label: string; href: string; }
+interface Props {
+  title: string;
+  stack?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  imageLoading?: 'lazy' | 'eager';
+  links?: CardLink[];
+  status?: string;
+  activity?: boolean;
+  id?: string;
+}
+const { title, stack, image, imageAlt, imageLoading = 'lazy', links = [], status, activity = false, id } = Astro.props;
+---
+<article class:list={['ProjectsCard', { 'activity-card': activity }]} id={id} aria-label={title}>
+  <div class="ProjectsCard-left">
+    {image && <div class="project-image">
+      {activity ? <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label="Open the full-size static GitHub contribution snapshot"><img src={image.src} width={image.width} height={image.height} alt={imageAlt} loading={imageLoading} decoding="async" /></a>
+        : <img src={image.src} width={image.width} height={image.height} alt={imageAlt} loading={imageLoading} decoding="async" />}
+    </div>}
+    <div class="ProjectsCard-left-info" aria-hidden={stack ? undefined : 'true'}>
+      {stack ? <><span class="ProjectsCard-left-info-left">stack</span><span class="ProjectsCard-left-info-right">{stack}</span></> : <span>&nbsp;</span>}
+    </div>
+    {links.length > 0 && <div class="ProjectsCard-left-buttons">
+      {links.map(link => <a class="ProjectsCard-left-buttons-button" href={link.href} target={link.href.startsWith('https://') ? '_blank' : undefined} rel={link.href.startsWith('https://') ? 'noopener noreferrer' : undefined} aria-label={`${title}: ${link.label}`}><span>{link.label}</span></a>)}
+    </div>}
+  </div>
+  <div class="ProjectsCard-center" aria-hidden="true"></div>
+  <div class="ProjectsCard-right">
+    <h2 class="ProjectsCard-right-header">{title}</h2>
+    <div class="project-copy">{status && <p class="project-status">{status}</p>}<slot /></div>
+  </div>
+</article>

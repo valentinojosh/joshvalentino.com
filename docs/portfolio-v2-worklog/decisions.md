@@ -1,0 +1,44 @@
+# Decisions
+
+## Final editorial audit — authoritative
+
+- Correct BetterDates.ai to “AI / Personalized planning” and an AI-powered personalized planning project with self-hosted models as the intended primary approach. Retain private/in-development status and no action. The owner establishes product direction; current deterministic fallback/provider support does not justify presenting AI as peripheral. The earlier optional-AI editorial decision below is superseded.
+- Remove redundant Selected Work and expertise introductions. Replace the abstract hero scope label with “Areas of work.” Broaden About to independent software, AI and physical systems, removing its repeated employment recap. Clarify Data-fy's backend paragraph; preserve technical facts, source links and limitations.
+- Coverage is sufficient across the strongest professional/independent categories. Preserve the three employment stories, six expertise areas, four-project selection/order, education, contact and design. Do not add a cloud experiment, security title, extra skills inventory or future feature. See the sanitized matrix in final-content-audit.md.
+- Preserve prior notes as historical records. No external browsing/operations or package changes. Historical resume exposure remains a separate owner decision; no history rewrite is authorized.
+
+## Previous focused final polish — historical
+
+- Preserve the approved page structure, charcoal/violet identity, experience, expertise and overview pages. Remove only the home-location clauses and apply the owner's precise education corrections. The newly confirmed ICS name supersedes the earlier cautious generic entry; no degree, year or partner-university claim is added.
+- Use one 16:9 card slot. AI Driver fits natively; Data-fy anchors at the top, trimming only spare lower whitespace; IMS centers a modest crop of outer margins while retaining the login panel. Keep the complete hardware photograph in a dark frame. Absolute image positioning prevents intrinsic dimensions from overflowing the slot. Fractional grid rows equalize all cards without fixed/clipping content heights.
+- Choose “Additional Work” as a straightforward companion to “Selected Work,” accommodating both a public mod and an in-development private project. “Other Projects” would be a reasonable alternative. Add an optional link/status secondary type; preserve featured public-source validation.
+- The owner now explicitly authorizes the private AI project's generic public summary. Describe optional AI-assisted research alongside preference-based recommendations; do not imply a configured/active provider, public access, offline inference or publish source/runtime details. SAP keeps its established source action.
+- Coordinate contact as compact text actions with the same font/height system; keep copy immediately beside mailto and preserve the exact approved message, feedback, keyboard and no-JS behavior.
+- Evaluate the supplied reference independently. Page-content access succeeded; browser rendering was network-denied. No newly considered feature was implemented. A contribution graph adds weak recruiting signal and unnecessary data-refresh/provider burden for this site.
+
+## Professional presentation refinement
+
+- Preserve the Astro architecture and original media, but change the composition materially: a split hero, projects before employment, differentiated charcoal surfaces, smaller headings, contextual expertise and a combined personal/education panel. Keep purple for key hierarchy and actions.
+- All four existing overview routes remain. Each now has 118–136 words of curated body content, authentic media, concise contribution/status context and a source action near the introduction. GitHub owns the detailed code, experiment and project documentation.
+- The current user explicitly confirms the public project destinations; that supersedes the previous task's link-visibility uncertainty. Add static URLs only and correct the obsolete IMS Pages destination. Omit the private secondary project completely from public data.
+- Preserve the Systems Lab photo in full with contain sizing on a dark frame. The originals for all four featured projects remain unchanged. No generated visuals or image editing required in this pass.
+- Represent systems, IT, networking, hardware, recovery and security-aware practices alongside software/data. Context labels distinguish professional engineering from independent work; no SOC, SIEM or formal security-title claim.
+- Keep the inherited SQL authorship distinction in the historical/editorial records. Public copy says extended established workflows and prepared tested DBA-controlled changes, emphasizing contribution without defensive access wording.
+- Education uses the user's confirmed 2022 Aurora degree and 3.88 GPA. Seville language/culture study is included without an unverified year or institution; College of DuPage is transfer context only. VTS is a modest independent initiative, without clients, revenue or corporate-status claims.
+- Group mailto/copy together and use the exact approved friendly wording. Maintain no-JS visibility, clipboard feedback and distinct GitHub/LinkedIn links. A public resume page, section, link, file or download remains explicitly excluded.
+- Retain session intro and its no-JS/reduced-motion safeguards. Use existing dependencies and the prior isolated-build method. No services, packages, remote GitHub access or deployment added.
+
+## Original implementation decisions (historical)
+
+- Retain the existing static Astro/content-collection architecture, CSS tokens, project cards, optimized imagery, layouts, footer, metadata and legacy route intent. Avoid a second migration or new dependencies.
+- Prior audit is historical planning, not confirmation of current claims or permission to publish tentative projects. Source review governs final content.
+- Preserve pre-existing scratch files and build artifacts. Isolate new validation output so prior work is not overwritten.
+- Worklogs are sanitized repository engineering documentation, outside public/ and generated routes. They may remain for maintenance and are never bundled into the website.
+- Professional experience has its own section; the old employment project record is hidden and reduced to a redirecting editorial pointer. Preserve prior draft files but mark them invisible, excluding them from routes and sitemap as well as homepage cards.
+- Use the confirmed base job title and dates; omit conflicting resume metrics and employer-scale counts. Credit the inherited SQL templates, independently authored utilities, team ETL product, and academic team separately.
+- Add AI Driver and Systems Lab case studies. Retain the Systems Lab content identifier for stable URLs; source visibility was unverified during that task. The current refinement adds the user-approved source links and retains only the approved SAP secondary summary.
+- Use the existing image pipeline and an authentic AI Driver documentation capture. No generated visuals or screenshot-gathering dependency. Preserve existing Data-fy and IMS imagery.
+- Visual review supported adding the existing Systems Lab Phase-1 interior photo to balance the project grid. Create a resized WebP derivative with installed Sharp, stripping source metadata; leave the external original untouched. The caption explicitly identifies the air-cooled first phase.
+- Generate the small sitemap directly from the same collection used for routes. Avoid a package solely for five canonical URLs. Use image-alt and HTTPS-link schema validation.
+- Test a hash-matched source mirror under ignored task scratch. Astro hardcodes its generated `.astro` folder under the selected root; changing root preserves the user's pre-existing `.astro` and `dist` artifacts without moving or restoring them.
+- Fix the retained decorative intro's opaque background: without JavaScript and without reduced motion, it otherwise permanently obscures content. A transparent background preserves the particle animation and visible first paint; confirm both motion preferences and session behavior in browser QA.

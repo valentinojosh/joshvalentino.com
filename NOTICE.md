@@ -1,5 +1,7 @@
-Copyright (c) 2023 Joshua Valentino
+Copyright (c) 2023-2026 Joshua Valentino
 
-This file is part of the joshvalentino.com project, which includes modifications to code originally created by
-Karen Ying and licensed under the MIT License. The modifications are made available
-under the same license terms.
+The React-parity Astro implementation recreates this repository's original portfolio design using native Astro components. Header and card styles are adapted from the original React source.
+
+The original portfolio included modifications to code created by Karen Ying and distributed under the MIT License. Attribution is retained here and in LICENSE.md. The Create React App and Material UI runtime has been replaced; the recognizable original presentation is retained.
+
+Varela Round and Ubuntu Mono font files are redistributed locally under their respective font licenses. See public/fonts/ for copyright and license text.

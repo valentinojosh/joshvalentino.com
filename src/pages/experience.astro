@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import rx from '../Assets/rx.jpg';
+import { experience } from '../data/profile';
+---
+<BaseLayout title="Experience | Josh Valentino" description="Josh Valentino’s production engineering experience at RxSense, volunteer technical collaboration with GHI, and founding work at Valentino Technology Solutions.">
+  <section class="projects-container page-fade" aria-label="Professional experience and technical collaboration">
+    <h1 class="visually-hidden">Experience</h1>
+    <ProjectCard title="rxsense" image={rx} imageAlt="RxSense logo." imageLoading="eager" stack="C#/.NET, SQL Server, Python, REST APIs" status="Production Support Engineer · Aug 2022 – Jan 2026">
+      <p>{experience.overview}</p>
+      <p>Worked with developers, technical teams, and other stakeholders to communicate findings clearly and resolve issues. Combined troubleshooting and software development with testing, validation, documentation, reviewed changes, and security-conscious handling of access and data in an enterprise environment.</p>
+    </ProjectCard>
+    <article class="text-panel experience-details" aria-label="RxSense engineering contributions">
+      {experience.stories.map(story => <section><h2>{story.title}</h2><p>{story.summary}</p><p>{story.contribution}</p></section>)}
+    </article>
+    <ProjectCard title="Global Harmonization Initiative" stack="Technical collaboration" status="Volunteer technical contributor · September 2026 – present" links={[{ label: 'site', href: 'https://www.globalharmonization.net/wg-religious-dietary-laws/' }]}>
+      <p>Contributing to the Global Harmonization Initiative’s Food Safety in Relation to Religious Dietary Laws Working Group as a volunteer technical collaborator, connecting software engineering, food science, and religious dietary research.</p>
+      <p>Collaborators include Prof. Joe M. Regenstein, Cornell University emeritus professor; Prof. Quamrul Hasan, halal science researcher and academic collaborator; and Prof. Dr. Jawad Alzeer, researcher and academic collaborator.</p>
+      <p>Technical work in planning: exploring accessible desktop- and mobile-friendly web forms to modernize document-based questionnaires, preserve structured halal-certification responses, and support future academic data comparison, search, and analysis. The objective is to improve research utility and transparency around differing religious dietary requirements.</p>
+    </ProjectCard>
+    <ProjectCard title="Valentino Technology Solutions" stack="Systems, networking, software" status="Founder · March 2025 – present" links={[{ label: 'site', href: 'https://valentinotechsolutions.com/' }]}>
+      <p>Founded Valentino Technology Solutions in DeKalb, Illinois, developing an independent technology-services business focused on residential and small-business needs.</p>
+      <p>Developed the business website, branding, service structure, and customer-intake workflows while establishing its technology-service direction.</p>
+      <p>Service offerings and business development encompass computer hardware and software troubleshooting, PC and workstation configuration, networking, technical infrastructure, software development, and technology consulting.</p>
+    </ProjectCard>
+  </section>
+</BaseLayout>
