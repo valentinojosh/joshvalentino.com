@@ -12,7 +12,7 @@
     "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
-    "test:build": "node --test scripts/verify-build.test.mjs",
+    "test:build": "node --test scripts/verify-parity-build.test.mjs",
     "verify": "astro check && astro build"
   },
   "dependencies": {

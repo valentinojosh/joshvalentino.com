@@ -17,7 +17,7 @@ links:
     kind: source
 deployment: retired
 deploymentNote: Completed in spring 2022 and permanently retired. Preserved as a historical collaborative software-engineering project.
-image: ../../media/projects/incident-management.png
+image: ../../Assets/im.png
 imageAlt: Historical IMS entry screen with separate administrator login and employee report access.
 ---
 

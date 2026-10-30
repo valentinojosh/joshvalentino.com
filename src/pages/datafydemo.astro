@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import base from '../Assets/BaseDemo.mp4?url';
+import mobile from '../Assets/MobileDemo.mp4?url';
+import error from '../Assets/ErrorDemo.mp4?url';
+const demos = [{ title: 'Base Demo', src: base }, { title: 'Mobile Demo', src: mobile }, { title: 'Error Demo', src: error }];
+---
+<BaseLayout title="Data-fy demos | Josh Valentino" description="The original Data-fy desktop, mobile, and error-handling video demonstrations, preserved as historical recordings.">
+  <section class="projects-container page-fade demo-page" aria-label="Data-fy video demonstrations">
+    <h1 class="visually-hidden">Data-fy demos</h1>
+    {demos.map(demo => <article class="DemoCard">
+      <h2>{demo.title}</h2>
+      <div class="demo-rule" aria-hidden="true"></div>
+      <video controls preload="auto" playsinline width="700" height="400" aria-label={demo.title}>
+        <source src={demo.src} type="video/mp4" />
+        <p>Your browser does not support embedded video. <a href={demo.src}>Download {demo.title}</a>.</p>
+      </video>
+    </article>)}
+    <p class="demo-note">Historical recordings from the retired application. <a href="/work/data-fy/">Project details</a>.</p>
+  </section>
+</BaseLayout>

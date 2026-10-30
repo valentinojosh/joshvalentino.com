@@ -1,74 +1,35 @@
 ---
-import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
-
-interface Props { project: CollectionEntry<'projects'>; }
-const { project } = Astro.props;
-const { data } = project;
-const source = data.links.find((link) => link.kind === 'source');
+import type { ImageMetadata } from 'astro';
+interface CardLink { label: string; href: string; }
+interface Props {
+  title: string;
+  stack?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  imageLoading?: 'lazy' | 'eager';
+  links?: CardLink[];
+  status?: string;
+  activity?: boolean;
+  id?: string;
+}
+const { title, stack, image, imageAlt, imageLoading = 'lazy', links = [], status, activity = false, id } = Astro.props;
 ---
-
-<article class:list={['project-card', `project-card--${data.prominence}`]}>
-  {data.image && data.imageAlt && (
-    <div class:list={['project-image', `project-image--${data.mediaKind}`]} style={`--card-image-position: ${data.cardImagePosition};`}>
-      <Image src={data.image} alt={data.imageAlt} widths={[480, 720, 960, 1200]}
-        sizes="(max-width: 704px) calc(100vw - 36px), (max-width: 1264px) calc((100vw - 72px) / 2), 580px"
-        format="webp" quality={86} loading="lazy" />
+<article class:list={['ProjectsCard', { 'activity-card': activity }]} id={id} aria-label={title}>
+  <div class="ProjectsCard-left">
+    {image && <div class="project-image">
+      {activity ? <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label="Open the full-size static GitHub contribution snapshot"><img src={image.src} width={image.width} height={image.height} alt={imageAlt} loading={imageLoading} decoding="async" /></a>
+        : <img src={image.src} width={image.width} height={image.height} alt={imageAlt} loading={imageLoading} decoding="async" />}
+    </div>}
+    <div class="ProjectsCard-left-info" aria-hidden={stack ? undefined : 'true'}>
+      {stack ? <><span class="ProjectsCard-left-info-left">stack</span><span class="ProjectsCard-left-info-right">{stack}</span></> : <span>&nbsp;</span>}
     </div>
-  )}
-  <div class="project-content">
-    <div class="project-meta"><span>{data.category}</span><span>{data.statusLabel}</span></div>
-    <h3>{data.title}</h3>
-    <p class="project-description">{data.shortDescription}</p>
-    {data.engineeringHighlights[0] && <p class="project-contribution">{data.engineeringHighlights[0]}</p>}
-    <p class="technologies" aria-label={`${data.title} technologies`}>{data.technologies.join(' · ')}</p>
-    <div class="project-links">
-      {source && <a class="source-link" href={source.href} target="_blank" rel="noopener noreferrer" aria-label={`View ${data.title} on GitHub`}>View on GitHub <span aria-hidden="true">↗</span></a>}
-      {data.detailPage && <a class="overview-link" href={`/work/${project.id}/`} aria-label={`Read the ${data.title} project overview`}>Project overview <span aria-hidden="true">→</span></a>}
-    </div>
+    {links.length > 0 && <div class="ProjectsCard-left-buttons">
+      {links.map(link => <a class="ProjectsCard-left-buttons-button" href={link.href} target={link.href.startsWith('https://') ? '_blank' : undefined} rel={link.href.startsWith('https://') ? 'noopener noreferrer' : undefined} aria-label={`${title}: ${link.label}`}><span>{link.label}</span></a>)}
+    </div>}
+  </div>
+  <div class="ProjectsCard-center" aria-hidden="true"></div>
+  <div class="ProjectsCard-right">
+    <h2 class="ProjectsCard-right-header">{title}</h2>
+    <div class="project-copy">{status && <p class="project-status">{status}</p>}<slot /></div>
   </div>
 </article>
-
-<style>
-  .project-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--color-rule); border-radius: 0.85rem; background: var(--color-surface); transition: border-color 160ms ease, box-shadow 160ms ease; }
-  .project-card:hover, .project-card:focus-within { border-color: var(--color-rule-strong); box-shadow: 0 8px 24px #00000018; }
-  .project-card--wide { grid-column: 1 / -1; }
-  .project-image {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-bottom: 1px solid var(--color-rule);
-    background: #14151c;
-  }
-
-  .project-image :global(img) {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: var(--card-image-position);
-  }
-
-  .project-image--photograph {
-    background: #13141a;
-  }
-
-  .project-image--photograph :global(img) {
-    object-fit: contain;
-  }
-  .project-content { display: flex; flex: 1; flex-direction: column; padding: clamp(1.25rem, 2.3vw, 1.8rem); }
-  .project-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 0.75rem; font-size: 0.72rem; line-height: 1.6; color: var(--color-text-muted); }
-  .project-meta span:first-child { color: var(--color-accent-soft); }
-  h3 { margin: 0.8rem 0 0; font-size: clamp(1.35rem, 2.1vw, 1.75rem); font-weight: 650; letter-spacing: -0.035em; line-height: 1.25; }
-  .project-description { margin: 0.8rem 0 0; color: var(--color-text-soft); font-size: 0.97rem; line-height: 1.7; }
-  .project-contribution { margin: 0.75rem 0 0; padding-left: 0.85rem; border-left: 2px solid var(--color-rule-strong); color: var(--color-text-muted); font-size: 0.87rem; line-height: 1.7; }
-  .technologies { margin: auto 0 0; padding-top: 1.4rem; color: var(--color-text-muted); font-size: 0.76rem; line-height: 1.8; }
-  .project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--color-rule); }
-  .project-links a { display: inline-flex; align-items: center; min-height: 2.75rem; gap: 0.65rem; font-size: 0.8rem; font-weight: 600; text-decoration: none; }
-  .source-link { color: var(--color-accent-soft); }
-  .overview-link { color: var(--color-text-soft); }
-  .project-links span { color: var(--color-accent); }
-  @media (max-width: 44rem) { .project-card--wide { grid-column: auto; } .project-links { justify-content: space-between; gap: 0.5rem; } }
-  @media (max-width: 38rem) { .project-content { padding: 1.1rem; } .project-description, .project-contribution { line-height: 1.6; } .technologies { padding-top: 1rem; } .project-links { margin-top: 0.85rem; padding-top: 0.8rem; } }
-</style>

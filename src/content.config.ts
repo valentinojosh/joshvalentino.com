@@ -37,8 +37,8 @@ const projects = defineCollection({
       if (project.image && !project.imageAlt) {
         context.addIssue({ code: 'custom', path: ['imageAlt'], message: 'Project images require descriptive alt text.' });
       }
-      if (project.visible && !project.links.some((link) => link.kind === 'source')) {
-        context.addIssue({ code: 'custom', path: ['links'], message: 'Published projects require a direct source destination.' });
+      if (project.visible && project.deployment !== 'not-public' && !project.links.some((link) => link.kind === 'source')) {
+        context.addIssue({ code: 'custom', path: ['links'], message: 'Public project records require a source destination.' });
       }
     }),
 });

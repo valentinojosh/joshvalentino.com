@@ -1,61 +1,27 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
-import '../styles/prose.css';
-
 interface Props { project: CollectionEntry<'projects'>; }
 const { project } = Astro.props;
 const { data } = project;
 ---
-
 <BaseLayout title={`${data.title} | Josh Valentino`} description={data.shortDescription} canonicalPath={`/work/${project.id}/`} type="article">
-  <article class="project-overview shell">
-    <a class="back-link quiet-link" href="/#projects"><span aria-hidden="true">←</span> All projects</a>
-    <header class="project-header">
-      <p class="eyebrow">Project overview / {data.category}</p>
-      <h1>{data.title}</h1>
-      <p class="project-description">{data.shortDescription}</p>
-      <div class="project-actions">
-        {data.links.map((link) => <a class:list={[link.kind === 'source' ? 'button-link' : 'quiet-link']} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}
-      </div>
-    </header>
-    <div class="project-context">
-      {data.image && data.imageAlt && (
-        <figure class="project-media">
-          <Image src={data.image} alt={data.imageAlt} widths={[480, 720, 960, 1280]}
-            sizes="(max-width: 816px) calc(100vw - 36px), 760px" format="webp" quality={88} />
-          <figcaption>{data.imageAlt}</figcaption>
-        </figure>
-      )}
-      <dl>
-        <div><dt>Contribution</dt><dd>{data.role}</dd></div>
-        <div><dt>Status</dt><dd>{data.deploymentNote}</dd></div>
-        <div><dt>Technology</dt><dd>{data.technologies.join(' · ')}</dd></div>
-      </dl>
+  <article class="text-panel project-overview page-fade">
+    <a class="back-link" href="/projects">← all projects</a>
+    <h1>{data.title}</h1>
+    {data.status === 'in-development' && <p class="project-status">{data.statusLabel}</p>}
+    <p>{data.shortDescription}</p>
+    {data.image && <img class="overview-image" src={data.image.src} width={data.image.width} height={data.image.height} alt={data.imageAlt} />}
+    <dl>
+      <div><dt>contribution</dt><dd>{data.role}</dd></div>
+      <div><dt>stack</dt><dd>{data.technologies.join(', ')}</dd></div>
+      <div><dt>status</dt><dd>{data.deploymentNote}</dd></div>
+    </dl>
+    <div class="prose"><slot /></div>
+    <div class="detail-links">
+      {data.links.map(link => <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}
+      {project.id === 'data-fy' && <a href="/datafydemo">Watch the original demos</a>}
     </div>
-    <div class="prose project-body"><slot /></div>
-    <a class="quiet-link return-link" href="/#projects">Explore the other projects <span aria-hidden="true">→</span></a>
+    <a href="/projects">← all projects</a>
   </article>
 </BaseLayout>
-
-<style>
-  .project-overview { padding-block: 2rem var(--section-space); }
-  .back-link { font-size: 0.8rem; }
-  .project-header { max-width: 54rem; margin-top: 2rem; }
-  h1 { margin: 0.75rem 0 1rem; font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 650; line-height: 1.15; letter-spacing: -0.045em; text-wrap: balance; }
-  .project-description { max-width: 47rem; margin: 0; color: var(--color-text-soft); font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.7; }
-  .project-actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; margin-top: 1.5rem; }
-  .project-context { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 0.85fr); gap: 2rem 3rem; margin-top: 2.5rem; align-items: start; }
-  .project-media { overflow: hidden; margin: 0; border: 1px solid var(--color-rule); border-radius: 0.65rem; background: #14151c; }
-  .project-media :global(img) { width: 100%; height: auto; }
-  figcaption { margin: 0; padding: 0.75rem 1rem; background: var(--color-canvas-soft); color: var(--color-text-muted); font-size: 0.75rem; line-height: 1.6; }
-  dl { margin: 0; }
-  dl div { border-top: 1px solid var(--color-rule); padding-block: 1rem; }
-  dt { color: var(--color-accent-soft); font-size: 0.72rem; }
-  dd { margin: 0.45rem 0 0; color: var(--color-text-soft); font-size: 0.88rem; line-height: 1.7; }
-  .project-body { max-width: 50rem; margin-top: 2.5rem; }
-  .return-link { margin-top: 1.5rem; }
-  @media (max-width: 51rem) { .project-context { grid-template-columns: 1fr; } dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; } }
-  @media (max-width: 36rem) { dl { grid-template-columns: 1fr; gap: 0; } }
-</style>

@@ -1,7 +1,7 @@
 ---
 title: AI Driver
 shortDescription: A driving simulator and controlled reinforcement-learning experiment exploring how observation design affects a learned policy.
-displayOrder: 2
+displayOrder: 1
 category: AI / Automation
 status: shipped
 statusLabel: Experiment complete

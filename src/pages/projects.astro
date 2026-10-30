@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import rx from '../Assets/rx.jpg';
+import github from '../Assets/github.png';
+import { site } from '../data/site';
+const projects = (await getCollection('projects', ({ data }) => data.visible)).sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+---
+<BaseLayout title="Projects | Josh Valentino" description="Software and systems projects by Josh Valentino, including Data-fy, Incident Management System, BetterDates.ai, AI Driver, and Systems Lab.">
+  <section class="projects-container page-fade" aria-label="Projects">
+    <h1 class="visually-hidden">Projects</h1>
+    <ProjectCard title="rxsense" stack="SQL, C#, Python, APIs" image={rx} imageAlt="RxSense logo." imageLoading="eager" links={[{ label: 'work', href: '/experience' }]}>
+      <p>Several years of professional work in software, data workflows, and production troubleshooting. Built C# tools, contributed Python backend components, and investigated application behavior across APIs and SQL Server.</p>
+      <p><a href="/experience">Read about my experience</a>.</p>
+    </ProjectCard>
+    {projects.map(({ id, data }) => <ProjectCard title={data.title} stack={data.technologies.join(', ')} image={data.image} imageAlt={data.imageAlt} status={data.status === 'in-development' ? data.statusLabel : undefined} links={[
+      ...data.links.map(link => ({ label: link.kind === 'source' ? (id === 'home-lab-network-security' ? 'docs' : 'code') : 'site', href: link.href })),
+      { label: 'about', href: `/work/${id}/` },
+      ...(id === 'data-fy' ? [{ label: 'demo', href: '/datafydemo' }] : []),
+    ]}>
+      <p>{data.shortDescription}</p>
+      {data.engineeringHighlights.map(highlight => <p>{highlight}</p>)}
+    </ProjectCard>)}
+    <ProjectCard title="github" image={github} imageAlt="Static full-year GitHub contribution activity screenshot, with January through December columns. This is a historical snapshot, not live activity." links={[{ label: 'site', href: site.github }]} activity id="github">
+      <p>For more information on the majority of my projects check out my GitHub!</p>
+    </ProjectCard>
+  </section>
+</BaseLayout>

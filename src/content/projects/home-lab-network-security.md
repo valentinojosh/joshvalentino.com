@@ -1,7 +1,7 @@
 ---
 title: Systems Lab
 shortDescription: A collection of hands-on systems work spanning networking, self-hosted services, PC integration, and storage recovery.
-displayOrder: 1
+displayOrder: 2
 category: Systems / Infrastructure
 status: active
 statusLabel: Ongoing independent work
@@ -12,7 +12,7 @@ technologies: [Windows, Networking, Jellyfin, Hardware diagnostics, Recovery]
 engineeringHighlights:
   - Built and commissioned an operational Phase-1 simulator PC, alongside a segmented home network and recoverable local services.
 links:
-  - label: View on GitHub
+  - label: Read documentation on GitHub
     href: https://github.com/valentinojosh/systems-lab
     kind: source
 deployment: not-public

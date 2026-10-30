@@ -1,42 +1,53 @@
-# [joshvalentino.com](https://joshvalentino.com)
+# Josh Valentino — original portfolio, rebuilt in Astro
 
-Portfolio V2 is a static Astro site for Josh Valentino's software, data, and systems engineering work. The original React site is preserved at `portfolio-v1-archive`.
+This local implementation recreates the original React portfolio from `main` using static Astro pages, native components, conventional CSS, and one small email-copy script. The charcoal canvas, original fonts, slash/dot navigation, project cards, screenshots, contribution snapshot, and demo recordings are retained. Updated writing distinguishes implemented work, retired deployments, and planned features.
 
-## Local development
+The working branch is `feat/portfolio-astro-react-parity`, based on local `feat/portfolio-v2-astro` (`8492629e`). No publication is part of this work.
+
+## Run locally
+
+Use Node 24+ and the existing locked dependencies:
 
 ```sh
 npm run dev
 ```
 
-Use the existing locked local dependencies. Installing packages requires separate authorization for this controlled review. Node 24 or newer is required. Quality checks:
+The original URLs `/`, `/about`, `/projects`, `/contact`, and `/datafydemo` are real static pages. `/experience` uses the same navigation convention. The four existing `/work/` URLs remain available, with a fifth bounded BetterDates.ai overview. An unmatched URL uses the static 404 page.
 
 ```sh
-npm run verify
+npm run check
+npm run build
 npm run test:build
 ```
 
-The production build is emitted to `dist/`. The existing Netlify configuration is retained; building locally does not deploy. Nothing in this task authorizes publishing. Project records live in `src/content/projects`. Homepage presentation is controlled in each record through:
+A normal build writes `dist/`. For this task, existing generated output was preserved and verification used an isolated output directory:
 
-- `displayOrder` for order
-- `prominence` for `standard` or full-grid `wide` presentation
-- `category` and `statusLabel` for restrained public metadata
-- `visible` for homepage inclusion
-- `detailPage` for static case-study generation
+```powershell
+npm run build -- --outDir tmp/react-parity/build
+$env:PORTFOLIO_BUILD_DIR = 'tmp/react-parity/build'
+npm run test:build
+```
 
-Public employment stories, expertise and additional projects live in `src/data/profile.ts`; site metadata/contact details live in `src/data/site.ts`. Private employer sources never belong in either file. `visible: false` excludes draft projects from both case-study routing and the sitemap, as well as the homepage. Images require descriptive alt text. The sitemap is generated from the same collection without another package.
+The retained Netlify configuration builds a static directory and applies security/cache headers. It has no SPA catch-all or redirects replacing the original pages. Building locally does not deploy.
 
-The homepage presents a broad technical introduction, four selected projects, professional experience, technical scope, background/education and contact. GitHub links on project cards and at the top of overview pages are the primary path to code and detailed documentation. The four existing `/work/` pages remain as short, visual introductions, avoiding a second copy of each repository's README. Systems Lab retains its existing `home-lab-network-security` identifier.
+## Maintain content and presentation
 
-Header navigation remains visible and keyboard accessible at mobile widths without JavaScript. Existing `/about`, `/projects`, `/contact` and `/datafydemo` URLs retain redirects. The public site deliberately has no resume page, section, link, PDF or download. Private source documents, runtime data and implementation details stay outside public copy and generated output; private projects appear only through explicitly approved high-level summaries.
+- `src/content/projects/*.md`: verified projects, order, status, technology, contribution, images, links, and overview copy. `visible`/`detailPage` control listing and generated routes. Private entries may omit source links. No runtime data belongs here.
+- `src/data/profile.ts`: sanitized professional experience. `src/pages/experience.astro`: current bounded GHI collaboration statement.
+- `src/data/site.ts`: contact/profile URLs and metadata.
+- `src/components/AboutPage.astro`: shared `/` and `/about` copy. `EmailCopy.astro`: copy status, compatibility fallback, and no-JavaScript mailto.
+- `src/styles/cards.css`: retained original desktop card declarations, compiled once from the original Sass. No Sass dependency is required by this Astro project.
+- `src/styles/parity.css`: original layout/header typography, responsive single-DOM card behavior, reduced motion, focus styles, and matching extensions for the new pages.
+- `public/fonts/`: the original Varela Round and Ubuntu Mono typefaces with redistribution licenses. Visitors make no font-service request.
 
-Featured cards share a 16:9 media slot and content-driven equal grid rows. `mediaKind` preserves the full hardware photograph while screenshots fill their slot. `cardImagePosition` permits a top anchor for Data-fy's header/chart; other screenshots use a centered fit. No source images are stretched or replaced. Secondary entries support an optional public link or a plain status label, so a private project never needs a placeholder action.
+External project/profile actions open separate tabs; internal navigation uses ordinary links. No React runtime, intro overlay, analytics, API activity feed, or production server is required. The original footer was disabled and remains absent.
 
-`npm run test:build` checks routes, assets, metadata, source destinations, privacy/draft exclusion, approved contact/education content, private-secondary link behavior and the no-resume boundary. Reachable historical Git objects are separate from current source/build output; earlier resume assets remain in local history and have not been erased.
+## Audit and verification
 
-Sanitized audit, decisions, validation and continuation notes live in `docs/portfolio-v2-worklog/`, outside the published site. See `handoff.md` before resuming. No React runtime, analytics, remote fonts or new dependencies have been added.
+See `docs/react-parity/` for the visual inventory, content provenance, validation, and resumable progress record. Ignored `tmp/react-parity/` contains the unchanged extracted React reference, comparison scripts/results, production build, screenshots, and preservation baselines. It is not published.
 
-The optional intro is controlled by `site.intro.mode` in `src/data/site.ts`: `always`, `session`, or `off`. It is decorative, non-interactive, and skipped for reduced-motion users. During local development, `?intro=always&intro-motion=force` is available for deliberate animation review without changing the production accessibility behavior.
+The original contribution image is a **historical static screenshot**. See `docs/react-parity/github-snapshot.md` for the manual refresh procedure. The graph remains visible on mobile and opens at full resolution, while other card images follow the original mobile hiding rule.
 
-## History and licensing
+## Licensing
 
-Portfolio V2 is an original Astro implementation. Earlier versions of this repository were adapted from Karen Ying's MIT-licensed portfolio; the historical attribution remains documented in `NOTICE.md` and `LICENSE.md`.
+Original design/code attribution to Karen Ying is retained in `LICENSE.md` and `NOTICE.md`. Fonts have separate license files under `public/fonts/`. Historical branches and prior documentation remain intact.
